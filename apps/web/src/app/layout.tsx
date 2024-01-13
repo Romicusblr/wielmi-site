@@ -1,4 +1,5 @@
 import "./globals.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "@repo/ui/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
