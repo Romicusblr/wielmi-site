@@ -50,13 +50,20 @@ const Hero: FC = () => {
             );
           })}
         </ul>
-        <ul className="flex items-center justify-between w-64">
+        <ul className="flex items-center justify-between w-1/4">
           {slides.map(({ id }) => (
             <li key={id}>
               <CircleButton onClick={() => setCurrentSlide(id)} isActive={currentSlide === id} text={id.toString()} />
             </li>
           ))}
         </ul>
+        <div className="self-end w-1/2 px-16">
+          <h3 className="mb-4">Dlaczego Wielmi?</h3>
+          <p>
+            Zadbamy o wszystko za Ciebie. Nie musisz się o nic martwić. Nasi specjaliści zainstalują Twój system,
+            aktywują go i pokażą, jak z niego korzystać
+          </p>
+        </div>
       </div>
     </div>
   );
