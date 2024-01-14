@@ -3,31 +3,40 @@ import { FC, useState } from "react";
 import Image from "next/image";
 import CircleButton from "./CircleButton";
 
+const slides = [
+  { id: 1, text: "INTELIGENTNY DOM", src: "/wielmi-1.png" },
+  { id: 2, text: "INSTALACJE ELEKTRYCZNE", src: "/wielmi-2.png" },
+  { id: 3, text: "SIECI LOKALNE", src: "/wielmi-3.png" },
+];
+
 const Hero: FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(1);
+  const [currentSlide, setCurrentSlide] = useState(slides[0].id);
 
   return (
     <div className="container relative w-full h-[720px]">
-      {[1, 2, 3].map((n, i) => (
+      {slides.map(({ id, src }, i) => (
         <Image
-          key={n}
+          key={id}
           className={classNames({
-            "absolute transition-opacity duration-500": true,
-            "opacity-0": currentSlide !== n,
+            "absolute object-cover transition-opacity duration-500": true,
+            "opacity-0": currentSlide !== id,
           })}
           fill
-          objectFit="cover"
           priority={i === 0}
-          src={`/wielmi-${n}.png`}
-          alt="hero"
+          src={src}
+          alt="cozy room"
         />
       ))}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <ul></ul>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <ul>
+          {slides.map(({ id, text }) => (
+            <li key={id}>{text}</li>
+          ))}
+        </ul>
         <ul className="flex items-center justify-between w-64">
-          {[1, 2, 3].map((n) => (
-            <li key={n}>
-              <CircleButton onClick={() => setCurrentSlide(n)} isActive={currentSlide === n} text={n.toString()} />
+          {slides.map(({ id }) => (
+            <li key={id}>
+              <CircleButton onClick={() => setCurrentSlide(id)} isActive={currentSlide === id} text={id.toString()} />
             </li>
           ))}
         </ul>
