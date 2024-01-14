@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { FC, useState } from "react";
 import Image from "next/image";
 import CircleButton from "./CircleButton";
+import Link from "next/link";
 
 const slides = [
   { id: 1, text: "INTELIGENTNY DOM", src: "/wielmi-1.png" },
@@ -32,20 +33,30 @@ const Hero: FC = () => {
           <h1 className="text-4xl">WIELMI</h1>
           <h2>Inteligentny dom</h2>
         </div>
-        <ul className="text-4xl mb-8">
+        <ul className="text-4xl mb-8 w-1/2">
           {slides.map(({ id, text }) => {
             const isActive = currentSlide === id;
             return (
               <li
                 className={classNames({
-                  "text-3xl mb-4": true,
+                  "text-3xl mb-4 flex justify-between": true,
                   "text-gray-100/50": !isActive,
                   "text-gray-100/100": isActive,
                 })}
                 key={id}
-                onClick={() => setCurrentSlide(id)}
               >
-                {text}
+                <Link onClick={() => setCurrentSlide(id)} href="#" scroll={false}>
+                  {text}
+                </Link>
+                <Link
+                  className={classNames({
+                    "text-sm rounded-full border px-4 py-2": true,
+                    "hidden": !isActive,
+                  })}
+                  href="#"
+                >
+                  Więcej
+                </Link>
               </li>
             );
           })}
