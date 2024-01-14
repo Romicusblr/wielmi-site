@@ -27,7 +27,11 @@ const Hero: FC = () => {
           alt="cozy room"
         />
       ))}
-      <div className="absolute inset-0 flex flex-col justify-center pl-36">
+      <div className="absolute inset-0 flex flex-col pl-36">
+        <div className="flex flex-col items-center mb-32 mt-8">
+          <h1 className="text-4xl">WIELMI</h1>
+          <h2>Inteligentny dom</h2>
+        </div>
         <ul className="text-4xl mb-8">
           {slides.map(({ id, text }) => {
             const isActive = currentSlide === id;
