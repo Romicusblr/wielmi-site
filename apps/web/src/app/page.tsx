@@ -1,4 +1,3 @@
-"use client";
 import Hero from "../components/Hero/Hero";
 
 const Page = () => {

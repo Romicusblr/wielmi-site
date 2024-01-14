@@ -1,3 +1,5 @@
+"use client";
+
 import classNames from "classnames";
 import { FC, useState } from "react";
 import Image from "next/image";
@@ -19,7 +21,8 @@ const Hero: FC = () => {
         <Image
           key={id}
           className={classNames({
-            "absolute object-cover transition-opacity duration-500 brightness-[.5]": true,
+            "absolute object-cover transition-opacity duration-500 brightness-[.5]":
+              true,
             "opacity-0": currentSlide !== id,
           })}
           fill
@@ -46,7 +49,11 @@ const Hero: FC = () => {
                   })}
                   key={id}
                 >
-                  <Link onClick={() => setCurrentSlide(id)} href="#" scroll={false}>
+                  <Link
+                    onClick={() => setCurrentSlide(id)}
+                    href="#"
+                    scroll={false}
+                  >
                     {text}
                   </Link>
                   <Link
@@ -65,7 +72,11 @@ const Hero: FC = () => {
           <ul className="flex items-center justify-between w-1/4">
             {slides.map(({ id }) => (
               <li key={id}>
-                <CircleButton onClick={() => setCurrentSlide(id)} isActive={currentSlide === id} text={id.toString()} />
+                <CircleButton
+                  onClick={() => setCurrentSlide(id)}
+                  isActive={currentSlide === id}
+                  text={id.toString()}
+                />
               </li>
             ))}
           </ul>
@@ -73,8 +84,9 @@ const Hero: FC = () => {
         <div className="self-end w-1/2 px-16">
           <h3 className="mb-4">Dlaczego Wielmi?</h3>
           <p>
-            Zadbamy o wszystko za Ciebie. Nie musisz się o nic martwić. Nasi specjaliści zainstalują Twój system,
-            aktywują go i pokażą, jak z niego korzystać
+            Zadbamy o wszystko za Ciebie. Nie musisz się o nic martwić. Nasi
+            specjaliści zainstalują Twój system, aktywują go i pokażą, jak z
+            niego korzystać
           </p>
         </div>
       </div>
