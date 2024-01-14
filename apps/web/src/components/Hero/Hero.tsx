@@ -1,10 +1,11 @@
 "use client";
 
 import classNames from "classnames";
-import { FC, useState } from "react";
+import type { FC } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import CircleButton from "./CircleButton";
 import Link from "next/link";
+import CircleButton from "./circle-button";
 
 const slides = [
   { id: 1, text: "INTELIGENTNY DOM", src: "/wielmi-1.png" },
@@ -21,8 +22,7 @@ const Hero: FC = () => {
         <Image
           key={id}
           className={classNames({
-            "absolute object-cover transition-opacity duration-500 brightness-[.5]":
-              true,
+            "absolute object-cover transition-opacity duration-500 brightness-[.5]": true,
             "opacity-0": currentSlide !== id,
           })}
           fill
@@ -50,7 +50,9 @@ const Hero: FC = () => {
                   key={id}
                 >
                   <Link
-                    onClick={() => setCurrentSlide(id)}
+                    onClick={() => {
+                      setCurrentSlide(id);
+                    }}
                     href="#"
                     scroll={false}
                   >
@@ -73,7 +75,9 @@ const Hero: FC = () => {
             {slides.map(({ id }) => (
               <li key={id}>
                 <CircleButton
-                  onClick={() => setCurrentSlide(id)}
+                  onClick={() => {
+                    setCurrentSlide(id);
+                  }}
                   isActive={currentSlide === id}
                   text={id.toString()}
                 />
@@ -84,9 +88,8 @@ const Hero: FC = () => {
         <div className="self-end w-1/2 px-16">
           <h3 className="mb-4">Dlaczego Wielmi?</h3>
           <p>
-            Zadbamy o wszystko za Ciebie. Nie musisz się o nic martwić. Nasi
-            specjaliści zainstalują Twój system, aktywują go i pokażą, jak z
-            niego korzystać
+            Zadbamy o wszystko za Ciebie. Nie musisz się o nic martwić. Nasi specjaliści zainstalują Twój system,
+            aktywują go i pokażą, jak z niego korzystać
           </p>
         </div>
       </div>
