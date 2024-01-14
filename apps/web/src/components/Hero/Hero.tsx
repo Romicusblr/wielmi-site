@@ -18,7 +18,7 @@ const Hero: FC = () => {
         <Image
           key={id}
           className={classNames({
-            "absolute object-cover transition-opacity duration-500": true,
+            "absolute object-cover transition-opacity duration-500 brightness-[.5]": true,
             "opacity-0": currentSlide !== id,
           })}
           fill
@@ -27,11 +27,24 @@ const Hero: FC = () => {
           alt="cozy room"
         />
       ))}
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <ul>
-          {slides.map(({ id, text }) => (
-            <li key={id}>{text}</li>
-          ))}
+      <div className="absolute inset-0 flex flex-col justify-center pl-36">
+        <ul className="text-4xl mb-8">
+          {slides.map(({ id, text }) => {
+            const isActive = currentSlide === id;
+            return (
+              <li
+                className={classNames({
+                  "text-3xl mb-4": true,
+                  "text-gray-100/50": !isActive,
+                  "text-gray-100/100": isActive,
+                })}
+                key={id}
+                onClick={() => setCurrentSlide(id)}
+              >
+                {text}
+              </li>
+            );
+          })}
         </ul>
         <ul className="flex items-center justify-between w-64">
           {slides.map(({ id }) => (
