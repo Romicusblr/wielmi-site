@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { FC } from "react";
+import type { FC } from "react";
 
 interface CircleButtonProps {
   isActive: boolean;
