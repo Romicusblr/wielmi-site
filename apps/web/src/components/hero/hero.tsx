@@ -20,15 +20,15 @@ const Hero: FC = () => {
     <div className="container relative w-full h-[720px]">
       {slides.map(({ id, src }, i) => (
         <Image
-          key={id}
+          alt="cozy room"
           className={classNames({
             "absolute object-cover transition-opacity duration-500 brightness-[.5]": true,
             "opacity-0": currentSlide !== id,
           })}
           fill
+          key={id}
           priority={i === 0}
           src={src}
-          alt="cozy room"
         />
       ))}
       <div className="absolute inset-0 flex flex-col">
@@ -50,10 +50,10 @@ const Hero: FC = () => {
                   key={id}
                 >
                   <Link
+                    href="#"
                     onClick={() => {
                       setCurrentSlide(id);
                     }}
-                    href="#"
                     scroll={false}
                   >
                     {text}
@@ -75,10 +75,10 @@ const Hero: FC = () => {
             {slides.map(({ id }) => (
               <li key={id}>
                 <CircleButton
+                  isActive={currentSlide === id}
                   onClick={() => {
                     setCurrentSlide(id);
                   }}
-                  isActive={currentSlide === id}
                   text={id.toString()}
                 />
               </li>
