@@ -8,7 +8,7 @@ interface CircleButtonProps {
   className?: string;
 }
 
-const CircleButton: FC<CircleButtonProps> = ({ isActive, text, onClick, className }) => {
+const CircleButton: FC<CircleButtonProps> = function ({ isActive, text, onClick, className }) {
   const buttonClass = classNames({
     className,
     "bg-white text-gray-800": isActive,
@@ -17,7 +17,7 @@ const CircleButton: FC<CircleButtonProps> = ({ isActive, text, onClick, classNam
   });
 
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button className={buttonClass} onClick={onClick} type="button">
       {text}
     </button>
   );

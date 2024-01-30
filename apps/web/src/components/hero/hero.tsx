@@ -13,7 +13,7 @@ const slides = [
   { id: 3, text: "SIECI LOKALNE", src: "/wielmi-3.png" },
 ];
 
-const Hero: FC = () => {
+const Hero: FC = function() {
   const [currentSlide, setCurrentSlide] = useState(slides[0].id);
 
   return (
@@ -95,6 +95,6 @@ const Hero: FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Hero;
