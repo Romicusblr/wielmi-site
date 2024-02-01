@@ -17,7 +17,7 @@ const CircleButton: FC<CircleButtonProps> = function ({ isActive, text, onClick,
   });
 
   return (
-    <button className={buttonClass} onClick={onClick} type="button">
+    <button className={buttonClass} onClick={onClick}>
       {text}
     </button>
   );
