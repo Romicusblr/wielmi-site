@@ -3,6 +3,7 @@ import "@repo/ui/styles.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import type { FC } from "react";
+import Footer from "../components/footer";
 
 const font = Montserrat({ subsets: ["latin"] });
 
@@ -15,12 +16,15 @@ export const metadata: Metadata = {
   description: "Wielmi site",
 };
 
-const RootLayout: FC<RootLayoutProps> = function({ children }) {
+const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
-}
+};
 
 export default RootLayout;

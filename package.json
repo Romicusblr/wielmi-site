@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.10",
@@ -25,10 +24,5 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  ]
 }
