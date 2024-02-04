@@ -36,7 +36,7 @@ const cards = [
 
 const SmartHome: FC = function () {
   return (
-    <div className="container relative w-full flex flex-col px-16">
+    <div className="container relative w-full flex flex-col">
       <h3 className="text-2xl text-center my-8">Inteligentny dom</h3>
       <p className="mt-2 text-center">
         Inteligentny dom to system, który łączy różne urządzenia elektroniczne i systemy w domu pod jednym zarządzaniem.

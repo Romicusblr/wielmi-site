@@ -17,7 +17,7 @@ const Hero: FC = function() {
   const [currentSlide, setCurrentSlide] = useState(slides[0].id);
 
   return (
-    <div className="container relative w-full h-screen text-gray-100">
+    <div className="relative w-full h-screen text-gray-100">
       {slides.map(({ id, src }, i) => (
         <Image
           alt="cozy room"
