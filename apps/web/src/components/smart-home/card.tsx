@@ -1,33 +1,41 @@
-import * as React from 'react';
-import Image from "next/image";
+import * as React from "react";
+// import Image from "next/image";
 import classNames from "classnames";
-import type { FC } from 'react';
+import type { FC } from "react";
+import { default as Image } from "../image/placeholder";
 
 interface CardProps {
   src: string;
-  alt: string;
+  alt?: string;
   topic: string;
-  text: string;
+  texts: string[];
   reverse: boolean;
 }
 
-const Card: FC<CardProps> = function ({ src, alt, topic, text, reverse }) {
+const Card: FC<CardProps> = function ({ src, alt, topic, texts, reverse }) {
   return (
     <div className={classNames("flex mt-16", { "flex-row-reverse": reverse })}>
-      <div className="">
-        <p className="mb-3">
-          <b>{topic}:&nbsp;</b>
-          {text}
-        </p>
-      </div>
-      <Image
-        alt={alt}
-        className={classNames("object-cover w-48 rounded-tr-[4rem] rounded-bl-[4rem]", { "mr-4": reverse, "ml-4": !reverse })}
-        height={400}
-        placeholder="empty"
-        src={src}
-        width={600}
-      />
+      <article className="max-w-md p-4">
+        <h3 className="font-bold">{topic}:</h3>
+        {texts.map((t, i) => (
+          <p className={classNames("mt-2", { "text-slate-500": i !== 0 })} key={t}>
+            {t}
+          </p>
+        ))}
+      </article>
+      <article className="max-w-md flex items-center">
+        <Image
+          // alt={alt}
+          className={classNames({
+            "mr-10": reverse,
+            "ml-10": !reverse,
+          })}
+          height="230 px"
+          // placeholder="empty"
+          // src={src}
+          width="620 px"
+        />
+      </article>
     </div>
   );
 };
