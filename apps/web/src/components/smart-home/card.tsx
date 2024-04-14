@@ -12,7 +12,7 @@ interface CardProps {
   reverse: boolean;
 }
 
-const Card: FC<CardProps> = function ({ src, alt, topic, texts, reverse }) {
+const Card: FC<CardProps> = function ({ topic, texts, reverse }) {
   return (
     <div className={classNames("flex mt-16", { "flex-row-reverse": reverse })}>
       <article className="max-w-md p-4">
