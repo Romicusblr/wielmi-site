@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import Hero from "../components/hero/hero-placeholder";
+import GridLines from "../components/grid-lines";
 // import SmartHome from "../components/smart-home";
 // import NavBar from "../components/navbar";
 
@@ -8,6 +9,7 @@ const Page: FC = function () {
     <main className="flex flex-col items-center justify-between min-h-screen">
       {/* <NavBar /> */}
       <Hero />
+      <GridLines />
       {/* <SmartHome /> */}
     </main>
   );
