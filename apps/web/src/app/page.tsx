@@ -6,9 +6,9 @@ import NavBar from "../components/navbar";
 const Page: FC = function () {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen">
-      <NavBar />
+      {/* <NavBar /> */}
       <Hero />
-      <SmartHome />
+      {/* <SmartHome /> */}
     </main>
   );
 };
