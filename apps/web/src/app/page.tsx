@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import Hero from "../components/hero/hero-placeholder";
-import SmartHome from "../components/smart-home";
-import NavBar from "../components/navbar";
+// import SmartHome from "../components/smart-home";
+// import NavBar from "../components/navbar";
 
 const Page: FC = function () {
   return (
