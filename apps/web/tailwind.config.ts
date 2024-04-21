@@ -23,6 +23,11 @@ const config: Pick<Config, "content" | "presets" | "theme"> = {
 
         "2xl": "1480px",
       },
+      colors: {
+        brand: {
+          DEFAULT: "#75A4DC",
+        },
+      },
     },
   },
 };
