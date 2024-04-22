@@ -4,9 +4,9 @@ import GridLine from "./line";
 const GridLines: FC = function () {
   return (
     <>
-      <GridLine />
-      <GridLine className="start-[10vw]" />
-      <GridLine className="end-[10vw]" />
+      <GridLine className="hidden lg:block"/>
+      <GridLine className="hidden sm:block start-[10vw]" />
+      <GridLine className="hidden sm:block end-[10vw]" />
     </>
   );
 };
