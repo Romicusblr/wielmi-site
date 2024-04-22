@@ -1,6 +1,9 @@
 import type { FC } from "react";
 import GridLineV from "./line-vertical";
 
+// < small - no gridlines
+// small:large - 2 gridlines
+// > large - 3 gridlines
 const GridLines: FC = function () {
   return (
     <>

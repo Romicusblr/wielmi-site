@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import Hero from "../components/hero/hero-placeholder";
+import Hero from "../components/hero/hero";
 import GridLines from "../components/grid-lines";
 // import SmartHome from "../components/smart-home";
 // import NavBar from "../components/navbar";

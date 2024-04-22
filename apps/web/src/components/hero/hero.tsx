@@ -13,16 +13,15 @@ const slides = [
   { id: 3, text: "SIECI LOKALNE", src: "/wielmi-3.png" },
 ];
 
-const Hero: FC = function() {
+const Hero: FC = function () {
   const [currentSlide, setCurrentSlide] = useState(slides[0].id);
 
   return (
-    <div className="relative w-full h-screen text-gray-100">
+    <div className="relative w-full h-screen text-gray-100 grid lg:grid-cols-[10vw_1fr_1fr_10vw] sm:grid-cols-[10vw_1fr_10vw]">
       {slides.map(({ id, src }, i) => (
         <Image
           alt="cozy room"
-          className={classNames({
-            "absolute object-cover transition-opacity duration-500 brightness-[.5]": true,
+          className={classNames("z-0 absolute object-cover transition-opacity duration-1000 brightness-[.5]", {
             "opacity-0": currentSlide !== id,
           })}
           fill
@@ -31,34 +30,28 @@ const Hero: FC = function() {
           src={src}
         />
       ))}
-      <div className="absolute inset-0 flex flex-col">
-        <div className="flex flex-col items-center mb-32 mt-8">
-          <h1 className="text-4xl">WIELMI</h1>
-          <h2>Inteligentny dom</h2>
-        </div>
-        <div className="pl-32">
-          <ul className="text-4xl mb-8 w-1/2">
-            {slides.map(({ id, text }) => {
-              const isActive = currentSlide === id;
-              return (
-                <li
-                  className={classNames({
-                    "text-3xl mb-4 flex justify-between": true,
-                    "text-gray-100/50": !isActive,
-                    "text-gray-100/100": isActive,
-                  })}
-                  key={id}
+      <div className="z-10 flex flex-col place-content-center sm:col-start-2">
+        <ul className="p-12 text-4xl w-full">
+          {slides.map(({ id, text }) => {
+            const isActive = currentSlide === id;
+            return (
+              <li
+                className={classNames("text-3xl mb-4 flex justify-between", {
+                  "text-gray-100/50": !isActive,
+                  "text-gray-100/100": isActive,
+                })}
+                key={id}
+              >
+                <Link
+                  href="#"
+                  onClick={() => {
+                    setCurrentSlide(id);
+                  }}
+                  scroll={false}
                 >
-                  <Link
-                    href="#"
-                    onClick={() => {
-                      setCurrentSlide(id);
-                    }}
-                    scroll={false}
-                  >
-                    {text}
-                  </Link>
-                  <Link
+                  {text}
+                </Link>
+                {/* <Link
                     className={classNames({
                       "text-sm rounded-full border px-4 py-2": true,
                       hidden: !isActive,
@@ -66,35 +59,27 @@ const Hero: FC = function() {
                     href="#"
                   >
                     Więcej
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <ul className="flex items-center justify-between w-1/4">
-            {slides.map(({ id }) => (
-              <li key={id}>
-                <CircleButton
-                  isActive={currentSlide === id}
-                  onClick={() => {
-                    setCurrentSlide(id);
-                  }}
-                  text={id.toString()}
-                />
+                  </Link> */}
               </li>
-            ))}
-          </ul>
-        </div>
-        <div className="self-end w-1/2 px-16">
-          <h3 className="mb-4">Dlaczego Wielmi?</h3>
-          <p>
-            Zadbamy o wszystko za Ciebie. Nie musisz się o nic martwić. Nasi specjaliści zainstalują Twój system,
-            aktywują go i pokażą, jak z niego korzystać
-          </p>
-        </div>
+            );
+          })}
+        </ul>
+        <ul className="flex justify-around">
+          {slides.map(({ id }) => (
+            <li key={id}>
+              <CircleButton
+                isActive={currentSlide === id}
+                onClick={() => {
+                  setCurrentSlide(id);
+                }}
+                text={id.toString()}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
-}
+};
 
 export default Hero;
