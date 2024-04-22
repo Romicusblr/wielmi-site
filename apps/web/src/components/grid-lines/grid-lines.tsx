@@ -1,12 +1,12 @@
 import type { FC } from "react";
-import GridLine from "./line";
+import GridLineV from "./line-vertical";
 
 const GridLines: FC = function () {
   return (
     <>
-      <GridLine className="hidden lg:block"/>
-      <GridLine className="hidden sm:block start-[10vw]" />
-      <GridLine className="hidden sm:block end-[10vw]" />
+      <GridLineV className="hidden lg:block"/>
+      <GridLineV className="hidden sm:block start-[10vw]" />
+      <GridLineV className="hidden sm:block end-[10vw]" />
     </>
   );
 };
