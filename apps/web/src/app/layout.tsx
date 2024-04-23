@@ -5,6 +5,7 @@ import { Montserrat } from "next/font/google";
 import type { FC } from "react";
 import classNames from "classnames";
 import Footer from "../components/footer";
+import Logo from "../components/logo";
 
 const font = Montserrat({ subsets: ["latin"], weight: ["100", "400", "700"] });
 
@@ -22,6 +23,7 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
     <html lang="en">
       <body className={classNames(font.className, "text-justify")}>
         {children}
+        <Logo />
         <Footer />
       </body>
     </html>
