@@ -17,11 +17,11 @@ const NavBar: FC = function () {
   const toggleOpen = (): void => { setIsOpen(!isOpen); };
 
   return (
-    <div className="z-10 fixed top-0 right-0 flex items-center">
+    <div className="z-20 fixed top-0 right-0 flex items-center">
       <button
         aria-controls="mobile-menu"
         aria-expanded="false"
-        className="relative w-[10vw] p-2 inline-flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-700 hover:text-white"
+        className="relative sm:w-[10vw] p-2 inline-flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-700 hover:text-white"
         onClick={toggleOpen}
         type="button"
       >
