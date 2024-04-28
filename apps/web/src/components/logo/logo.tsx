@@ -6,8 +6,10 @@ const Logo: FC = function () {
   // const theme = "light";
 
   return (
-    <Link className="z-10 w-[8vw] ml-[1vw] fixed block h-12 top-0 left-0" href="/">
-      <Image alt="Logo" className="object-contain mt-4" fill src="/logo-light.png" />
+    <Link className="z-10 h-12 w-[10vw] fixed top-0 left-0 p-2" href="/">
+      <div className="relative w-full h-full min-w-12">
+        <Image alt="Logo" className="object-contain" fill src="/logo-light.png" />
+      </div>
     </Link>
   );
 };
