@@ -24,6 +24,12 @@ const config: Pick<Config, "content" | "presets" | "theme"> = {
         "2xl": "1480px",
       },
       colors: {
+        'primary': '#75A4DC',  // Example primary color (blue)
+        // 'secondary': '#0075FF',  // Example secondary color (orange)
+        // 'accent': '#0075FF',  // Example accent color (purple)
+        'text-base': '#333333',  // Dark gray for primary text
+        'text-light': '#555555',  // Lighter gray for secondary text
+        'text-muted': '#888888',  // Muted gray for less emphasis
         brand: {
           DEFAULT: "#75A4DC",
         },

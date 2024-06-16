@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   return (
     <html lang="en">
-      <body className={classNames(font.className, "text-justify")}>
+      <body className={classNames(font.className, "text-justify text-base")}>
         {children}
         <Logo />
         <Footer />
