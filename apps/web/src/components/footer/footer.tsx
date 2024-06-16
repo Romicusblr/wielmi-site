@@ -3,7 +3,7 @@ import { FaLocationDot, FaInstagram, FaPhone, FaEnvelope, FaFacebook } from "rea
 
 const Footer: FC = function () {
   return (
-    <footer className="m-4 bg-gray-800 text-gray-300">
+    <footer className="m-4 bg-gray-800">
       <div className="container mx-auto p-4 flex items-center">
         <div className="flex-1">
           <b className="text">Kontakty:</b>
