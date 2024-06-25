@@ -55,7 +55,7 @@ const NavBar: FC = function () {
       </div>
       <div
         className={classNames(
-          "z-20 fixed inset-0 bg-black bg-opacity-75 transition-opacity grid lg:grid-cols-[10vw_1fr_1fr_10vw] sm:grid-cols-[10vw_1fr_10vw]",
+          "z-20 fixed inset-0 bg-black bg-opacity-75 transition-opacity grid grid-layout",
           isOpen ? "block" : "hidden"
         )}
       >
