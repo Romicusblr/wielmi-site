@@ -23,7 +23,9 @@ const NavBar: FC = function () {
   return (
     <nav className="fixed z-30 w-full text-dark-grey">
       <div className="grid-layout lg:items-center">
-        <Logo />
+        <div className="h-12 lg:m-4 sm:m-2">
+          <Logo />
+        </div>
         <ul
           className={classNames(
             "flex-col p-4 text-2xl",

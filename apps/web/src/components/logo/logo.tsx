@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Logo: FC = function () {
   return (
-    <Link className="h-12 m-4 relative" href="/">
+    <Link className="block w-full h-full relative" href="/">
       <Image alt="Logo" className="object-contain" fill src="/logo-light.png" />
     </Link>
   );
