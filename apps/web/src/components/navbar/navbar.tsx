@@ -36,7 +36,7 @@ const NavBar: FC = function () {
           {navigation.map(({ name, href }) => (
             <li key={name}>
               <Link
-                className="flex justify-center p-2 hover:text-brand hover:underline hover:scale-105 transform transition duration-150 ease-in-out"
+                className="flex justify-center p-2 hover:text-brand hover:underline underline-offset-8 hover:scale-105 transform transition duration-150 ease-in-out"
                 href={href}
               >
                 {name}
