@@ -1,37 +1,36 @@
+import { faFacebookF, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import type { FC } from "react";
-import { FaLocationDot, FaInstagram, FaPhone, FaEnvelope, FaFacebook } from "react-icons/fa6";
 
 const Footer: FC = function () {
   return (
-    <footer className="m-4 bg-gray-800">
-      <div className="container mx-auto p-4 flex items-center">
-        <div className="flex-1">
-          <b className="text">Kontakty:</b>
-          <p>
-            <FaPhone className="inline-block mr-2" />
-            +48 571 780 770
-          </p>
-          <p>
-            <FaEnvelope className="inline-block mr-2" />
-            kontakt@wielmi.pl
-          </p>
-          <p>
-            <FaLocationDot className="inline-block mr-2" />
-            Kraków
-          </p>
+    <footer className="bg-grey h-96 grid-layout text-dark-grey">
+      <div className="col-start-2 flex flex-col lg:p-24 justify-center">
+        <h2 className="text-3xl underline underline-offset-8">KONTAKTY</h2>
+        <p className="mt-4 text-brand">INTELIGENTNY DOM Wielmi</p>
+        <p className="mt-8">Kraków, Polska</p>
+        <div className="flex justify-start gap-4 col-start-2 h-8 row-start-5 mt-2">
+          <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faFacebookF} />
+          </Link>
+          <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faInstagram} />
+          </Link>
+          <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faWhatsapp} />
+          </Link>
+          <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faEnvelope} />
+          </Link>
         </div>
-        <div className="text-center flex-1">
-          <span>{new Date().getFullYear()}</span>
-        </div>
-        <div className="flex-1 flex justify-end">
-          <div>
-            <p className="text-center flex-1 text-4xl mb-2">WiELMi</p>
-            <p>
-              <FaInstagram className="inline-block mr-2 text-2xl" />
-              <FaFacebook className="inline-block mr-2 text-2xl" />
-            </p>
-          </div>
-        </div>
+      </div>
+      <div className="col-start-3 flex flex-col lg:p-24 justify-center">
+        <p>Godziny pracy: od 10:00 do 19:00</p>
+        <p>Weekendy: sobota, niedziela</p>
+        <p className="text-center mt-4"><a href="tel:+48571780770">+ 48 571 780 770</a></p>
+        <p className="text-center mt-4"><a href="mailto:kontakt@wielmi.pl">kontakt@wielmi.pl</a></p>
       </div>
     </footer>
   );

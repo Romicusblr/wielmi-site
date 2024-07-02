@@ -1,1 +1,1 @@
-export { default } from "./footer-empty";
+export { default } from "./footer";
