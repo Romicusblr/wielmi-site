@@ -30,7 +30,7 @@ const config: Pick<Config, "content" | "presets" | "theme"> = {
         'grey': '#333333',  // Dark gray for primary text
         'light-grey': '#555555',  // Lighter gray for secondary text
         'muted-grey': '#888888',  // Muted gray for less emphasis
-        'dark-grey': '#cccccc',    // Light gray for primary text in dark theme
+        'dark-grey': '#F0F0F0',    // Light gray for primary text in dark theme
         'dark-light-grey': '#aaaaaa', // Lighter gray for secondary text in dark theme
         'dark-muted-grey': '#999999', // Less muted gray for emphasis in dark theme
         brand: {

@@ -1,82 +1,39 @@
-"use client";
-
-import classNames from "classnames";
 import type { FC } from "react";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import CircleButton from "./circle-button";
-
-const slides = [
-  { id: 1, text: "INTELIGENTNY DOM", src: "/wielmi-1.png" },
-  { id: 2, text: "INSTALACJE ELEKTRYCZNE", src: "/wielmi-2.png" },
-  { id: 3, text: "SIECI LOKALNE", src: "/wielmi-3.png" },
-];
+import { faFacebookF, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Hero: FC = function () {
-  const [currentSlide, setCurrentSlide] = useState(slides[0].id);
-
   return (
-    <div className="relative w-full h-screen grid-layout">
-      {slides.map(({ id, src }, i) => (
-        <Image
-          alt="cozy room"
-          className={classNames("z-0 absolute object-cover transition-opacity duration-1000 brightness-[.5]", {
-            "opacity-0": currentSlide !== id,
-          })}
-          fill
-          key={id}
-          priority={i === 0}
-          src={src}
-        />
-      ))}
-      <div className="z-10 flex flex-col place-content-center sm:col-start-2">
-        <ul className="p-12 text-4xl w-full">
-          {slides.map(({ id, text }) => {
-            const isActive = currentSlide === id;
-            return (
-              <li
-                className={classNames("text-3xl mb-4 flex justify-between", {
-                  "text-gray-100/50": !isActive,
-                  "text-gray-100/100": isActive,
-                })}
-                key={id}
-              >
-                <Link
-                  href="#"
-                  onClick={() => {
-                    setCurrentSlide(id);
-                  }}
-                  scroll={false}
-                >
-                  {text}
-                </Link>
-                {/* <Link
-                    className={classNames({
-                      "text-sm rounded-full border px-4 py-2": true,
-                      hidden: !isActive,
-                    })}
-                    href="#"
-                  >
-                    Więcej
-                  </Link> */}
-              </li>
-            );
-          })}
-        </ul>
-        <ul className="flex justify-around">
-          {slides.map(({ id }) => (
-            <li key={id}>
-              <CircleButton
-                isActive={currentSlide === id}
-                onClick={() => {
-                  setCurrentSlide(id);
-                }}
-                text={id.toString()}
-              />
-            </li>
-          ))}
-        </ul>
+    <div className="relative w-full h-screen grid-layout grid-rows-6 text-dark-grey">
+      <Image alt="cozy room" className="-z-10" fill objectFit="cover" priority quality={100} src="/wielmi-1.png" />
+      <div className="text-6xl col-span-2 col-start-2 row-start-3 flex flex-col lg:pl-36 justify-end">
+        <h2>PROJEKTUJEMY</h2>
+        <h2>I REALIZUJEMY</h2>
+      </div>
+      <div className="col-span-full row-start-4 hidden sm:flex flex-col justify-center">
+        <hr />
+      </div>
+      <div className="flex justify-center gap-4 col-start-2 h-12 row-start-5">
+        <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faFacebookF} />
+        </Link>
+        <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faInstagram} />
+        </Link>
+        <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faWhatsapp} />
+        </Link>
+        <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faEnvelope} />
+        </Link>
+      </div>
+      <div className="flex h-12 justify-center lg:row-start-5 lg:col-start-3 col-start-2 row-start-6">
+        <button className="rounded-lg flex items-center text-xl px-12 py-2.5 border-2 border-brand hover:bg-brand" type="button">
+          napisz do nas
+        </button>
       </div>
     </div>
   );
