@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   return (
     <html lang="en">
-      <body className={classNames(font.className, "text-justify text-base")}>
+      <body className={classNames(font.className, "text-justify text-grey")}>
         <NavBar />
         {children}
         <Footer />
