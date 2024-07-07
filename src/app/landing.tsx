@@ -24,12 +24,38 @@ const cards = [
     text: "Zajmujemy się programowaniem i testowaniem sprzętu, opracowujemy scenariusze jego działania oraz szkolimy użytkowników w obsłudze systemu.",
   },
   {
-    heading: "Gwarancyjne i serwisowe usługi:",
+    heading: "Gwarancyjne i serwisowe usługi",
     text: "Oferujemy kontrolę i aktualizację oprogramowania, modernizację systemu w razie potrzeby, a także wyjazdy na miejsce na życzenie klienta w celu wykonania prac serwisowych.",
   },
 ];
+
+const blackCards = [
+  {
+    heading: "Bezpłatna konsultacja",
+    text: `Na etapie bezpłatnej konsultacji określamy Państwa potrzeby i oczekiwania. 
+    Opowiadają nam Państwo o swoim domu marzeń i planach, które chcą zrealizować. 
+    My proponujemy najlepsze rozwiązania dla inteligentnego domu.`,
+  },
+  {
+    heading: "Indywidualna kalkulacja kosztów",
+    text: `Przygotowujemy wstępną wycenę, która obejmuje koszt sprzętu, montażu 
+    oraz automatyzacji domu. Używamy terminu „wstępna”, ponieważ na etapie uzgadniania 
+    można dodać dodatkowe funkcje według Państwa życzeń. Gdy wszystkie szczegóły są 
+    uzgodnione i przeliczone, podpisujemy umowę.`,
+  },
+  {
+    heading: "Realizacja projektu",
+    text: `Po podpisaniu umowy rozpoczynamy pracę. Proces projektowania może zająć od 
+    kilku dni do kilku tygodni, w zależności od skomplikowania projektu. Następnie, 
+    zgodnie z ustalonym harmonogramem i w koordynacji z innymi wykonawcami, przystępujemy
+    do realizacji instalacji elektrycznej oraz montażu sprzętu. Po zakończeniu tych prac
+    programujemy system i szkolimy Państwa z jego obsługi. 
+    Gratulacje - Inteligentny Dom jest już Państwa!`,
+  },
+];
+
 interface CardProps {
-  num: string;
+  num?: string;
   heading: string;
   text: string;
 }
@@ -39,6 +65,15 @@ const Card: FC<CardProps> = function ({ num, heading, text }) {
     <article className="p-4 pt-12 w-1/6 bg-[#E4F0FF] text-sm shadow-lg relative transition-transform duration-200 hover:-translate-y-2 transform">
       <p className="absolute left-1 top-1 text-3xl text-muted-grey font-bold">{num}</p>
       <h3 className="font-semibold mb-4">{heading}</h3>
+      <p>{text}</p>
+    </article>
+  );
+};
+
+const BlackCard: FC<CardProps> = function ({ num, heading, text }) {
+  return (
+    <article className="p-8 pt-12 w-1/3 bg-grey text-sm text-dark-grey">
+      <h3 className="font-semibold mb-4 text-xl text-center">{heading}</h3>
       <p>{text}</p>
     </article>
   );
@@ -87,18 +122,24 @@ const Landing: FC = function () {
         </div>
       </section>
       <GridLineH />
-      <section className="col-span-full grid-layout bg-[#F6FAFF]">
+      <section className="grid-layout bg-[#F6FAFF]">
         <div className="col-start-3 p-12">
           <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">ETAPY PRACY</h2>
         </div>
         <div className="col-span-full py-12 flex gap-4 justify-around px-4">
           {cards.map(({ heading, text }, i) => {
             const num = "0" + (i + 1);
-            return <Card num={num} key={i} heading={heading} text={text} />;
+            return <Card num={num} key={heading} heading={heading} text={text} />;
           })}
         </div>
       </section>
       <GridLineH />
+      <section className="col-span-full py-12 flex gap-24 justify-center px-36">
+        {blackCards.map(({ heading, text }, i) => {
+          const num = "0" + (i + 1);
+          return <BlackCard key={heading} heading={heading} text={text} />;
+        })}
+      </section>
     </>
   );
 };
