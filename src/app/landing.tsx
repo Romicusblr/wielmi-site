@@ -1,6 +1,8 @@
 import type { FC } from "react";
 import BrandedButton from "../ui/button";
 import GridLineH from "@/ui/line-horizontal";
+import { faEnvelope, IconDefinition } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const cards = [
   {
@@ -54,8 +56,34 @@ const blackCards = [
   },
 ];
 
+const iconCards1 = [
+  {
+    icon: faEnvelope,
+    text: `BEZPŁATNA KONSULTACJA`,
+  },
+  {
+    icon: faEnvelope,
+    text: `24/7`,
+  },
+  {
+    icon: faEnvelope,
+    text: `NADZÓR AUTORSKI`,
+  },
+];
+
+const iconCards2 = [
+  {
+    icon: faEnvelope,
+    text: `24/7`,
+  },
+  {
+    icon: faEnvelope,
+    text: `NADZÓR AUTORSKI`,
+  },
+];
+
 interface CardProps {
-  num?: string;
+  num: string;
   heading: string;
   text: string;
 }
@@ -70,10 +98,29 @@ const Card: FC<CardProps> = function ({ num, heading, text }) {
   );
 };
 
-const BlackCard: FC<CardProps> = function ({ num, heading, text }) {
+interface BlackCardProps {
+  heading: string;
+  text: string;
+}
+
+const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
   return (
-    <article className="p-8 pt-12 w-1/3 bg-grey text-sm text-dark-grey">
+    <article className="p-8 pt-12 flex-1 bg-grey text-sm text-dark-grey">
       <h3 className="font-semibold mb-4 text-xl text-center">{heading}</h3>
+      <p>{text}</p>
+    </article>
+  );
+};
+
+interface IconCardProps {
+  icon: IconDefinition;
+  text: string;
+}
+
+const IconCard: FC<IconCardProps> = ({ icon, text }) => {
+  return (
+    <article className="w-64 h-24 p-4 bg-[#E4F0FF] text-sm shadow-lg shadow-brand rounded-lg flex items-center">
+      <FontAwesomeIcon icon={icon} className="h-8 w-8 mr-3" />
       <p>{text}</p>
     </article>
   );
@@ -134,12 +181,22 @@ const Landing: FC = function () {
         </div>
       </section>
       <GridLineH />
-      <section className="col-span-full py-12 flex gap-24 justify-center px-36">
+      <section className="w-full py-12 flex gap-24 px-36 justify-center">
         {blackCards.map(({ heading, text }, i) => {
-          const num = "0" + (i + 1);
           return <BlackCard key={heading} heading={heading} text={text} />;
         })}
       </section>
+      <section className="w-full py-8 flex gap-24 justify-center">
+        {iconCards1.map(({ icon, text }, i) => {
+          return <IconCard key={text} icon={icon} text={text} />;
+        })}
+      </section>
+      <section className="w-full py-8 flex gap-24 justify-center">
+        {iconCards2.map(({ icon, text }, i) => {
+          return <IconCard key={text} icon={icon} text={text} />;
+        })}
+      </section>
+      <section className="w-full py-8 flex gap-24 justify-center bg-grey text-dark-grey"></section>
     </>
   );
 };
