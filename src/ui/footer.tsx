@@ -1,8 +1,6 @@
-import { faFacebookF, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import type { FC } from "react";
+import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 const Footer: FC = function () {
   return (
@@ -13,16 +11,16 @@ const Footer: FC = function () {
         <p className="mt-8">Kraków, Polska</p>
         <div className="flex justify-start gap-4 col-start-2 h-8 row-start-5 mt-2">
           <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faFacebookF} />
+            <FaFacebookF className="h-4 w-4 text-grey" />
           </Link>
           <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faInstagram} />
+            <FaInstagram className="h-4 w-4 text-grey" />
           </Link>
           <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faWhatsapp} />
+            <FaWhatsapp className="h-4 w-4 text-grey" />
           </Link>
           <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-            <FontAwesomeIcon className="h-4 w-4 text-grey" icon={faEnvelope} />
+            <FaEnvelope className="h-4 w-4 text-grey" />
           </Link>
         </div>
       </div>

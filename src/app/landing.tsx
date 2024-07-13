@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import BrandedButton from "../ui/button";
 import GridLineH from "@/ui/line-horizontal";
-import { faEnvelope, IconDefinition } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaBook, FaPhone, FaRegClock, FaRegComments, FaRegEye } from "react-icons/fa6";
+import { IconType } from "react-icons";
 
 const cards = [
   {
@@ -58,27 +58,27 @@ const blackCards = [
 
 const iconCards1 = [
   {
-    icon: faEnvelope,
+    icon: FaPhone,
     text: `BEZPŁATNA KONSULTACJA`,
   },
   {
-    icon: faEnvelope,
+    icon: FaRegClock,
     text: `24/7`,
   },
   {
-    icon: faEnvelope,
+    icon: FaRegEye,
     text: `NADZÓR AUTORSKI`,
   },
 ];
 
 const iconCards2 = [
   {
-    icon: faEnvelope,
-    text: `24/7`,
+    icon: FaRegComments,
+    text: `MENEDŻER OSOBISTY`,
   },
   {
-    icon: faEnvelope,
-    text: `NADZÓR AUTORSKI`,
+    icon: FaBook,
+    text: `PEŁNA DOKUMENTACJA TECHNICZNA PROJEKTU`,
   },
 ];
 
@@ -113,15 +113,15 @@ const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
 };
 
 interface IconCardProps {
-  icon: IconDefinition;
+  Icon: IconType;
   text: string;
 }
 
-const IconCard: FC<IconCardProps> = ({ icon, text }) => {
+const IconCard: FC<IconCardProps> = ({ Icon, text }) => {
   return (
     <article className="w-64 h-24 p-4 bg-[#E4F0FF] text-sm shadow-lg shadow-brand rounded-lg flex items-center">
-      <FontAwesomeIcon icon={icon} className="h-8 w-8 mr-3" />
-      <p>{text}</p>
+      <Icon className="h-8 w-8 mr-3" />
+      <p className="font-bold text-left">{text}</p>
     </article>
   );
 };
@@ -188,12 +188,12 @@ const Landing: FC = function () {
       </section>
       <section className="w-full py-8 flex gap-24 justify-center">
         {iconCards1.map(({ icon, text }, i) => {
-          return <IconCard key={text} icon={icon} text={text} />;
+          return <IconCard key={text} Icon={icon} text={text} />;
         })}
       </section>
       <section className="w-full py-8 flex gap-24 justify-center">
         {iconCards2.map(({ icon, text }, i) => {
-          return <IconCard key={text} icon={icon} text={text} />;
+          return <IconCard key={text} Icon={icon} text={text} />;
         })}
       </section>
       <section className="w-full py-8 flex gap-24 justify-center bg-grey text-dark-grey"></section>

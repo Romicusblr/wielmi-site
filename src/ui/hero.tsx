@@ -1,11 +1,9 @@
 import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { faFacebookF, faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BrandedButton from "./button";
 import GridLineH from "./line-horizontal";
+import { FaEnvelope, FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa6";
 
 const Hero: FC = function () {
   return (
@@ -20,16 +18,16 @@ const Hero: FC = function () {
       </div>
       <div className="flex justify-center gap-4 col-start-2 h-12 row-start-5">
         <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faFacebookF} />
+          <FaFacebookF className="h-8 w-8 text-grey" />
         </Link>
         <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faInstagram} />
+          <FaInstagram className="h-8 w-8 text-grey" />
         </Link>
         <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faWhatsapp} />
+          <FaWhatsapp className="h-8 w-8 text-grey" />
         </Link>
         <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-          <FontAwesomeIcon className="h-8 w-8 text-grey" icon={faEnvelope} />
+          <FaEnvelope className="h-8 w-8 text-grey" />
         </Link>
       </div>
       <div className="flex h-12 justify-center lg:row-start-5 lg:col-start-3 col-start-2 row-start-6">
