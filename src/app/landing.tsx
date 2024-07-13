@@ -4,6 +4,7 @@ import GridLineH from "@/ui/line-horizontal";
 import { FaBook, FaPhone, FaRegClock, FaRegComments, FaRegEye } from "react-icons/fa6";
 import { IconType } from "react-icons";
 import ResponsiveImage from "@/ui/responsive-image";
+import Image from "next/image";
 
 const cards = [
   {
@@ -197,7 +198,7 @@ const Landing: FC = function () {
           return <IconCard key={text} Icon={icon} text={text} />;
         })}
       </section>
-      <section className="w-full py-8 bg-grey text-dark-grey grid-layout">
+      <section className="w-full pt-8 bg-grey text-dark-grey grid-layout">
         <GridLineH className="mt-24 col-span-full" />
         <GridLineH className="mt-12 col-span-full" />
         <ResponsiveImage className="h-[48rem] col-span-2" src="/landing_id.jpeg" alt="intelegentny dom" />
@@ -264,6 +265,29 @@ const Landing: FC = function () {
         </article>
         <GridLineH className="col-span-full" />
         <GridLineH className="mt-12 col-span-full" />
+      </section>
+      <section className="w-full py-8 bg-grey text-dark-grey grid-layout">
+        <div className="text-3xl col-start-2 p-8">
+          <h2 className="font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8">NASZ ZESPÓŁ</h2>
+          <p className="mb-8">Odpowiadamy za każdy projekt</p>
+        </div>
+        <div className="col-start-2 col-span-2 p-8 flex justify-center">
+          <div className="p-4">
+            <Image className="" src="/zespol_man.jpeg" alt="Aleks" width={300} height={300} />
+            <h3 className="text-2xl ">Aleks</h3>
+            <p className="">Electrical Team Leader</p>
+          </div>
+          <div className="p-4">
+            <Image className="" src="/zespol_man.jpeg" alt="Aleks" width={300} height={300} />
+            <h3 className="text-2xl ">Andrzej</h3>
+            <p className="">Inżynier</p>
+          </div>
+          <div className="p-4">
+            <Image className="" src="/zespol_man.jpeg" alt="Aleks" width={300} height={300} />
+            <h3 className="text-2xl ">Roman</h3>
+            <p className="">Programista</p>
+          </div>
+        </div>
       </section>
     </>
   );
