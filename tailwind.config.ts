@@ -38,6 +38,7 @@ const config: Config = {
         'dark-muted-grey': '#999999', // Less muted gray for emphasis in dark theme
         brand: {
           DEFAULT: "#75A4DC",
+          light: "#E4F0FF"
         },
       },
     },

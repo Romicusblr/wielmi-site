@@ -5,6 +5,7 @@ import { FaBook, FaPhone, FaRegClock, FaRegComments, FaRegEye } from "react-icon
 import { IconType } from "react-icons";
 import ResponsiveImage from "@/ui/responsive-image";
 import Image from "next/image";
+import Testimonials from "@/ui/testimonials";
 
 const cards = [
   {
@@ -288,6 +289,9 @@ const Landing: FC = function () {
             <p className="">Programista</p>
           </div>
         </div>
+      </section>
+      <section className="w-full py-8 text-dark-grey">
+        <Testimonials />
       </section>
     </>
   );
