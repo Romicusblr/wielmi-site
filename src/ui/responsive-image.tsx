@@ -12,7 +12,7 @@ const ResponsiveImage: FC<ResponsiveImageProps> = ({ className, src, alt }) => {
   return (
     <div className={classNames("relative overflow-hidden", className)}>
       <Image
-        className={classNames("object-cover ", className)}
+        className={classNames("object-cover", className)}
         src={src} // Replace with your image path
         alt={alt}
         fill
