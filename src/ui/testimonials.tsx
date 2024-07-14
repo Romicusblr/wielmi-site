@@ -27,6 +27,13 @@ const reviews: SlideProps[] = [
     name: "Bartosz",
     location: "Kraków, Polska",
   },
+  {
+    text: `Zdecydowałem się na firmę WIELMI do zainstalowania systemu inteligentnego domu w moim nowym mieszkaniu.
+    Proces przebiegał bardzo sprawnie od początku do końca. Zespół był profesjonalny i zawsze gotowy odpowiedzieć na moje pytania.
+    Szczególnie doceniam system zarządzania energią, który pozwala mi monitorować i optymalizować zużycie prądu. Dzięki temu moje rachunki są niższe, a ja mam większą kontrolę nad domem. Gorąco polecam firmę WIELMI!`,
+    name: "Marcin",
+    location: "Kraków, Polska",
+  },
 ];
 
 const Slide: FC<SlideProps> = ({ text, name, location }) => {
