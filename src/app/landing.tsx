@@ -94,7 +94,7 @@ interface CardProps {
 
 const Card: FC<CardProps> = function ({ num, heading, text }) {
   return (
-    <article className="p-4 pt-12 w-1/6 bg-[#E4F0FF] text-sm shadow-lg relative transition-transform duration-200 hover:-translate-y-2 transform">
+    <article className="p-4 pt-12 w-1/6 bg-brand-light text-sm shadow-lg relative transition-transform duration-200 hover:-translate-y-2 transform">
       <p className="absolute left-1 top-1 text-3xl text-muted-grey font-bold">{num}</p>
       <h3 className="font-semibold mb-4">{heading}</h3>
       <p>{text}</p>
@@ -123,7 +123,7 @@ interface IconCardProps {
 
 const IconCard: FC<IconCardProps> = ({ Icon, text }) => {
   return (
-    <article className="w-64 h-24 p-4 bg-[#E4F0FF] text-sm shadow-lg shadow-brand rounded-lg flex items-center">
+    <article className="w-64 h-24 p-4 bg-brand-light text-sm shadow-lg shadow-brand rounded-lg flex items-center">
       <Icon className="h-8 w-8 mr-3" />
       <p className="font-bold text-left">{text}</p>
     </article>
