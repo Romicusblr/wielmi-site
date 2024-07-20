@@ -7,6 +7,7 @@ import ResponsiveImage from "@/ui/responsive-image";
 import Image from "next/image";
 import Testimonials from "@/ui/testimonials";
 import SocialMedia from "@/ui/social-media";
+import Hero from "@/ui/hero";
 
 const cards = [
   {
@@ -133,7 +134,8 @@ const IconCard: FC<IconCardProps> = ({ Icon, text }) => {
 const Landing: FC = function () {
   return (
     <>
-      <section className="grid-layout">
+      <Hero />
+      {/* <section className="grid-layout">
         <div className="col-start-2 p-12">
           <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">O Wielmi</h2>
         </div>
@@ -345,7 +347,7 @@ const Landing: FC = function () {
       </section>
       <section className="w-full py-8 text-dark-grey">
         <Testimonials />
-      </section>
+      </section> */}
     </>
   );
 };

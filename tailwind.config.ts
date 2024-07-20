@@ -30,7 +30,7 @@ const config: Config = {
         'primary': '#75A4DC',  // Example primary color (blue)
         // 'secondary': '#0075FF',  // Example secondary color (orange)
         // 'accent': '#0075FF',  // Example accent color (purple)
-        'grey': '#333333',  // Dark gray for primary text
+        'grey': '#393939',  // Dark gray for primary text
         'light-grey': '#555555',  // Lighter gray for secondary text
         'muted-grey': '#888888',  // Muted gray for less emphasis
         'dark-grey': '#F0F0F0',    // Light gray for primary text in dark theme
