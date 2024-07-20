@@ -7,7 +7,8 @@ import ResponsiveImage from "@/ui/responsive-image";
 import Image from "next/image";
 import Testimonials from "@/ui/testimonials";
 import SocialMedia from "@/ui/social-media";
-import Hero from "@/ui/hero";
+import Hero from "@/ui/landing/hero";
+import AboutSection from "@/ui/landing/about";
 
 const cards = [
   {
@@ -135,46 +136,9 @@ const Landing: FC = function () {
   return (
     <>
       <Hero />
-      {/* <section className="grid-layout">
-        <div className="col-start-2 p-12">
-          <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">O Wielmi</h2>
-        </div>
-        <div className="p-12">
-          <h4 className="text-xl mb-4">Inteligentny dom Wielmi</h4>
-          <p>
-            Firma Wielmi to gwarancja kompleksowej i profesjonalnej realizacji projektów. Oferujemy pełen zakres usług,
-            obejmujących:
-          </p>
-          <ul className="list-disc ml-8">
-            <li>Projektowanie</li>
-            <li>Instalacje elektryczne</li>
-            <li>Uruchamianie i programowanie</li>
-            <li>Owarzancja i serwis</li>
-          </ul>
-          <p>
-            Nasze rozwiązania „pod klucz” zapewniają, że każda faza projektu jest wykonywana przez nasz zespół, co
-            gwarantuje spójność i najwyższą jakość. Dbamy o każdy szczegół, aby końcowy efekt spełniał Państwa
-            oczekiwania. Wybierając Wielmi, wybieracie Państwo jakość i terminowość.
-          </p>
-        </div>
-        <GridLineH className="col-span-full" />
-        <div className="col-start-2 p-12">
-          <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">
-            NASZA INSPIRACJA
-          </h2>
-        </div>
-        <div className="p-12">
-          <p className="mb-4">
-            Inspirują nas oryginalne projekty designerów, którzy nie trzymają się standardowych rozwiązań, a w swojej
-            pracy wykorzystują kreatywność i niestandardowe podejście.
-          </p>
-          <p className="mb-16">Jesteśmy otwarci na nowe projekty i gotowi do współpracy!</p>
-          <div className="flex justify-center">
-            <BrandedButton className="px-12">Czy masz jakiś pomysł?</BrandedButton>
-          </div>
-        </div>
-      </section>
       <GridLineH />
+      <AboutSection />
+      {/*
       <section className="grid-layout bg-[#F6FAFF]">
         <div className="col-start-3 p-12">
           <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">ETAPY PRACY</h2>

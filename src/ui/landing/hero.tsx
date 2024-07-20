@@ -1,9 +1,8 @@
 import type { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import BrandedButton from "./button";
-import GridLineH from "./line-horizontal";
-import SocialLinks from "./social-links";
+import BrandedButton from "@/ui/button";
+import GridLineH from "@/ui/line-horizontal";
+import SocialLinks from "@/ui/social-links";
 
 const Hero: FC = function () {
   return (
