@@ -1,6 +1,5 @@
-import Link from "next/link";
 import type { FC } from "react";
-import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import SocialLinks from "./social-links";
 
 const Footer: FC = function () {
   return (
@@ -10,19 +9,8 @@ const Footer: FC = function () {
           <h2 className="text-3xl underline underline-offset-8">KONTAKTY</h2>
           <p className="mt-4 text-brand">INTELIGENTNY DOM Wielmi</p>
           <p className="mt-8">Kraków, Polska</p>
-          <div className="flex justify-start gap-4 h-8 mt-2">
-            <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-              <FaFacebookF className="h-4 w-4 text-grey" />
-            </Link>
-            <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-              <FaInstagram className="h-4 w-4 text-grey" />
-            </Link>
-            <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-              <FaWhatsapp className="h-4 w-4 text-grey" />
-            </Link>
-            <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
-              <FaEnvelope className="h-4 w-4 text-grey" />
-            </Link>
+          <div className="mt-4">
+            <SocialLinks />
           </div>
         </div>
         <div className="flex flex-col lg:p-24 p-12 justify-center">
