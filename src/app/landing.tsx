@@ -11,6 +11,7 @@ import WorkStepsSection from "@/ui/landing/steps";
 import BlackCardSection from "@/ui/landing/black-cards";
 import IconCardSection from "@/ui/landing/icon-cards";
 import InfoSection from "@/ui/landing/info";
+import TeamSection from "@/ui/landing/team";
 
 
 const Landing: FC = function () {
@@ -25,30 +26,9 @@ const Landing: FC = function () {
       <GridLineH />
       <IconCardSection />
       <InfoSection />
+      <TeamSection />
       {/*
-      <section className="w-full py-8 bg-grey text-dark-grey grid-layout">
-        <div className="text-3xl col-start-2 p-8">
-          <h2 className="font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8">NASZ ZESPÓŁ</h2>
-          <p className="mb-8">Odpowiadamy za każdy projekt</p>
-        </div>
-        <div className="col-start-2 col-span-2 p-8 flex justify-center">
-          <div className="p-4">
-            <Image className="" src="/zespol_man.jpeg" alt="Aleks" width={300} height={300} />
-            <h3 className="text-2xl ">Aleks</h3>
-            <p className="">Electrical Team Leader</p>
-          </div>
-          <div className="p-4">
-            <Image className="" src="/zespol_man.jpeg" alt="Aleks" width={300} height={300} />
-            <h3 className="text-2xl ">Andrzej</h3>
-            <p className="">Inżynier</p>
-          </div>
-          <div className="p-4">
-            <Image className="" src="/zespol_man.jpeg" alt="Aleks" width={300} height={300} />
-            <h3 className="text-2xl ">Roman</h3>
-            <p className="">Programista</p>
-          </div>
-        </div>
-      </section>
+      
       <section className="grid-layout w-full bg-[url('/kontakt-bg.jpeg')] bg-cover bg-center">
         <div className="col-start-2 py-16 px-8">
           <h2 className="text-dark-grey text-3xl">Czy masz jakiś pomysł?</h2>
