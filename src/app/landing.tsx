@@ -10,31 +10,7 @@ import SocialMedia from "@/ui/social-media";
 import Hero from "@/ui/landing/hero";
 import AboutSection from "@/ui/landing/about";
 import WorkStepsSection from "@/ui/landing/steps";
-
-const blackCards = [
-  {
-    heading: "Bezpłatna konsultacja",
-    text: `Na etapie bezpłatnej konsultacji określamy Państwa potrzeby i oczekiwania. 
-    Opowiadają nam Państwo o swoim domu marzeń i planach, które chcą zrealizować. 
-    My proponujemy najlepsze rozwiązania dla inteligentnego domu.`,
-  },
-  {
-    heading: "Indywidualna kalkulacja kosztów",
-    text: `Przygotowujemy wstępną wycenę, która obejmuje koszt sprzętu, montażu 
-    oraz automatyzacji domu. Używamy terminu „wstępna”, ponieważ na etapie uzgadniania 
-    można dodać dodatkowe funkcje według Państwa życzeń. Gdy wszystkie szczegóły są 
-    uzgodnione i przeliczone, podpisujemy umowę.`,
-  },
-  {
-    heading: "Realizacja projektu",
-    text: `Po podpisaniu umowy rozpoczynamy pracę. Proces projektowania może zająć od 
-    kilku dni do kilku tygodni, w zależności od skomplikowania projektu. Następnie, 
-    zgodnie z ustalonym harmonogramem i w koordynacji z innymi wykonawcami, przystępujemy
-    do realizacji instalacji elektrycznej oraz montażu sprzętu. Po zakończeniu tych prac
-    programujemy system i szkolimy Państwa z jego obsługi. 
-    Gratulacje - Inteligentny Dom jest już Państwa!`,
-  },
-];
+import BlackCardSection from "@/ui/landing/black-cards";
 
 const iconCards1 = [
   {
@@ -68,15 +44,6 @@ interface BlackCardProps {
   text: string;
 }
 
-const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
-  return (
-    <article className="p-8 pt-12 flex-1 bg-grey text-sm text-dark-grey">
-      <h3 className="font-semibold mb-4 text-xl text-center">{heading}</h3>
-      <p>{text}</p>
-    </article>
-  );
-};
-
 interface IconCardProps {
   Icon: IconType;
   text: string;
@@ -98,14 +65,11 @@ const Landing: FC = function () {
       <GridLineH />
       <AboutSection />
       <WorkStepsSection />
+      <GridLineH />
+      <BlackCardSection />
       {/*
 
-      <GridLineH />
-      <section className="w-full py-12 flex gap-24 px-36 justify-center">
-        {blackCards.map(({ heading, text }, i) => {
-          return <BlackCard key={heading} heading={heading} text={text} />;
-        })}
-      </section>
+
       <section className="w-full py-8 flex gap-24 justify-center">
         {iconCards1.map(({ icon, text }, i) => {
           return <IconCard key={text} Icon={icon} text={text} />;
