@@ -38,7 +38,7 @@ const reviews: SlideProps[] = [
 
 const Slide: FC<SlideProps> = ({ text, name, location }) => {
   return (
-    <div className="min-w-0 w-1/2 flex-none p-4">
+    <div className="min-w-0 lg:w-1/2 w-full flex-none p-4">
       <div className="p-12 bg-[url('/slide-bg.jpeg')] bg-cover bg-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,13 +68,13 @@ const Testimonials = () => {
   }, [emblaApi]);
 
   return (
-    <section className="grid-layout">
-      <div className="grid place-items-center">
+    <section className="grid-layout text-dark-grey">
+      <div className="sm:grid place-items-center hidden">
         <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollPrev}>
           <SlArrowLeft className="h-8 w-8" />
         </button>
       </div>
-      <div className="overflow-hidden col-span-2 m-8">
+      <div className="overflow-hidden lg:col-span-2 m-8">
         <div>
           <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8 text-grey">
             <span>CO MÓWIĄ O NAS NASI KLIENCI</span>
@@ -88,8 +88,22 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-      <div className="grid place-items-center">
+      <div className="sm:grid place-items-center hidden">
         <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollNext}>
+          <SlArrowRight className="h-8 w-8" />
+        </button>
+      </div>
+      <div className="sm:hidden grid grid-cols-2 h-24">
+        <button
+          className="p-4 rounded-lg text-brand hover:bg-brand-light grid place-content-center"
+          onClick={scrollPrev}
+        >
+          <SlArrowLeft className="h-8 w-8" />
+        </button>
+        <button
+          className="p-4 rounded-lg text-brand hover:bg-brand-light grid place-content-center"
+          onClick={scrollNext}
+        >
           <SlArrowRight className="h-8 w-8" />
         </button>
       </div>

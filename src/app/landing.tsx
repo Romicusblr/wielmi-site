@@ -3,7 +3,7 @@ import BrandedButton from "../ui/button";
 import GridLineH from "@/ui/line-horizontal";
 import ResponsiveImage from "@/ui/responsive-image";
 import Image from "next/image";
-import Testimonials from "@/ui/testimonials";
+import Testimonials from "@/ui/landing/testimonials";
 import SocialMedia from "@/ui/social-media";
 import Hero from "@/ui/landing/hero";
 import AboutSection from "@/ui/landing/about";
@@ -12,7 +12,6 @@ import BlackCardSection from "@/ui/landing/black-cards";
 import IconCardSection from "@/ui/landing/icon-cards";
 import InfoSection from "@/ui/landing/info";
 import TeamSection from "@/ui/landing/team";
-
 
 const Landing: FC = function () {
   return (
@@ -27,6 +26,7 @@ const Landing: FC = function () {
       <IconCardSection />
       <InfoSection />
       <TeamSection />
+      <Testimonials />
       {/*
       
       <section className="grid-layout w-full bg-[url('/kontakt-bg.jpeg')] bg-cover bg-center">
@@ -81,9 +81,7 @@ const Landing: FC = function () {
           </div>
         </div>
       </section>
-      <section className="w-full py-8 text-dark-grey">
-        <Testimonials />
-      </section> */}
+      */}
     </>
   );
 };
