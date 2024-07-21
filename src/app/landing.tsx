@@ -1,8 +1,6 @@
 import type { FC } from "react";
 import BrandedButton from "../ui/button";
 import GridLineH from "@/ui/line-horizontal";
-import { FaBook, FaPhone, FaRegClock, FaRegComments, FaRegEye } from "react-icons/fa6";
-import { IconType } from "react-icons";
 import ResponsiveImage from "@/ui/responsive-image";
 import Image from "next/image";
 import Testimonials from "@/ui/testimonials";
@@ -11,52 +9,8 @@ import Hero from "@/ui/landing/hero";
 import AboutSection from "@/ui/landing/about";
 import WorkStepsSection from "@/ui/landing/steps";
 import BlackCardSection from "@/ui/landing/black-cards";
+import IconCardSection from "@/ui/landing/icon-cards";
 
-const iconCards1 = [
-  {
-    icon: FaPhone,
-    text: `BEZPŁATNA KONSULTACJA`,
-  },
-  {
-    icon: FaRegClock,
-    text: `24/7`,
-  },
-  {
-    icon: FaRegEye,
-    text: `NADZÓR AUTORSKI`,
-  },
-];
-
-const iconCards2 = [
-  {
-    icon: FaRegComments,
-    text: `MENEDŻER OSOBISTY`,
-  },
-  {
-    icon: FaBook,
-    text: `PEŁNA DOKUMENTACJA TECHNICZNA PROJEKTU`,
-  },
-];
-
-
-interface BlackCardProps {
-  heading: string;
-  text: string;
-}
-
-interface IconCardProps {
-  Icon: IconType;
-  text: string;
-}
-
-const IconCard: FC<IconCardProps> = ({ Icon, text }) => {
-  return (
-    <article className="w-64 h-24 p-4 bg-brand-light text-sm shadow-lg shadow-brand rounded-lg flex items-center">
-      <Icon className="h-8 w-8 mr-3" />
-      <p className="font-bold text-left">{text}</p>
-    </article>
-  );
-};
 
 const Landing: FC = function () {
   return (
@@ -67,19 +21,10 @@ const Landing: FC = function () {
       <WorkStepsSection />
       <GridLineH />
       <BlackCardSection />
+      <GridLineH />
+      <IconCardSection />
       {/*
 
-
-      <section className="w-full py-8 flex gap-24 justify-center">
-        {iconCards1.map(({ icon, text }, i) => {
-          return <IconCard key={text} Icon={icon} text={text} />;
-        })}
-      </section>
-      <section className="w-full py-8 flex gap-24 justify-center">
-        {iconCards2.map(({ icon, text }, i) => {
-          return <IconCard key={text} Icon={icon} text={text} />;
-        })}
-      </section>
       <section className="w-full pt-8 bg-grey text-dark-grey grid-layout">
         <GridLineH className="mt-24 col-span-full" />
         <GridLineH className="mt-12 col-span-full" />
