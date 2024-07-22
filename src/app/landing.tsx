@@ -1,10 +1,6 @@
 import type { FC } from "react";
-import BrandedButton from "../ui/button";
 import GridLineH from "@/ui/line-horizontal";
-import ResponsiveImage from "@/ui/responsive-image";
-import Image from "next/image";
 import Testimonials from "@/ui/landing/testimonials";
-import SocialMedia from "@/ui/social-media";
 import Hero from "@/ui/landing/hero";
 import AboutSection from "@/ui/landing/about";
 import WorkStepsSection from "@/ui/landing/steps";

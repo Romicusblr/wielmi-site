@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image'
 import BrandedButton from "@/ui/button";
 import GridLineH from "@/ui/line-horizontal";
 import SocialLinks from "@/ui/social-links";

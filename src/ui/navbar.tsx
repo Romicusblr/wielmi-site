@@ -6,12 +6,12 @@ import Logo from "./logo";
 import MenuButton from "./menu-button";
 
 const navigation = [
-  { name: "Inteligentny dom", href: "#", current: false },
-  { name: "Instalacje elektryczne", href: "#", current: false },
-  { name: "Sieci lokalne", href: "#", current: false },
-  { name: "Współpraca", href: "#", current: false },
-  { name: "Kontakty", href: "#", current: false },
-  { name: "O Wielmi", href: "#", current: false },
+  { name: "O Wielmi", href: "/#wielmi" },
+  { name: "Inteligentny dom", href: "/#smart" },
+  { name: "Instalacje elektryczne", href: "/#electric" },
+  { name: "Sieci lokalne", href: "/#lan" },
+  { name: "Zespól", href: "/#team" },
+  { name: "Kontakty", href: "/#contact" },
 ];
 
 const phoneNumber = "+48571780770";

@@ -4,16 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-export-optimize-images",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@web3forms/react": "^1.1.3",
     "classnames": "^2.5.1",
     "embla-carousel-react": "^8.1.6",
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1"
   },
   "devDependencies": {
@@ -23,6 +25,7 @@
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.5",
+    "next-export-optimize-images": "^4.5.0",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3"

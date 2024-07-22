@@ -1,18 +1,45 @@
-import type { FC } from "react";
+"use client";
+
+import { useState, type FC } from "react";
 import ResponsiveImage from "@/ui/responsive-image";
 import GridLineH from "@/ui/line-horizontal";
 import BrandedButton from "@/ui/button";
 import SocialMedia from "@/ui/social-media";
+import { useForm } from "react-hook-form";
+import useWeb3Forms from "@web3forms/react";
 
 const ContactSection: FC = function () {
+  const { register, reset, handleSubmit } = useForm();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [result, setResult] = useState("");
+  const accessKey = process.env.NEXT_PUBLIC_FORM_ACCESS_KEY ?? "";
+
+  const { submit: onSubmit } = useWeb3Forms({
+    access_key: accessKey,
+    settings: {
+      from_name: "Wielmi Contact Form",
+      subject: "New Contact Message from your Website",
+    },
+    onSuccess: (msg, data) => {
+      setIsSuccess(true);
+      setResult(msg);
+      reset();
+    },
+    onError: (msg, data) => {
+      setIsSuccess(false);
+      setResult(msg);
+    },
+  });
+
   return (
-    <section className="grid-layout w-full bg-[url('/kontakt-bg.jpeg')] bg-cover bg-center">
+    <section className="grid-layout w-full bg-[url('/kontakt-bg.jpeg')] bg-cover bg-center" id="contact">
       <div className="sm:col-start-2 sm:row-start-3 lg:row-start-1 py-16 px-8">
         <h2 className="text-dark-grey text-3xl">Czy masz jakiś pomysł?</h2>
         <div className="shadow-lg rounded-lg mt-8">
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
             <div>
               <input
+                {...register("name", { required: true })}
                 type="text"
                 placeholder="Podaj imię..."
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -20,6 +47,7 @@ const ContactSection: FC = function () {
             </div>
             <div>
               <input
+                {...register("email", { required: true })}
                 type="email"
                 placeholder="Podaj email..."
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -28,12 +56,14 @@ const ContactSection: FC = function () {
             <div>
               <input
                 type="tel"
+                {...register("phone", { required: true })}
                 placeholder="Podaj numer telefonu..."
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
               <textarea
+                {...register("message", { required: true })}
                 placeholder="Informacje dla nas..."
                 className="w-full px-4 py-2 border rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
@@ -44,7 +74,11 @@ const ContactSection: FC = function () {
           </form>
         </div>
       </div>
-      <ResponsiveImage className="h-full lg:col-start-3 object-bottom hidden lg:block" src="/kontakt-image.jpeg" alt="macbook" />
+      <ResponsiveImage
+        className="h-full lg:col-start-3 object-bottom hidden lg:block"
+        src="/kontakt-image.jpeg"
+        alt="macbook"
+      />
       <GridLineH className="col-span-full row-start-2" />
       <div className="text-dark-grey lg:col-start-3 sm:col-start-2 row-start-1 lg:row-start-3 px-8 py-16">
         <h3 className="text-2xl">Współpraca</h3>

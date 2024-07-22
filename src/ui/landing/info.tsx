@@ -5,6 +5,7 @@ import classNames from "classnames";
 
 const infos = [
   {
+    id: "smart",
     imageSrc: "/landing_id.jpeg",
     heading: "INTELIGENTNY DOM",
     article: (
@@ -23,6 +24,7 @@ const infos = [
     ),
   },
   {
+    id: "electric",
     imageSrc: "/landing_electric.png",
     heading: "INSTALACJE ELEKTRYCZNE",
     article: (
@@ -48,6 +50,7 @@ const infos = [
     ),
   },
   {
+    id: "lan",
     imageSrc: "/landing_lan.png",
     heading: "SIECI LOKALNE",
     article: (
@@ -72,16 +75,17 @@ interface InfoProps {
   heading: string;
   article: JSX.Element;
   reverse?: boolean;
+  id: string;
 }
 
-const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse }) {
+const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, id }) {
   const classImage = reverse ? "lg:col-start-3" : "";
   const classArticle = reverse ? "lg:col-start-2" : "lg:col-start-3";
 
   return (
     <>
       <ResponsiveImage className={classNames("lg:h-[48rem] h-[36rem] lg:col-span-2 col-span-full", classImage)} src={imageSrc} alt={heading} />
-      <article className={classNames("px-12 py-16 lg:col-start-2 sm:col-start-2", classArticle)}>
+      <article className={classNames("px-12 py-16 lg:col-start-2 sm:col-start-2", classArticle)} id={id}>
         <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8">
           {heading}
         </h2>

@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from 'next-export-optimize-images/image'
 
 const Logo: FC = function () {
   return (

@@ -4,7 +4,7 @@ import GridLineH from "@/ui/line-horizontal";
 
 const AboutSection: FC = function () {
   return (
-    <section className="grid-layout">
+    <section className="grid-layout" id="wielmi">
       <div className="sm:col-start-2 p-12">
         <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">O Wielmi</h2>
       </div>
