@@ -51,8 +51,13 @@ jobs:
           # static_site_generator: next
       - name: Install dependencies
         run: pnpm install
+      - name: Extract repository name
+        id: repo-name
+        run: echo "::set-output name=repo::$(echo ${GITHUB_REPOSITORY#*/})"
       - name: Build with Next.js
         run: pnpm run build
+        env:
+          BASE_PATH: "/${{ steps.repo-name.outputs.repo }}"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
