@@ -2,7 +2,7 @@
  * @type {import('next-export-optimize-images').Config}
  */
 const config = {
-  basePath: "/wielmi-site",
+  basePath: process.env.BASE_PATH ?? "",
 };
 
 module.exports = config;

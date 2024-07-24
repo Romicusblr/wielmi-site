@@ -4,9 +4,10 @@ import { useState, type FC } from "react";
 import ResponsiveImage from "@/ui/responsive-image";
 import GridLineH from "@/ui/line-horizontal";
 import BrandedButton from "@/ui/button";
-import SocialMedia from "@/ui/social-media";
+import SocialLinks from "@/ui/social-links";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
+import Image from "next-export-optimize-images/image";
 
 const ContactSection: FC = function () {
   const { register, reset, handleSubmit } = useForm();
@@ -32,7 +33,15 @@ const ContactSection: FC = function () {
   });
 
   return (
-    <section className="grid-layout w-full bg-[url('/kontakt-bg.jpeg')] bg-cover bg-center" id="contact">
+    <section className="relative grid-layout w-full bg-cover bg-center" id="contact">
+        <Image
+          alt="Kontakt Background Image"
+          className="-z-10 object-cover"
+          fill
+          priority
+          quality={100}
+          src="/kontakt-bg.jpeg"
+        />
       <div className="sm:col-start-2 sm:row-start-3 lg:row-start-1 py-16 px-8">
         <h2 className="text-dark-grey text-3xl">Czy masz jakiś pomysł?</h2>
         <div className="shadow-lg rounded-lg mt-8">
@@ -88,7 +97,7 @@ const ContactSection: FC = function () {
         </p>
         <p>Z naszymi specjalistami możesz skonsultować się w każdej sprawie.</p>
         <div className="mt-8">
-          <SocialMedia />
+          <SocialLinks />
         </div>
       </div>
     </section>
