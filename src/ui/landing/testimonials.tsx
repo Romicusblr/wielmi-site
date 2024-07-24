@@ -3,6 +3,7 @@
 import React, { FC, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import Image from "next-export-optimize-images/image";
 
 interface SlideProps {
   text: string;
@@ -39,7 +40,15 @@ const reviews: SlideProps[] = [
 const Slide: FC<SlideProps> = ({ text, name, location }) => {
   return (
     <div className="min-w-0 lg:w-1/2 w-full flex-none p-4">
-      <div className="p-12 bg-[url('/slide-bg.jpeg')] bg-cover bg-center">
+      <div className="relative p-12 bg-center">
+        <Image
+          alt="keyboard in dark light"
+          className="-z-10 object-cover"
+          fill
+          priority
+          quality={100}
+          src="/slide-bg.jpeg"
+        />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
