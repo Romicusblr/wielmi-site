@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import Link from "next/link";
 import type { FC } from "react";
 import { FaEnvelope, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
@@ -12,18 +11,18 @@ const SocialLinks: FC<SocialLinksProps> = function ({ className, iconClassName =
   const cls = classNames("flex justify-start gap-4", className);
   return (
     <div className={cls}>
-      <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+      <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="https://www.facebook.com/wielmismart">
         <FaFacebookF className={classNames(iconClassName, "text-grey")} />
-      </Link>
-      <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+      </a>
+      <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="https://www.instagram.com/wielmismart">
         <FaInstagram className={classNames(iconClassName, "text-grey")} />
-      </Link>
-      <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+      </a>
+      <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="https://wa.me/48571780770">
         <FaWhatsapp className={classNames(iconClassName, "text-grey")} />
-      </Link>
-      <Link className="bg-dark-grey hover:bg-brand rounded-full p-2" href="#">
+      </a>
+      <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="mailto:kontakt@wielmi.pl">
         <FaEnvelope className={classNames(iconClassName, "text-grey")} />
-      </Link>
+      </a>
     </div>
   );
 };

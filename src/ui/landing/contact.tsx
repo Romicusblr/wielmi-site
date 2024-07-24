@@ -4,7 +4,7 @@ import { useState, type FC } from "react";
 import ResponsiveImage from "@/ui/responsive-image";
 import GridLineH from "@/ui/line-horizontal";
 import BrandedButton from "@/ui/button";
-import SocialMedia from "@/ui/social-media";
+import SocialLinks from "@/ui/social-links";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import Image from "next-export-optimize-images/image";
@@ -97,7 +97,7 @@ const ContactSection: FC = function () {
         </p>
         <p>Z naszymi specjalistami możesz skonsultować się w każdej sprawie.</p>
         <div className="mt-8">
-          <SocialMedia />
+          <SocialLinks />
         </div>
       </div>
     </section>
