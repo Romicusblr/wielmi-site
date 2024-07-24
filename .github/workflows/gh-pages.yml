@@ -1,8 +1,4 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
-name: Deploy Next.js site to Pages
+name: Deploy site to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -51,13 +47,8 @@ jobs:
           # static_site_generator: next
       - name: Install dependencies
         run: pnpm install
-      - name: Extract repository name
-        id: repo-name
-        run: echo "::set-output name=repo::$(echo ${GITHUB_REPOSITORY#*/})"
       - name: Build with Next.js
-        run: pnpm run build
-        env:
-          BASE_PATH: "/${{ steps.repo-name.outputs.repo }}"
+        run: BASE_PATH="/${GITHUB_REPOSITORY#*/}" pnpm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
