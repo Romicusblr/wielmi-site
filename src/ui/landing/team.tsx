@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import Image from "next-export-optimize-images/image";
 import { FaUser } from "react-icons/fa6";
 
 const persons = [
