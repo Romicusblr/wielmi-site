@@ -41,6 +41,7 @@ const ContactSection: FC = function () {
           priority
           quality={100}
           src="/images/kontakt-bg.jpeg"
+          sizes="100%"
         />
       <div className="sm:col-start-2 sm:row-start-3 lg:row-start-1 py-16 px-8">
         <h2 className="text-dark-grey text-3xl">Czy masz jakiś pomysł?</h2>

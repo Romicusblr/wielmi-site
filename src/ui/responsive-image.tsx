@@ -16,6 +16,7 @@ const ResponsiveImage: FC<ResponsiveImageProps> = ({ className, src, alt }) => {
         src={src}
         placeholder='blur'
         alt={alt}
+        sizes="100%"
         fill
       />
     </div>
