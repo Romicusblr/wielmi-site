@@ -5,6 +5,7 @@ import type { FC } from "react";
 import classNames from "classnames";
 import Footer from "@/ui/footer";
 import NavBar from "@/ui/navbar";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const font = Montserrat({ subsets: ["latin"], weight: ["100", "400", "700"] });
 
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: FC<RootLayoutProps> = function ({ children }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID ?? "";
+
   return (
     <html lang="en">
       <body className={classNames(font.className, "text-justify text-grey")}>
@@ -25,6 +28,7 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId={gaId} />
     </html>
   );
 };

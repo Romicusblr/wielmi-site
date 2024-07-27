@@ -36,19 +36,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        # with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          # static_site_generator: next
       - name: Install dependencies
         run: pnpm install
       - name: Build with Next.js
         run: BASE_PATH="/${GITHUB_REPOSITORY#*/}" pnpm run build
+        env:
+          NEXT_PUBLIC_FORM_ACCESS_KEY: ${{ env.NEXT_PUBLIC_FORM_ACCESS_KEY }}
+          NEXT_PUBLIC_GA_ID: ${{ env.NEXT_PUBLIC_GA_ID }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
