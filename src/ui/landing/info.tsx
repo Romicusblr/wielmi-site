@@ -6,7 +6,7 @@ import classNames from "classnames";
 const infos = [
   {
     id: "smart",
-    imageSrc: "/images/landing_id.jpeg",
+    imageSrc: "/landing_id.jpeg",
     heading: "INTELIGENTNY DOM",
     article: (
       <>
@@ -25,7 +25,7 @@ const infos = [
   },
   {
     id: "electric",
-    imageSrc: "/images/landing_electric.png",
+    imageSrc: "/landing_electric.png",
     heading: "INSTALACJE ELEKTRYCZNE",
     article: (
       <>
@@ -51,7 +51,7 @@ const infos = [
   },
   {
     id: "lan",
-    imageSrc: "/images/landing_lan.png",
+    imageSrc: "/landing_lan.png",
     heading: "SIECI LOKALNE",
     article: (
       <>
