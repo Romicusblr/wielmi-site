@@ -54,7 +54,7 @@ jobs:
         with:
           path: |
             ${{ github.workspace }}/node_modules/.cache/next-export-optimize-images
-          key: ${{ runner.os }}-images-${{ hashFiles('/public/images/**') }}
+          key: ${{ runner.os }}-images-${{ hashFiles('./public/images/**') }}
           restore-keys: |
             ${{ runner.os }}-images-
       - name: Build with Next.js
