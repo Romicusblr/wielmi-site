@@ -5,17 +5,17 @@ const persons = [
   {
     name: "Aleks",
     description: "Electrical Team Leader",
-    image: "/zespol_man.jpeg",
+    image: "/images/zespol_man.jpeg",
   },
   {
     name: "Andrzej",
     description: "Inżynier",
-    image: "/zespol_man.jpeg",
+    image: "/images/zespol_man.jpeg",
   },
   {
     name: "Roman",
     description: "Programista",
-    image: "/zespol_man.jpeg",
+    image: "/images/zespol_man.jpeg",
   },
 ];
 

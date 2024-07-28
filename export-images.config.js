@@ -3,7 +3,7 @@
  */
 const config = {
   basePath: process.env.BASE_PATH ?? "",
-  cacheDir: ".next/cache"
+  imageDir: "_optimized",
 };
 
 module.exports = config;
