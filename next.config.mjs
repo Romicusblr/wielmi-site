@@ -1,10 +1,12 @@
 import withExportImages from "next-export-optimize-images";
-import withBundleAnalyzer from "@next/bundle-analyzer";
+import analyzer from "@next/bundle-analyzer";
 
-const nextConfig = withBundleAnalyzer({
+const withBundleAnalyzer = analyzer({
   enabled: process.env.ANALYZE === "true",
-})(
-  withExportImages({
+});
+
+const nextConfig = withExportImages(
+  withBundleAnalyzer({
     output: "export",
     basePath: process.env.BASE_PATH ?? "",
   })
