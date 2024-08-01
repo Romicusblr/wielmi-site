@@ -4,17 +4,16 @@ import Link from "next/link";
 import classNames from "classnames";
 import Logo from "./logo";
 import MenuButton from "./menu-button";
+import { PHONENUMBER } from "@/constants";
 
 const navigation = [
-  { name: "O Wielmi", href: "/#wielmi" },
-  { name: "Inteligentny dom", href: "/#smart" },
-  { name: "Instalacje elektryczne", href: "/#electric" },
-  { name: "Sieci lokalne", href: "/#lan" },
-  { name: "Zespól", href: "/#team" },
-  { name: "Kontakty", href: "/#contact" },
+  { name: "O Wielmi", href: "#wielmi" },
+  { name: "Inteligentny dom", href: "#smart" },
+  { name: "Instalacje elektryczne", href: "#electric" },
+  { name: "Sieci lokalne", href: "#lan" },
+  { name: "Zespól", href: "#team" },
+  { name: "Kontakty", href: "#contact" },
 ];
-
-const phoneNumber = "+48571780770";
 
 function formatNumber(phoneNumber: string) {
   return phoneNumber.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4");
@@ -54,14 +53,14 @@ const NavBar: FC = function () {
             </li>
           ))}
           <li className="mt-8 lg:hidden">
-            <Link className={navLiClass} href={`tel:${phoneNumber}`}>
-              {formatNumber(phoneNumber)}
+            <Link className={navLiClass} href={`tel:${PHONENUMBER}`}>
+              {formatNumber(PHONENUMBER)}
             </Link>
           </li>
         </ul>
         <div className="lg:block hidden">
-          <Link className={navLiClass} href={`tel:${phoneNumber}`}>
-            {formatNumber(phoneNumber)}
+          <Link className={navLiClass} href={`tel:${PHONENUMBER}`}>
+            {formatNumber(PHONENUMBER)}
           </Link>
         </div>
       </div>

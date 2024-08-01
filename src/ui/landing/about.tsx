@@ -1,6 +1,8 @@
 import type { FC } from "react";
 import BrandedButton from "@/ui/button";
 import GridLineH from "@/ui/line-horizontal";
+import { CONTACT_HASH } from "@/constants";
+import Link from "next/link";
 
 const AboutSection: FC = function () {
   return (
@@ -39,7 +41,9 @@ const AboutSection: FC = function () {
         </p>
         <p className="mb-16">Jesteśmy otwarci na nowe projekty i gotowi do współpracy!</p>
         <div className="flex justify-center">
-          <BrandedButton className="px-6">Czy masz jakiś pomysł?</BrandedButton>
+          <Link href={CONTACT_HASH}>
+            <BrandedButton className="px-6">Czy masz jakiś pomysł?</BrandedButton>
+          </Link>
         </div>
       </div>
     </section>

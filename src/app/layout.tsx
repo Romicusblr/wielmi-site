@@ -22,7 +22,7 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
   return (
-    <html lang="en">
+    <html lang="pl-PL" className="scroll-smooth">
       <body className={classNames(font.className, "text-justify text-grey")}>
         <NavBar />
         {children}
