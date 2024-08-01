@@ -24,7 +24,6 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   return (
     <html lang="pl-PL" className="scroll-smooth">
       <body className={classNames(font.className, "text-justify text-grey")}>
-        <NavBar />
         {children}
         <Footer />
       </body>

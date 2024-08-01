@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import SocialLinks from "./social-links";
+import Link from "next/link";
 
 const Footer: FC = function () {
   return (
@@ -21,6 +22,9 @@ const Footer: FC = function () {
           </p>
           <p className="mt-4">
             <a href="mailto:kontakt@wielmi.pl">kontakt@wielmi.pl</a>
+          </p>
+          <p className="mt-4">
+            <Link href="/privacy-policy">Polityka Prywatności</Link>
           </p>
         </div>
       </div>

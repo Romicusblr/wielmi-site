@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import GridLines from "../ui/grid-lines";
 import Landing from "./landing";
-// import SmartHome from "../components/smart-home";
 
 const Page: FC = function () {
   return (
