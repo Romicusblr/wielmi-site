@@ -59,10 +59,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-images-
       - name: Build with Next.js
-        run: BASE_PATH="/${GITHUB_REPOSITORY#*/}" pnpm run build
+        run: pnpm run build
         env:
-          NEXT_PUBLIC_FORM_ACCESS_KEY: ${{ env.NEXT_PUBLIC_FORM_ACCESS_KEY }}
-          NEXT_PUBLIC_GA_ID: ${{ env.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_FORM_ACCESS_KEY: ${{ vars.NEXT_PUBLIC_FORM_ACCESS_KEY }}
+          NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+          BASE_PATH: ${{ vars.BASE_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
