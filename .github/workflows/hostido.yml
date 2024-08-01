@@ -47,10 +47,10 @@ jobs:
           NEXT_PUBLIC_FORM_ACCESS_KEY: ${{ env.NEXT_PUBLIC_FORM_ACCESS_KEY }}
           NEXT_PUBLIC_GA_ID: ${{ env.NEXT_PUBLIC_GA_ID }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
-          name: build-files
           path: ./out
+          name: build
 
   # Deployment job
   deploy:
@@ -63,23 +63,15 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: build-files
+          name: build
           path: ./build
-
       - name: Prepare SSH
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
-        env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy to server
         run: |
-          scp -P $SSH_PORT -r ./build/* $SSH_USERNAME@$SSH_HOST:~/domains/wielmi.pl/public_html
-        env:
-          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
+          scp -P ${{ secrets.SSH_PORT }} -r ./build/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/wielmi.pl/public_html
