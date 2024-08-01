@@ -4,7 +4,6 @@ import { Montserrat } from "next/font/google";
 import type { FC } from "react";
 import classNames from "classnames";
 import Footer from "@/ui/footer";
-import NavBar from "@/ui/navbar";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const font = Montserrat({ subsets: ["latin"], weight: ["100", "400", "700"] });
@@ -27,7 +26,7 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
         {children}
         <Footer />
       </body>
-      <GoogleAnalytics gaId={gaId} />
+      {/* <GoogleAnalytics gaId={gaId} /> */}
     </html>
   );
 };
