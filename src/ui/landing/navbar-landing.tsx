@@ -2,8 +2,8 @@
 import { useState, type FC } from "react";
 import Link from "next/link";
 import classNames from "classnames";
-import Logo from "./logo";
-import MenuButton from "./menu-button";
+import Logo from "../logo";
+import MenuButton from "../menu-button";
 import { PHONENUMBER } from "@/constants";
 
 const navigation = [
@@ -25,6 +25,10 @@ const NavBar: FC = function () {
     setIsOpen(!isOpen);
   };
 
+  const close = (): void => {
+    setIsOpen(false);
+  };
+
   const navLiClass =
     "whitespace-nowrap flex justify-center lg:justify-end p-2 lg:p-2 hover:text-brand hover:underline underline-offset-8 hover:scale-105 transform transition duration-150 ease-in-out";
   return (
@@ -39,6 +43,7 @@ const NavBar: FC = function () {
           </div>
         </div>
         <ul
+          onClick={close}
           className={classNames(
             "flex-col p-4 text-2xl h-[100vh] justify-start col-span-full",
             "lg:h-auto lg:text-base lg:flex lg:flex-row lg:justify-center lg:col-span-2",
