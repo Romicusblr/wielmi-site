@@ -47,7 +47,8 @@ const Slide: FC<SlideProps> = ({ text, name, location }) => {
           fill
           priority
           quality={100}
-          src="/slide-bg.jpeg"
+          sizes="100%"
+          src="/images/slide-bg.jpeg"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"

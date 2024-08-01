@@ -14,7 +14,7 @@ const SocialLinks: FC<SocialLinksProps> = function ({ className, iconClassName =
       <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="https://www.facebook.com/wielmismart">
         <FaFacebookF className={classNames(iconClassName, "text-grey")} />
       </a>
-      <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="https://www.instagram.com/wielmismart">
+      <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="https://www.instagram.com/wielmi.pl/">
         <FaInstagram className={classNames(iconClassName, "text-grey")} />
       </a>
       <a className="bg-dark-grey hover:bg-brand rounded-full p-2" href="https://wa.me/48571780770">

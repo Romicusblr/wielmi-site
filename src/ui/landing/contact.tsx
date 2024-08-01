@@ -40,7 +40,8 @@ const ContactSection: FC = function () {
           fill
           priority
           quality={100}
-          src="/kontakt-bg.jpeg"
+          src="/images/kontakt-bg.jpeg"
+          sizes="100%"
         />
       <div className="sm:col-start-2 sm:row-start-3 lg:row-start-1 py-16 px-8">
         <h2 className="text-dark-grey text-3xl">Czy masz jakiś pomysł?</h2>
@@ -85,7 +86,7 @@ const ContactSection: FC = function () {
       </div>
       <ResponsiveImage
         className="h-full lg:col-start-3 object-bottom hidden lg:block"
-        src="/kontakt-image.jpeg"
+        src="/images/kontakt-image.jpeg"
         alt="macbook"
       />
       <GridLineH className="col-span-full row-start-2" />

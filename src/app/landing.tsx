@@ -9,10 +9,12 @@ import IconCardSection from "@/ui/landing/icon-cards";
 import InfoSection from "@/ui/landing/info";
 import TeamSection from "@/ui/landing/team";
 import ContactSection from "@/ui/landing/contact";
+import NavBar from "@/ui/landing/navbar-landing";
 
 const Landing: FC = function () {
   return (
     <>
+      <NavBar />
       <Hero />
       <GridLineH />
       <AboutSection />
