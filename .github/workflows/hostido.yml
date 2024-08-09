@@ -46,6 +46,7 @@ jobs:
         env:
           NEXT_PUBLIC_FORM_ACCESS_KEY: ${{ vars.NEXT_PUBLIC_FORM_ACCESS_KEY }}
           NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+          SITE_URL: https://wielmi.pl
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
