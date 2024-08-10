@@ -63,7 +63,7 @@ const NavBar: FC = function () {
             </Link>
           </li>
         </ul>
-        <div className="lg:block hidden">
+        <div className="lg:flex lg:justify-end xl:justify-center hidden">
           <Link className={navLiClass} href={`tel:${PHONENUMBER}`}>
             {formatNumber(PHONENUMBER)}
           </Link>
