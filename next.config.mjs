@@ -8,6 +8,7 @@ const withBundleAnalyzer = analyzer({
 const nextConfig = withExportImages(
   withBundleAnalyzer({
     output: "export",
+    trailingSlash: true,
     basePath: process.env.BASE_PATH ?? "",
   })
 );
