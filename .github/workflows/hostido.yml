@@ -73,6 +73,10 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy to server
+      - name: Deploy to server using rsync
         run: |
-          scp -P ${{ secrets.SSH_PORT }} -r ./build/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/wielmi.pl/public_html
+          rsync -avz --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/wielmi.pl/public_html/
+
+      # - name: Deploy to server
+      #   run: |
+      #     scp -P ${{ secrets.SSH_PORT }} -r ./build/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/wielmi.pl/public_html
