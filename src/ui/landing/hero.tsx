@@ -37,7 +37,7 @@ const Hero: FC = function () {
       </div>
       <div className="h-12 flex justify-center lg:row-start-5 lg:col-start-3 sm:col-start-2 row-start-6">
         <Link href={CONTACT_HASH}>
-          <BrandedButton className="px-12">napisz do nas</BrandedButton>
+          <BrandedButton className="px-12 sm:w-96 w-full">napisz do nas</BrandedButton>
         </Link>
       </div>
     </div>
