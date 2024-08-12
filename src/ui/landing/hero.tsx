@@ -23,7 +23,7 @@ const Hero: FC = function () {
       <div
         className={classnames(
           paddingLeft,
-          "sm:col-start-2 lg:col-end-4 row-start-3 flex flex-col items-center lg:items-stretch justify-end 2xl:text-7xl sm:text-6xl text-4xl 2xl:pl-64"
+          "sm:col-start-2 lg:col-end-4 row-start-3 flex flex-col items-center lg:items-stretch justify-end 2xl:text-7xl sm:text-6xl text-4xl"
         )}
       >
         <h2>PROJEKTUJEMY</h2>
