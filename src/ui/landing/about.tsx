@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const AboutSection: FC = function () {
   return (
-    <section className="grid-layout" id="wielmi">
+    <section className="grid-layout pt-20 -mt-20" id="wielmi">
       <div className="sm:col-start-2 p-12">
         <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">O Wielmi</h2>
       </div>
