@@ -85,7 +85,7 @@ const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, id 
   return (
     <>
       <ResponsiveImage className={classNames("lg:h-[48rem] h-[36rem] lg:col-span-2 col-span-full", classImage)} src={imageSrc} alt={heading} />
-      <article className={classNames("px-12 py-16 lg:col-start-2 sm:col-start-2 pt-20 -mt-20", classArticle)} id={id}>
+      <article className={classNames("px-12 py-16 lg:col-start-2 sm:col-start-2", classArticle)} id={id}>
         <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8">
           {heading}
         </h2>
