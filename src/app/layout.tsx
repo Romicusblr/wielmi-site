@@ -21,7 +21,7 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
   return (
-    <html lang="pl-PL" className="scroll-smooth">
+    <html lang="pl-PL" className="scroll-smooth scroll-pt-20">
       <body className={classNames(font.className, "text-justify text-grey")}>
         {children}
         <Footer />

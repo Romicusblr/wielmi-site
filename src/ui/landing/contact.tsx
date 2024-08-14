@@ -33,7 +33,7 @@ const ContactSection: FC = function () {
   });
 
   return (
-    <section className="relative grid-layout w-full bg-cover bg-center pt-20 -mt-20" id="contact">
+    <section className="relative grid-layout w-full bg-cover bg-center" id="contact">
         <Image
           alt="Kontakt Background Image"
           className="-z-10 object-cover"
