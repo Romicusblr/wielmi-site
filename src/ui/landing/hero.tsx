@@ -13,7 +13,7 @@ const Hero: FC = function () {
     <div className="relative w-full h-screen grid-layout grid-rows-6 text-dark-grey">
       <Image
         alt="cozy room"
-        className="-z-10 object-cover"
+        className="-z-10 object-cover opacity-80"
         fill
         priority
         quality={100}
