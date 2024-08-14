@@ -13,11 +13,11 @@ const Hero: FC = function () {
     <div className="relative w-full h-screen grid-layout grid-rows-6 text-dark-grey">
       <Image
         alt="cozy room"
-        className="-z-10 object-cover opacity-80"
+        className="-z-10 object-cover"
         fill
         priority
         quality={100}
-        src="/images/wielmi-1.png"
+        src="/images/hero.png"
         sizes="100%"
       />
       <div
