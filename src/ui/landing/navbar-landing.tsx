@@ -32,7 +32,7 @@ const NavBar: FC = function () {
   const navLiClass =
     "whitespace-nowrap flex justify-center lg:justify-end p-2 lg:p-2 hover:text-brand hover:underline underline-offset-8 hover:scale-105 transform transition duration-150 ease-in-out";
   return (
-    <nav className="p-2 fixed z-30 w-full text-dark-grey bg-grey bg-opacity-90 px-2 sm:px-0">
+    <nav className="lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey bg-opacity-90 px-2 sm:px-0">
       <div className="grid-layout items-center">
         <div className="flex items-center justify-between col-span-full lg:col-span-1">
           <div className="h-12 w-24 sm:w-[10vw] p-2">

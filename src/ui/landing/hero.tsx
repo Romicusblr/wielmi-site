@@ -17,7 +17,7 @@ const Hero: FC = function () {
         fill
         priority
         quality={100}
-        src="/images/wielmi-1.png"
+        src="/images/hero.png"
         sizes="100%"
       />
       <div
