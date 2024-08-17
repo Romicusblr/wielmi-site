@@ -6,7 +6,7 @@ import classNames from "classnames";
 import Footer from "@/ui/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const font = Montserrat({ subsets: ["latin"], weight: ["100", "400", "700"] });
+const font = Montserrat({ subsets: ["latin", "latin-ext"] });
 
 interface RootLayoutProps {
   children?: React.ReactNode;
