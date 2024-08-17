@@ -5,6 +5,7 @@ import type { FC } from "react";
 import classNames from "classnames";
 import Footer from "@/ui/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import NavBar from "@/ui/landing/navbar-landing";
 
 const font = Montserrat({ subsets: ["latin", "latin-ext"] });
 
@@ -23,6 +24,7 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   return (
     <html lang="pl-PL" className="scroll-smooth scroll-pt-20">
       <body className={classNames(font.className, "text-justify text-grey bg-[#F6FAFF]")}>
+        <NavBar />
         {children}
         <Footer />
       </body>

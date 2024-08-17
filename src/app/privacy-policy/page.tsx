@@ -1,10 +1,8 @@
 import type { FC } from "react";
-import NavBar from "@/ui/navbar";
 
 const Page: FC = function () {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen bg-grey text-dark-grey">
-      <NavBar />
       <div className="container mx-auto px-4 pt-20">
         <h1 className="text-4xl font-bold mb-6">Polityka Prywatności</h1>
 
