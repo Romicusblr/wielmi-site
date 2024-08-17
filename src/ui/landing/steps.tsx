@@ -35,8 +35,8 @@ interface CardProps {
 
 const Card: FC<CardProps> = function ({ num, heading, text }) {
   return (
-    <article className="p-4 pt-12 bg-brand-light text-sm shadow-lg relative transition-transform duration-200 hover:-translate-y-2 transform">
-      <p className="absolute left-1 top-1 text-3xl text-muted-grey font-bold">{num}</p>
+    <article className="p-4 pt-16 bg-brand-light text-sm shadow-lg relative transition-transform duration-200 hover:-translate-y-2 transform">
+      <p className="absolute left-4 top-2 text-4xl text-brand font-[250]">{num}</p>
       <h3 className="font-semibold mb-4">{heading}</h3>
       <p>{text}</p>
     </article>
