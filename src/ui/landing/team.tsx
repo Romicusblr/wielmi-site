@@ -39,7 +39,7 @@ const Person: FC<PersonProps> = function ({ name, description, image }) {
 
 const TeamSection: FC = function () {
   return (
-    <section className="w-full py-8 bg-grey text-dark-grey grid-layout" id="team">
+    <section className="w-full py-8 bg-grey text-dark-grey grid-layout">
       <div className="text-3xl sm:col-start-2 lg:col-end-4 p-8">
         <h2 className="font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8 lg:text-left text-center">
           NASZ ZESPÓŁ

@@ -24,8 +24,8 @@ export const GridLineH: FC<GridLineProps> = function ({ className }) {
 const GridLines: FC = function () {
   return (
     <>
-      <GridLineV className="hidden lg:block"/>
       <GridLineV className="hidden sm:block start-[12vw]" />
+      <GridLineV className="hidden lg:block start-[50vw]"/>
       <GridLineV className="hidden sm:block end-[12vw]" />
     </>
   );
