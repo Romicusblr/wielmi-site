@@ -3,7 +3,7 @@ import Image from "next-export-optimize-images/image";
 
 const Page: FC = function () {
   return (
-    <section className="grid-layout pt-16 border border-red-700 ">
+    <section className="grid-layout">
       <div className="sm:col-start-2">
         <h1 className="text-4xl font-bold">INTELIGENTNY DOM</h1>
         <h2 className="text-2xl text-brand font-light mt-4">ZWYCZAJ KOMFORTU</h2>

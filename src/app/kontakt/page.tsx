@@ -1,13 +1,8 @@
 import type { FC } from "react";
+import PageWrapper from "@/ui/page";
 
-const Page: FC = function () {
-  return (
-    <section className="grid-layout pt-20">
-      <div className="col-span-full">
-        <h1 className="text-4xl font-bold">Kontakt</h1>
-      </div>
-    </section>
-  );
-};
+const Page: FC = () => {
+  return <PageWrapper name="Kontakt"/>
+}
 
 export default Page;

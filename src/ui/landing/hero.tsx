@@ -10,7 +10,7 @@ import { CONTACT_HASH } from "@/constants";
 const Hero: FC = function () {
   const paddingLeft = "2xl:pl-60 xl:pl-48 lg:pl-36";
   return (
-    <div className="relative w-full h-screen grid-layout grid-rows-6 text-dark-grey">
+    <div className="relative w-full h-screen grid-layout grid-rows-6 text-dark-grey -mt-20">
       <Image
         alt="cozy room"
         className="-z-10 object-cover brightness-[0.5] contrast-[.75]"

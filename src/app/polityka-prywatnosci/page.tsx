@@ -1,9 +1,10 @@
+import PageWrapper from "@/ui/page";
 import type { FC } from "react";
 
 const Page: FC = function () {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen bg-grey text-dark-grey">
-      <div className="container mx-auto px-4 pt-20">
+    <PageWrapper>
+      <div className="px-4 py-8 sm:col-start-2 lg:col-end-4">
         <h1 className="text-4xl font-bold mb-6">Polityka Prywatności</h1>
 
         <section className="mb-6">
@@ -131,7 +132,7 @@ const Page: FC = function () {
           </p>
         </section>
       </div>
-    </main>
+    </PageWrapper>
   );
 };
 

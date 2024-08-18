@@ -24,7 +24,7 @@ const Footer: FC = function () {
             <a href="mailto:kontakt@wielmi.pl">kontakt@wielmi.pl</a>
           </p>
           <p className="mt-4">
-            <Link href="/privacy-policy">Polityka Prywatności</Link>
+            <Link href="/polityka-prywatnosci">Polityka Prywatności</Link>
           </p>
         </div>
       </div>

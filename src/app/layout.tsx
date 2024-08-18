@@ -27,7 +27,7 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
       <body className={classNames(font.className, "text-justify text-grey bg-[#F6FAFF]")}>
         <GridLines />
         <NavBar />
-        <main className="flex flex-col justify-between min-h-screen">{children}</main>
+        <main className="flex flex-col justify-between min-h-screen pt-20">{children}</main>
         <Footer />
       </body>
       {/* <GoogleAnalytics gaId={gaId} /> */}
