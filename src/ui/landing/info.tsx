@@ -55,7 +55,7 @@ const infos = [
     heading: "SIECI LOKALNE",
     article: (
       <>
-        <p className="text-3xl mb-8">ZINTEGROWANE ROZWIĄZANIA TECHOLOGICZNNE</p>
+        <p className="text-3xl mb-8">ZINTEGROWANE ROZWIĄZANIA TECHNOLOGICZNE</p>
         <p className="mb-8">
           Specjalizujemy się w tworzeniu kompleksowych rozwiązań zapewniających ciągłą i wysokiej jakości pracę systemów
           w Twoim domu.
