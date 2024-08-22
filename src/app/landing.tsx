@@ -18,6 +18,7 @@ const Landing: FC = function () {
       <Hero />
       <GridLineH />
       <AboutSection />
+      <GridLineH/>
       <WorkStepsSection />
       <GridLineH />
       <BlackCardSection />

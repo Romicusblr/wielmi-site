@@ -45,7 +45,7 @@ const Card: FC<CardProps> = function ({ num, heading, text }) {
 
 const WorkStepsSection: FC = function () {
   return (
-    <section className="grid-layout bg-[#F6FAFF]">
+    <section className="grid-layout">
       <div className="lg:col-start-3 sm:col-start-2 p-12">
         <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">ETAPY PRACY</h2>
       </div>
