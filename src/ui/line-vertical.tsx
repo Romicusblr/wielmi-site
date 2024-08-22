@@ -7,7 +7,7 @@ interface GridLineProps {
 
 const GridLineV: FC<GridLineProps> = function ({ className }) {
   return (
-    <div className={classNames(className, "fixed z-10 min-h-screen m-0 bg-gray-400 border-none w-[1px]")} />
+    <div className={classNames(className, "fixed min-h-screen m-0 bg-gray-400 border-none w-[1px]")} />
   );
 };
 
