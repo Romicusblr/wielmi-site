@@ -2,7 +2,7 @@
 
 import { useState, type FC } from "react";
 import ResponsiveImage from "@/ui/responsive-image";
-import GridLineH from "@/ui/line-horizontal";
+import { GridLineH } from "@/ui/grid-lines";
 import BrandedButton from "@/ui/button";
 import SocialLinks from "@/ui/social-links";
 import { useForm } from "react-hook-form";

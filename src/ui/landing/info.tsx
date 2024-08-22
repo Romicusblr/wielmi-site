@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import GridLineH from "@/ui/line-horizontal";
+import { GridLineH } from "@/ui/grid-lines";
 import ResponsiveImage from "../responsive-image";
 import classNames from "classnames";
 

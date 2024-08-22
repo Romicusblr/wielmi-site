@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import BrandedButton from "@/ui/button";
-import GridLineH from "@/ui/line-horizontal";
+import { GridLineH } from "@/ui/grid-lines";
 import { CONTACT_HASH } from "@/constants";
 import Link from "next/link";
 
