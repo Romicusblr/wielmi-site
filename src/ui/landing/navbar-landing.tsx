@@ -1,7 +1,8 @@
 "use client";
-import { useState, type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import Link from "next/link";
 import classNames from "classnames";
+import { throttle } from "lodash";
 import Logo from "../logo";
 import MenuButton from "../menu-button";
 import { PHONENUMBER } from "@/constants";
@@ -29,10 +30,29 @@ const NavBar: FC = function () {
     setIsOpen(false);
   };
 
+  const THRESHOLD = 100; // px
+  const THROTTLE_THRESHOLD = 100; // ms
+  const [isTop, setIsTop] = useState(false);
+
+  useEffect(() => {
+    const scroll = throttle(() => {
+      const { scrollY } = window;
+      setIsTop(scrollY > THRESHOLD);
+    }, THROTTLE_THRESHOLD);
+    document.addEventListener("scroll", scroll);
+
+    return () => document.removeEventListener("scroll", scroll);
+  }, []);
+
   const navLiClass =
     "whitespace-nowrap flex justify-center lg:justify-end p-2 lg:p-2 hover:text-brand hover:underline underline-offset-8 hover:scale-105 transform transition duration-150 ease-in-out";
   return (
-    <nav className="lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey bg-opacity-90 px-2 sm:px-0">
+    <nav
+      className={classNames(
+        "lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-2 sm:px-0 transition-all duration-1000",
+        !isTop && "bg-opacity-0"
+      )}
+    >
       <div className="grid-layout items-center">
         <div className="flex items-center justify-between col-span-full lg:col-span-1">
           <div className="h-12 w-24 sm:w-[10vw] p-2">
