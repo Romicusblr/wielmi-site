@@ -28,6 +28,6 @@ body {
 
 @layer components {
   .grid-layout {
-    @apply grid lg:grid-cols-[10vw_1fr_1fr_10vw] sm:grid-cols-[10vw_1fr_10vw];
+    @apply grid lg:grid-cols-[12vw_1fr_1fr_12vw] sm:grid-cols-[12vw_1fr_12vw];
   }
 }

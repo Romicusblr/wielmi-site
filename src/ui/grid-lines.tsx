@@ -25,8 +25,8 @@ const GridLines: FC = function () {
   return (
     <>
       <GridLineV className="hidden lg:block"/>
-      <GridLineV className="hidden sm:block start-[10vw]" />
-      <GridLineV className="hidden sm:block end-[10vw]" />
+      <GridLineV className="hidden sm:block start-[12vw]" />
+      <GridLineV className="hidden sm:block end-[12vw]" />
     </>
   );
 };
