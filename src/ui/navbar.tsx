@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, type FC } from "react";
 import { throttle } from "lodash";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
 import Logo from "@/ui/logo";
@@ -33,16 +34,20 @@ const NavBar: FC = function () {
   const THRESHOLD = 100; // px
   const THROTTLE_THRESHOLD = 100; // ms
   const [isTop, setIsTop] = useState(false);
-
+  const path = usePathname();
   useEffect(() => {
-    const scroll = throttle(() => {
-      const { scrollY } = window;
-      setIsTop(scrollY > THRESHOLD);
-    }, THROTTLE_THRESHOLD);
-    document.addEventListener("scroll", scroll);
-
-    return () => document.removeEventListener("scroll", scroll);
-  }, []);
+    if (path === "/") {
+      const scroll = throttle(() => {
+        const { scrollY } = window;
+        setIsTop(scrollY < THRESHOLD);
+      }, THROTTLE_THRESHOLD);
+      document.addEventListener("scroll", scroll);
+      scroll();
+      return () => document.removeEventListener("scroll", scroll);
+    } else {
+      setIsTop(false);
+    }
+  }, [path]);
 
   const navLiClass =
     "whitespace-nowrap flex justify-center lg:justify-end p-2 lg:p-2 hover:text-brand hover:underline underline-offset-8 hover:scale-105 transform transition duration-150 ease-in-out";
@@ -50,7 +55,7 @@ const NavBar: FC = function () {
     <nav
       className={classNames(
         "lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-2 sm:px-0 transition-all duration-1000",
-        !isTop && "bg-opacity-0"
+        isTop && "bg-opacity-0"
       )}
     >
       <div className="grid-layout items-center">
