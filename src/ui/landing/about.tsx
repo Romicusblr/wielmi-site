@@ -1,12 +1,12 @@
 import type { FC } from "react";
 import BrandedButton from "@/ui/button";
-import GridLineH from "@/ui/line-horizontal";
+import { GridLineH } from "@/ui/grid-lines";
 import { CONTACT_HASH } from "@/constants";
 import Link from "next/link";
 
 const AboutSection: FC = function () {
   return (
-    <section className="grid-layout bg-brand-light" id="wielmi">
+    <section className="grid-layout" id="wielmi">
       <div className="sm:col-start-2 p-12">
         <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">O Wielmi</h2>
       </div>

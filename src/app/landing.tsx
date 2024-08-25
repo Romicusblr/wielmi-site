@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import GridLineH from "@/ui/line-horizontal";
+import { GridLineH } from "@/ui/grid-lines";
 import Testimonials from "@/ui/landing/testimonials";
 import Hero from "@/ui/landing/hero";
 import AboutSection from "@/ui/landing/about";
