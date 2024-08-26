@@ -5,6 +5,8 @@ import type { FC } from "react";
 import classNames from "classnames";
 import Footer from "@/ui/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import NavBar from "@/ui/navbar";
+import GridLines from "@/ui/grid-lines";
 
 const font = Montserrat({ subsets: ["latin", "latin-ext"] });
 
@@ -23,7 +25,9 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   return (
     <html lang="pl-PL" className="scroll-smooth scroll-pt-20">
       <body className={classNames(font.className, "text-justify text-grey bg-[#F6FAFF]")}>
-        {children}
+        <GridLines />
+        <NavBar />
+        <main className="flex flex-col justify-between min-h-screen pt-20">{children}</main>
         <Footer />
       </body>
       {/* <GoogleAnalytics gaId={gaId} /> */}
