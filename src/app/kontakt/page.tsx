@@ -1,8 +1,14 @@
 import type { FC } from "react";
-import PageWrapper from "@/ui/page";
+import { GridLineH } from "@/ui/grid-lines";
+import Section1 from "./section1";
 
-const Page: FC = () => {
-  return <PageWrapper name="Kontakt"/>
-}
+const Page: FC = function () {
+  return (
+    <>
+      <Section1 />
+      <GridLineH />
+    </>
+  );
+};
 
 export default Page;
