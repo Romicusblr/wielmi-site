@@ -2,6 +2,9 @@ import type { FC } from "react";
 import classNames from "classnames";
 import ResponsiveImage from "@/ui/responsive-image";
 import { GridLineH } from "@/ui/grid-lines";
+import { FaDroplet, FaLock, FaRegLightbulb, FaWarehouse, FaAsterisk } from "react-icons/fa6";
+import { IconType } from "react-icons";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 // interface Props {
 //   invert: boolean;
@@ -12,7 +15,7 @@ import { GridLineH } from "@/ui/grid-lines";
 
 const services = [
   {
-    icon: "🔒", // Placeholder for icon
+    icon: FaLock,
     title: "Systemy bezpieczeństwa",
     items: [
       "Inteligentne zamki i systemy zamykania",
@@ -22,7 +25,7 @@ const services = [
     ],
   },
   {
-    icon: "✔️", // Placeholder for icon
+    icon: FaRegCheckCircle, // Placeholder for icon
     title: "Oszczędność energii i kontrola klimatu",
     items: [
       "Inteligentne termostaty",
@@ -32,7 +35,7 @@ const services = [
     ],
   },
   {
-    icon: "💡", // Placeholder for icon
+    icon: FaRegLightbulb, // Placeholder for icon
     title: "Oświetlenie",
     items: [
       "Systemy sterowania oświetleniem za pomocą harmonogramów lub czujników ruchu i natężenia światła.",
@@ -43,7 +46,7 @@ const services = [
 
 const services2 = [
   {
-    icon: "💧", // Placeholder for icon
+    icon: FaDroplet, // Placeholder for icon
     title: "Systemy zaopatrzenia w wodę i kontroli wody",
     items: [
       "Czujniki wycieku wody",
@@ -52,22 +55,22 @@ const services2 = [
     ],
   },
   {
-    icon: "🏠", // Placeholder for icon
+    icon: FaWarehouse, // Placeholder for icon
     title: "Systemy kontroli dostępu i automatyzacji",
     items: ["Zarządzanie i kontrola stanu bram garażowych, wjazdowych, furtki, drzwi wejściowych, okien i rolet"],
   },
   {
-    icon: "✳️", // Placeholder for icon
+    icon: FaAsterisk, // Placeholder for icon
     title: "Sterowanie urządzeniami domowymi",
     items: ["Nagłośnienie", "Urządzenia kuchenne", "I wiele, wiele innych różnych urządzeń!"],
   },
 ];
 
-const ServiceItem: FC<{ icon: string; title: string; items: string[] }> = ({ icon, title, items }) => {
+const ServiceItem: FC<{ icon: IconType; title: string; items: string[] }> = ({ icon: Icon, title, items }) => {
   return (
-    <div className="flex items-start mb-8">
-      <div className="flex-shrink-0 bg-dark-grey text-white rounded-full w-16 h-16 flex items-center justify-center">
-        <span className="text-2xl">{icon}</span>
+    <div className="flex items-start p-4 lg:min-h-48">
+      <div className="flex-shrink-0 bg-grey text-white rounded-full w-16 h-16 flex items-center justify-center">
+        <Icon size={28} />
       </div>
       <div className="ml-6">
         <h3 className="text-xl font-bold text-grey">{title}</h3>
