@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, type FC } from "react";
-import ResponsiveImage from "@/ui/responsive-image";
-import { GridLineH } from "@/ui/grid-lines";
-import BrandedButton from "@/ui/button";
-import SocialLinks from "@/ui/social-links";
+import ResponsiveImage from "@/ui/common/responsive-image";
+import { GridLineH } from "@/ui/sections/grid-lines";
+import BrandedButton from "@/ui/common/button";
+import SocialLinks from "@/ui/sections/social-links";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import Image from "next-export-optimize-images/image";

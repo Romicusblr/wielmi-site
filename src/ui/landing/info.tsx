@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { GridLineH } from "@/ui/grid-lines";
-import ResponsiveImage from "../responsive-image";
+import { GridLineH } from "@/ui/sections/grid-lines";
+import ResponsiveImage from "@/ui/common/responsive-image";
 import classNames from "classnames";
 
 const infos = [

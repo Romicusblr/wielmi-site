@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { GridLineH } from "@/ui/grid-lines";
+import { GridLineH } from "@/ui/sections/grid-lines";
 import Section1 from "./section1";
 
 const Page: FC = function () {

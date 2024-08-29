@@ -8,6 +8,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
+    "ts": "tsc",
     "analyze": "ANALYZE=true pnpm build"
   },
   "dependencies": {

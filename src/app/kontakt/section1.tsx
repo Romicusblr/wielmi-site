@@ -1,4 +1,4 @@
-import SocialLinks from "@/ui/social-links";
+import SocialLinks from "@/ui/sections/social-links";
 import type { FC } from "react";
 
 const Section1: FC = () => {

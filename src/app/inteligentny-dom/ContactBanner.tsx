@@ -1,4 +1,4 @@
-import ResponsiveImage from "@/ui/responsive-image";
+import ResponsiveImage from "@/ui/common/responsive-image";
 
 const ContactBanner = () => {
   return (

@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import type { FC } from "react";
 import classNames from "classnames";
-import Footer from "@/ui/footer";
+import Footer from "@/ui/sections/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import NavBar from "@/ui/navbar";
-import GridLines from "@/ui/grid-lines";
+import NavBar from "@/ui/sections/navbar";
+import GridLines from "@/ui/sections/grid-lines";
 
 const font = Montserrat({ subsets: ["latin", "latin-ext"] });
 

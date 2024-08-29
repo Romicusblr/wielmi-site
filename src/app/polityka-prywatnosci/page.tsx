@@ -1,4 +1,4 @@
-import PageWrapper from "@/ui/page";
+import PageWrapper from "@/ui/common/page";
 import type { FC } from "react";
 
 const Page: FC = function () {

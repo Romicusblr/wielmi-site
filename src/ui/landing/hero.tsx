@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import Image from "next-export-optimize-images/image";
-import BrandedButton from "@/ui/button";
-import { GridLineH } from "@/ui/grid-lines";
-import SocialLinks from "@/ui/social-links";
+import BrandedButton from "@/ui/common/button";
+import { GridLineH } from "@/ui/sections/grid-lines";
+import SocialLinks from "@/ui/sections/social-links";
 import Link from "next/link";
 import classnames from "classnames";
 import { CONTACT_HASH } from "@/constants";

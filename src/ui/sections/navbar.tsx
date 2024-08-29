@@ -4,9 +4,9 @@ import { throttle } from "lodash";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
-import Logo from "@/ui/logo";
-import MenuButton from "@/ui/menu-button";
 import { PHONENUMBER } from "@/constants";
+import Logo from "@/ui/common/logo";
+import MenuButton from "@/ui/common/menu-button";
 
 const navigation = [
   { name: "Inteligentny Dom", href: "/inteligentny-dom/" },

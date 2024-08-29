@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import GridLines from "../ui/grid-lines";
 import Landing from "./landing";
 
 const Page: FC = function () {

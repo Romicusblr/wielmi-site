@@ -1,17 +1,10 @@
 import type { FC } from "react";
 import classNames from "classnames";
-import ResponsiveImage from "@/ui/responsive-image";
-import { GridLineH } from "@/ui/grid-lines";
+import ResponsiveImage from "@/ui/common/responsive-image";
+import { GridLineH } from "@/ui/sections/grid-lines";
 import { FaDroplet, FaLock, FaRegLightbulb, FaWarehouse, FaAsterisk } from "react-icons/fa6";
 import { IconType } from "react-icons";
 import { FaRegCheckCircle } from "react-icons/fa";
-
-// interface Props {
-//   invert: boolean;
-//   imgSrc: string;
-//   heading: React.ReactNode;
-//   text: React.ReactNode;
-// }
 
 const services = [
   {
@@ -81,19 +74,6 @@ const ServiceItem: FC<{ icon: IconType; title: string; items: string[] }> = ({ i
         </ul>
       </div>
     </div>
-  );
-};
-
-const ServicesList: FC = () => {
-  return (
-    <>
-      <div className="p-8"></div>
-      <div className="p-8">
-        {services2.map((service, index) => (
-          <ServiceItem key={index} icon={service.icon} title={service.title} items={service.items} />
-        ))}
-      </div>
-    </>
   );
 };
 

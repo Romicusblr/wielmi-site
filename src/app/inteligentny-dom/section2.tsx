@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from "react";
 import classNames from "classnames";
-import ResponsiveImage from "@/ui/responsive-image";
-import { GridLineH } from "@/ui/grid-lines";
+import ResponsiveImage from "@/ui/common/responsive-image";
+import { GridLineH } from "@/ui/sections/grid-lines";
 
 interface Props {
   invert: boolean;
