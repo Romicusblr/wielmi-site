@@ -36,7 +36,7 @@ const Section4 = () => {
           src="/images/inteligentny-dom/dom.png" // Update with your image path
           alt="inteligentny-dom"
         >
-          <div className="p-2 grid grid-cols-4 gap-2 h-full text-white lg:mr-[12vw] text-xs">
+          <div className="p-2 lg:pr-0 grid grid-cols-4 gap-2 h-full text-white lg:mr-[12vw] text-xs">
             {services.map((service, index) => (
               <div
                 key={index}
