@@ -1,81 +1,78 @@
 import type { FC } from "react";
-import classNames from "classnames";
-import ResponsiveImage from "@/ui/common/responsive-image";
-import { GridLineH } from "@/ui/sections/grid-lines";
 import { FaDroplet, FaLock, FaRegLightbulb, FaWarehouse, FaAsterisk } from "react-icons/fa6";
-import { IconType } from "react-icons";
 import { FaRegCheckCircle } from "react-icons/fa";
+import ServiceItem from "@/ui/common/service-item";
 
 const services = [
   {
     icon: FaLock,
+    className: "lg:col-start-1",
     title: "Systemy bezpieczeństwa",
-    items: [
-      "Inteligentne zamki i systemy zamykania",
-      "Systemy nadzoru wideo",
-      "Czujniki ruchu i alarmy",
-      "Inteligentne dzwonki do drzwi",
-    ],
+    items: (
+      <ul className="list-disc ml-5 mt-2 text-grey">
+        <li>Inteligentne zamki i systemy zamykania</li>
+        <li>Systemy nadzoru wideo</li>
+        <li>Czujniki ruchu i alarmy</li>
+        <li>Inteligentne dzwonki do drzwi</li>
+      </ul>
+    ),
   },
   {
-    icon: FaRegCheckCircle, // Placeholder for icon
+    icon: FaRegCheckCircle,
+    className: "lg:col-start-1",
     title: "Oszczędność energii i kontrola klimatu",
-    items: [
-      "Inteligentne termostaty",
-      "Sterowanie ogrzewaniem, klimatyzacją i wentylacją",
-      "Inteligentne wtyczki i przełączniki",
-      "Inteligentne gniazdka i przełączniki",
-    ],
+    items: (
+      <ul className="list-disc ml-5 mt-2 text-grey">
+        <li>Inteligentne termostaty</li>
+        <li>Sterowanie ogrzewaniem, klimatyzacją i wentylacją</li>
+        <li>Inteligentne wtyczki i przełączniki</li>
+        <li>Inteligentne gniazdka i przełączniki</li>
+      </ul>
+    ),
   },
   {
-    icon: FaRegLightbulb, // Placeholder for icon
+    icon: FaRegLightbulb,
+    className: "lg:col-start-1",
     title: "Oświetlenie",
-    items: [
-      "Systemy sterowania oświetleniem za pomocą harmonogramów lub czujników ruchu i natężenia światła.",
-      "Sterowanie oświetleniem przy użyciu komend głosowych lub mobilnej aplikacji",
-    ],
+    items: (
+      <ul className="list-disc ml-5 mt-2 text-grey">
+        <li>Systemy sterowania oświetleniem za pomocą harmonogramów lub czujników ruchu i natężenia światła.</li>
+        <li>Sterowanie oświetleniem przy użyciu komend głosowych lub mobilnej aplikacji</li>
+      </ul>
+    ),
   },
-];
-
-const services2 = [
   {
-    icon: FaDroplet, // Placeholder for icon
+    icon: FaDroplet,
     title: "Systemy zaopatrzenia w wodę i kontroli wody",
-    items: [
-      "Czujniki wycieku wody",
-      "Automatyczne zarządzanie zaworami wody",
-      "Inteligentne systemy nawadniania ogrodów",
-    ],
+    items: (
+      <ul className="list-disc ml-5 mt-2 text-grey">
+        <li>Czujniki wycieku wody</li>
+        <li>Automatyczne zarządzanie zaworami wody</li>
+        <li>Inteligentne systemy nawadniania ogrodów</li>
+      </ul>
+    ),
   },
   {
-    icon: FaWarehouse, // Placeholder for icon
+    icon: FaWarehouse,
     title: "Systemy kontroli dostępu i automatyzacji",
-    items: ["Zarządzanie i kontrola stanu bram garażowych, wjazdowych, furtki, drzwi wejściowych, okien i rolet"],
+    items: (
+      <ul className="list-disc ml-5 mt-2 text-grey">
+        <li>Zarządzanie i kontrola stanu bram garażowych, wjazdowych, furtki, drzwi wejściowych, okien i rolet</li>
+      </ul>
+    ),
   },
   {
-    icon: FaAsterisk, // Placeholder for icon
+    icon: FaAsterisk,
     title: "Sterowanie urządzeniami domowymi",
-    items: ["Nagłośnienie", "Urządzenia kuchenne", "I wiele, wiele innych różnych urządzeń!"],
+    items: (
+      <ul className="list-disc ml-5 mt-2 text-grey">
+        <li>Nagłośnienie</li>
+        <li>Urządzenia kuchenne</li>
+        <li>I wiele, wiele innych różnych urządzeń!</li>
+      </ul>
+    ),
   },
 ];
-
-const ServiceItem: FC<{ icon: IconType; title: string; items: string[] }> = ({ icon: Icon, title, items }) => {
-  return (
-    <div className="flex items-start p-4 lg:min-h-48">
-      <div className="flex-shrink-0 bg-grey text-white rounded-full w-16 h-16 flex items-center justify-center">
-        <Icon size={28} />
-      </div>
-      <div className="ml-6">
-        <h3 className="text-xl font-bold text-grey">{title}</h3>
-        <ul className="list-disc ml-5 mt-2 text-grey">
-          {items.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const Section3 = () => {
   return (
@@ -86,14 +83,9 @@ const Section3 = () => {
         </h1>
         <h2 className="text-2xl font-light mt-4">NIEKTÓRE GŁÓWNE KORZYŚCI</h2>
       </div>
-      <div className="p-4 lg:col-start-2 sm:col-start-2">
+      <div className="p-4 sm:col-start-2 lg:col-end-4 grid lg:grid-cols-2 lg:grid-flow-dense">
         {services.map((service, index) => (
-          <ServiceItem key={index} icon={service.icon} title={service.title} items={service.items} />
-        ))}
-      </div>
-      <div className="p-4 lg:col-start-3 sm:col-start-2">
-        {services2.map((service, index) => (
-          <ServiceItem key={index} icon={service.icon} title={service.title} items={service.items} />
+          <ServiceItem key={index}  iconSize={28} {...service} />
         ))}
       </div>
     </section>
