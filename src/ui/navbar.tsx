@@ -9,12 +9,12 @@ import MenuButton from "@/ui/menu-button";
 import { PHONENUMBER } from "@/constants";
 
 const navigation = [
-  { name: "Inteligentny Dom", href: "/inteligentny-dom" },
-  { name: "Instalacje Elektryczne", href: "/instalacje-elektryczne" },
-  { name: "Sieci Lokalne", href: "/sieci-lokalne" },
-  { name: "Współpraca", href: "/wspolpraca" },
-  { name: "O Nas", href: "/o-nas" },
-  { name: "Kontakt", href: "/kontakt" },
+  { name: "Inteligentny Dom", href: "/inteligentny-dom/" },
+  { name: "Instalacje Elektryczne", href: "/instalacje-elektryczne/" },
+  { name: "Sieci Lokalne", href: "/sieci-lokalne/" },
+  { name: "Współpraca", href: "/wspolpraca/" },
+  { name: "O Nas", href: "/o-nas/" },
+  { name: "Kontakt", href: "/kontakt/" },
 ];
 
 function formatNumber(phoneNumber: string) {
@@ -77,7 +77,7 @@ const NavBar: FC = function () {
         >
           {navigation.map(({ name, href }) => (
             <li key={name} className="xl:px-2">
-              <Link className={navLiClass} href={href}>
+              <Link className={classNames(navLiClass, path === href && 'text-brand')} href={href} >
                 {name}
               </Link>
             </li>
