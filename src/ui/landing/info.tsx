@@ -1,16 +1,14 @@
 import type { FC } from "react";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import ResponsiveImage from "@/ui/common/responsive-image";
-import classNames from "classnames";
+import Info from "@/ui/sections/Info";
 
 const infos = [
   {
-    id: "smart",
     imageSrc: "/images/landing_id.jpeg",
     heading: "INTELIGENTNY DOM",
+    subtitles: ["ZARZĄDZANIE DOMEM", "Z DOWOLNEGO", "MIEJSCA NA ŚWIECIE"],
     article: (
       <>
-        <p className="text-2xl mb-8">ZARZĄDZANIE DOMEM Z DOWOLNEGO MIEJSCA NA ŚWIECIE</p>
         <p className="mb-8">
           Inteligentny dom to system, który łączy różne urządzenia elektroniczne i systemy w domu pod jednym
           zarządzaniem. Może to obejmować kontrolę oświetlenia, ogrzewania, klimatyzacji, bezpieczeństwa, systemów
@@ -24,7 +22,6 @@ const infos = [
     ),
   },
   {
-    id: "electric",
     imageSrc: "/images/landing_electric.png",
     heading: "INSTALACJE ELEKTRYCZNE",
     article: (
@@ -50,12 +47,11 @@ const infos = [
     ),
   },
   {
-    id: "lan",
     imageSrc: "/images/landing_lan.png",
     heading: "SIECI LOKALNE",
+    subtitles: ["ZINTEGROWANE", "ROZWIĄZANIA", "TECHNOLOGICZNE"],
     article: (
       <>
-        <p className="text-3xl mb-8">ZINTEGROWANE ROZWIĄZANIA TECHNOLOGICZNE</p>
         <p className="mb-8">
           Specjalizujemy się w tworzeniu kompleksowych rozwiązań zapewniających ciągłą i wysokiej jakości pracę systemów
           w Twoim domu.
@@ -70,31 +66,6 @@ const infos = [
   },
 ];
 
-interface InfoProps {
-  imageSrc: string;
-  heading: string;
-  article: JSX.Element;
-  reverse?: boolean;
-  id: string;
-}
-
-const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, id }) {
-  const classImage = reverse ? "lg:col-start-3" : "";
-  const classArticle = reverse ? "lg:col-start-2" : "lg:col-start-3";
-
-  return (
-    <>
-      <ResponsiveImage className={classNames("lg:h-[48rem] h-[36rem] lg:col-span-2 col-span-full", classImage)} src={imageSrc} alt={heading} />
-      <article className={classNames("px-12 py-16 lg:col-start-2 sm:col-start-2", classArticle)}>
-        <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8">
-          {heading}
-        </h2>
-        {article}
-      </article>
-    </>
-  );
-};
-
 const InfoSection: FC = function () {
   return (
     <section className="w-full pt-8 bg-grey text-dark-grey grid-layout grid-flow-dense">
@@ -102,7 +73,7 @@ const InfoSection: FC = function () {
       <GridLineH className="mt-12 col-span-full" />
       <Info {...infos[0]} />
       <GridLineH className="col-span-full" />
-      <Info {...infos[1]} reverse/>
+      <Info {...infos[1]} reverse />
       <GridLineH className="col-span-full" />
       <Info {...infos[2]} />
       <GridLineH className="col-span-full" />

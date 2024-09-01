@@ -3,12 +3,13 @@ import BrandedButton from "@/ui/common/button";
 import { GridLineH } from "@/ui/sections/grid-lines";
 import { CONTACT_HASH } from "@/constants";
 import Link from "next/link";
+import Heading from "@/ui/common/heading";
 
 const AboutSection: FC = function () {
   return (
     <section className="grid-layout">
       <div className="sm:col-start-2 p-12">
-        <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">O Wielmi</h2>
+        <Heading title="O Wielmi" />
       </div>
       <div className="sm:col-start-2 lg:col-start-3 p-12 pt-0 lg:pt-12">
         <h4 className="text-xl mb-4">Inteligentny dom Wielmi</h4>
@@ -30,9 +31,7 @@ const AboutSection: FC = function () {
       </div>
       <GridLineH className="col-span-full" />
       <div className="sm:col-start-2 p-12">
-        <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">
-          NASZA INSPIRACJA
-        </h2>
+        <Heading title="NASZA INSPIRACJA" />
       </div>
       <div className="sm:col-start-2 lg:col-start-3 p-12 pt-0 lg:pt-12">
         <p className="mb-4">

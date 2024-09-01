@@ -1,13 +1,12 @@
 import type { FC } from "react";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import ResponsiveImage from "@/ui/common/responsive-image";
-import classNames from "classnames";
+import Info from "@/ui/sections/Info";
 
 const infos = [
   {
     id: "ESTETYKA",
     imageSrc: "/images/instalacje-elektryczne/estetyka.jpeg",
-    heading: "ESTETYKA I CABLE MENAGMENT:",
+    heading: "ESTETYKA I CABLE MENAGMENT",
     article: (
       <p className="mb-8">
         Estetyka i precyzyjne zarządzanie okablowaniem to dla nas kluczowe aspekty każdej instalacji. Dbałość o te
@@ -20,7 +19,7 @@ const infos = [
   {
     id: "electric",
     imageSrc: "/images/instalacje-elektryczne/profesjonalizm.jpeg",
-    heading: "PROFESJONALIZM I DOKŁADNOŚĆ:",
+    heading: "PROFESJONALIZM I DOKŁADNOŚĆ",
     article: (
       <p className="mb-4">
         Niezmiennie stawiamy na najwyższą jakość usług. Nie skracamy czasu pracy kosztem jakości czy ignorując standardy
@@ -32,7 +31,7 @@ const infos = [
   {
     id: "lan",
     imageSrc: "/images/instalacje-elektryczne/instalacje.jpeg",
-    heading: "INSTALACJE PRZYGOTOWANE NA PRZYSZŁOŚĆ:",
+    heading: "INSTALACJE PRZYGOTOWANE NA PRZYSZŁOŚĆ",
     article: (
       <>
         <p className="mb-8">
@@ -49,35 +48,6 @@ const infos = [
     ),
   },
 ];
-
-interface InfoProps {
-  imageSrc: string;
-  heading: string;
-  article: JSX.Element;
-  reverse?: boolean;
-  id: string;
-}
-
-const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, id }) {
-  const classImage = reverse ? "lg:col-start-3" : "";
-  const classArticle = reverse ? "lg:col-start-2" : "lg:col-start-3";
-
-  return (
-    <>
-      <ResponsiveImage
-        className={classNames("lg:h-[48rem] h-[36rem] lg:col-span-2 col-span-full", classImage)}
-        src={imageSrc}
-        alt={heading}
-      />
-      <article className={classNames("px-12 py-16 lg:col-start-2 sm:col-start-2", classArticle)}>
-        <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8">
-          {heading}
-        </h2>
-        {article}
-      </article>
-    </>
-  );
-};
 
 const InfoSection: FC = function () {
   return (

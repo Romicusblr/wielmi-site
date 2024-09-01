@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import Heading from "@/ui/common/heading";
 
 const cards = [
   {
@@ -47,7 +48,7 @@ const WorkStepsSection: FC = function () {
   return (
     <section className="grid-layout">
       <div className="lg:col-start-3 sm:col-start-2 p-12">
-        <h2 className="text-2xl font-bold underline underline-offset-8 decoration-brand decoration-4">ETAPY PRACY</h2>
+        <Heading title="ETAPY PRACY" />
       </div>
       <div className="col-span-full py-12 grid lg:grid-cols-6 sm:grid-cols-3 gap-4 justify-around sm:px-4 px-12">
         {cards.map(({ heading, text }, i) => {

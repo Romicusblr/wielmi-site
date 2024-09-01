@@ -4,6 +4,7 @@ import React, { FC, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import Image from "next-export-optimize-images/image";
+import Heading from "@/ui/common/heading";
 
 interface SlideProps {
   text: string;
@@ -78,20 +79,16 @@ const Testimonials = () => {
   }, [emblaApi]);
 
   return (
-    <section className="grid-layout text-dark-grey">
+    <section className="grid-layout ">
       <div className="sm:grid place-items-center hidden">
         <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollPrev}>
           <SlArrowLeft className="h-8 w-8" />
         </button>
       </div>
       <div className="overflow-hidden lg:col-span-2 m-8">
-        <div>
-          <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8 text-grey">
-            <span>CO MÓWIĄ O NAS NASI KLIENCI</span>
-          </h2>
-        </div>
+        <Heading title="CO MÓWIĄ O NAS KLIENCI"/>
         <div ref={emblaRef}>
-          <div className="flex justify-around">
+          <div className="flex justify-around text-dark-grey">
             {reviews.map((t) => {
               return <Slide key={t.name} {...t} />;
             })}

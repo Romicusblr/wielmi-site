@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import { FaUser } from "react-icons/fa6";
+import Heading from "@/ui/common/heading";
 
 const persons = [
   {
@@ -41,9 +42,7 @@ const TeamSection: FC = function () {
   return (
     <section className="w-full py-8 bg-grey text-dark-grey grid-layout">
       <div className="text-3xl sm:col-start-2 lg:col-end-4 p-8">
-        <h2 className="font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8 lg:text-left text-center">
-          NASZ ZESPÓŁ
-        </h2>
+        <Heading title="NASZ ZESPÓŁ"/>
         <p className="mb-8 lg:text-left text-center">Odpowiadamy za każdy projekt</p>
       </div>
       <div className="sm:col-start-2 lg:col-end-4 p-8 flex flex-col gap-8 lg:flex-row justify-between items-center">
