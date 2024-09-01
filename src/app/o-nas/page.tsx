@@ -1,12 +1,12 @@
 import type { FC } from "react";
-import { GridLineH } from "@/ui/sections/grid-lines";
-import Section1 from "./section1";
+import AboutSection from "@/ui/sections/about";
+import ContactSection from "@/ui/sections/contact";
 
 const Page: FC = function () {
   return (
     <>
-      <Section1 />
-      <GridLineH />
+      <AboutSection />
+      <ContactSection />
     </>
   );
 };
