@@ -70,7 +70,7 @@ const NavBar: FC = function () {
         <ul
           onClick={close}
           className={classNames(
-            "flex-col p-4 text-2xl h-[100vh] justify-start col-span-full",
+            "ml-8 flex-col p-4 text-2xl h-[100vh] justify-start col-span-full",
             "lg:h-auto lg:text-base lg:flex lg:flex-row lg:justify-center lg:col-span-2",
             isOpen ? "flex" : "hidden"
           )}
