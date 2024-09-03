@@ -11,7 +11,7 @@ const Heading: FC<HeadingProps> = ({ title, subtitles, tag }) => {
   const TitleTag = tag ?? "h1";
   return (
     <div>
-      <TitleTag className="font-bold text-4xl text-left uppercase mb-8">
+      <TitleTag className="font-bold text-5xl text-left uppercase mb-8">
         <span>{title}</span>
         <div className="bg-brand h-2 w-40 mt-2"></div>
       </TitleTag>

@@ -31,11 +31,6 @@ const iconCards = [
   },
 ];
 
-function getColByIndex(index: number) {
-  const mapping = [1, 3, 5, 2, 4];
-  return mapping[index];
-}
-
 interface IconCardProps {
   Icon: IconType;
   text: string;
