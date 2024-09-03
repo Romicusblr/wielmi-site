@@ -9,6 +9,7 @@ import IconCardSection from "@/ui/landing/icon-cards";
 import InfoSection from "@/ui/landing/info";
 import TeamSection from "@/ui/landing/team";
 import ContactSection from "@/ui/sections/contact";
+import StatisticsSection from "@/ui/landing/statistics";
 
 const Landing: FC = function () {
   return (
@@ -18,6 +19,8 @@ const Landing: FC = function () {
       <AboutSection />
       <GridLineH/>
       <WorkStepsSection />
+      <GridLineH />
+      <StatisticsSection />
       <GridLineH />
       <BlackCardSection />
       <GridLineH />
