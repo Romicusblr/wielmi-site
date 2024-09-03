@@ -1,63 +1,56 @@
-import type { FC } from "react";
-import Heading from "@/ui/common/heading";
+import Heading from "../common/heading";
 
-const cards = [
+const steps = [
   {
-    heading: 'Opracowanie koncepcji "Inteligentnego domu"',
-    text: "Przed podpisaniem umowy tworzymy koncepcję przyszłego systemu, uwzględniając Państwa styl życia, układ pomieszczeń i cechy architektoniczne domu.",
+    title: "Opracowanie koncepcji „Inteligentnego domu”",
+    description:
+      "Przed podpisaniem umowy tworzymy koncepcję przyszłego systemu, uwzględniając Państwa styl życia, układ pomieszczeń i cechy architektoniczne domu.",
   },
   {
-    heading: "Wykonanie projektu",
-    text: "Opracowujemy indywidualny projekt w ścisłej współpracy z projektantem, architektem oraz innymi wykonawcami.",
+    title: "Wykonanie projektu",
+    description:
+      "Opracowujemy indywidualny projekt w ścisłej współpracy z projektantem, architektem oraz innymi wykonawcami.",
   },
   {
-    heading: "Dobór i dostawa sprzętu",
-    text: "Kompletujemy sprzęt zgodnie z wymaganiami technicznymi i projektem wnętrz. Bezpośrednia współpraca z producentami pozwala nam na precyzyjne dopasowanie komponentów do Państwa potrzeb.",
+    title: "Dobór i dostawa sprzętu",
+    description:
+      "Kompletujemy sprzęt zgodnie z wymaganiami technicznymi i projektem wnętrz. Bezpośrednia współpraca z producentami pozwala nam na precyzyjne dopasowanie komponentów do Państwa potrzeb.",
   },
   {
-    heading: "Wykonanie instalacji",
-    text: "Realizujemy instalację systemu zgodnie ze wszystkimi regulacjami technicznymi i wymaganiami projektu. Jest to istotne, ponieważ niektóre rozwiązania konstrukcyjne są niemożliwe do zmiany po zakończeniu prac budowlanych.",
+    title: "Wykonanie instalacji",
+    description:
+      "Realizujemy instalację systemu zgodnie ze wszystkimi regulacjami technicznymi i wymaganiami projektu. Jest to istotne, ponieważ niektóre rozwiązania konstrukcyjne są niemożliwe do zmiany po zakończeniu prac budowlanych.",
   },
   {
-    heading: "Programowanie i uruchomienie",
-    text: "Zajmujemy się programowaniem i testowaniem sprzętu, opracowujemy scenariusze jego działania oraz szkolimy użytkowników w obsłudze systemu.",
+    title: "Programowanie i uruchomienie",
+    description:
+      "Zajmujemy się programowaniem i testowaniem sprzętu, opracowujemy scenariusze jego działania oraz szkolimy użytkowników w obsłudze systemu.",
   },
   {
-    heading: "Gwarancyjne i serwisowe usługi",
-    text: "Oferujemy kontrolę i aktualizację oprogramowania, modernizację systemu w razie potrzeby, a także wyjazdy na miejsce na życzenie klienta w celu wykonania prac serwisowych.",
+    title: "Gwarancyjne i serwisowe usługi",
+    description:
+      "Oferujemy kontrolę i aktualizację oprogramowania, modernizację systemu w razie potrzeby, a także wyjazdy na miejsce na życzenie klienta w celu wykonania prac serwisowych.",
   },
 ];
 
-interface CardProps {
-  num: string;
-  heading: string;
-  text: string;
-}
-
-const Card: FC<CardProps> = function ({ num, heading, text }) {
+const WorkSteps: React.FC = () => {
   return (
-    <article className="p-4 pt-16 bg-brand-light text-sm shadow-lg relative transition-transform duration-200 hover:-translate-y-2 transform">
-      <p className="absolute left-4 top-2 text-4xl text-brand font-[250]">{num}</p>
-      <h3 className="font-semibold mb-4">{heading}</h3>
-      <p>{text}</p>
-    </article>
-  );
-};
-
-const WorkStepsSection: FC = function () {
-  return (
-    <section className="grid-layout">
-      <div className="lg:col-start-3 sm:col-start-2 p-12">
+    <section className="grid-layout grid-flow-dense text-dark-grey bg-grey py-12">
+      <div className="sm:col-start-2 lg:col-start-3 p-12 items-start">
         <Heading title="ETAPY PRACY" />
       </div>
-      <div className="col-span-full py-12 grid lg:grid-cols-6 sm:grid-cols-3 gap-4 justify-around sm:px-4 px-12">
-        {cards.map(({ heading, text }, i) => {
-          const num = "0" + (i + 1);
-          return <Card num={num} key={heading} heading={heading} text={text} />;
-        })}
+      <div className="sm:col-start-2 p-12 space-y-8">
+        {steps.map((step, index) => (
+          <div key={index} className="flex items-start">
+            <div>
+              <h3 className="relative font-bold before:block before:absolute before:bg-white before:-left-14 before:w-4 before:h-4 before:border-4 before:top-1/2 before:transform before:-translate-y-1/2">{step.title}</h3>
+              <p className="mt-4">{step.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 };
 
-export default WorkStepsSection;
+export default WorkSteps;
