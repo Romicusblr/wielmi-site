@@ -5,7 +5,7 @@ import Hero from "@/ui/landing/hero";
 import AboutSection from "@/ui/sections/about";
 import WorkStepsSection from "@/ui/landing/steps";
 import BlackCardSection from "@/ui/landing/black-cards";
-import IconCardSection from "@/ui/landing/icon-cards";
+import ServicesSection from "@/ui/landing/services";
 import InfoSection from "@/ui/landing/info";
 import TeamSection from "@/ui/landing/team";
 import ContactSection from "@/ui/sections/contact";
@@ -24,7 +24,7 @@ const Landing: FC = function () {
       <GridLineH />
       <BlackCardSection />
       <GridLineH />
-      <IconCardSection />
+      <ServicesSection />
       <InfoSection />
       <TeamSection />
       <ContactSection />
