@@ -8,13 +8,13 @@ interface GridLineProps {
 
 export const GridLineV: FC<GridLineProps> = function ({ className }) {
   return (
-    <div className={classNames(className, "fixed min-h-screen w-[1px]", GRID_COLOR)} />
+    <div className={classNames(className, "fixed min-h-screen w-[1px] opacity-80", GRID_COLOR)} />
   );
 };
 
 export const GridLineH: FC<GridLineProps> = function ({ className }) {
   return (
-    <hr className={classNames(className, "h-[1px] w-full", GRID_COLOR)} />
+    <hr className={classNames(className, "h-[1px] w-full opacity-80", GRID_COLOR)} />
   );
 };
 
@@ -25,7 +25,7 @@ const GridLines: FC = function () {
   return (
     <>
       <GridLineV className="hidden sm:block start-[12vw]" />
-      <GridLineV className="hidden lg:block start-[50vw]"/>
+      <GridLineV className="hidden lg:block start-[50vw] -z-10"/>
       <GridLineV className="hidden sm:block end-[12vw]" />
     </>
   );

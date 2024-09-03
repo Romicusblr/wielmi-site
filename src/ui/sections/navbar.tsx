@@ -59,7 +59,7 @@ const NavBar: FC = function () {
       )}
     >
       <div className="grid-layout items-center">
-        <div className="flex items-center justify-between col-span-full lg:col-span-1">
+        <div className="flex items-center lg:justify-center justify-between col-span-full lg:col-span-1">
           <div className="h-12 w-24 sm:w-[10vw] p-2">
             <Logo />
           </div>

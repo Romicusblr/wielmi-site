@@ -34,15 +34,15 @@ const ContactSection: FC = function () {
 
   return (
     <section className="relative grid-layout w-full bg-cover bg-center" id="contact">
-        <Image
-          alt="Kontakt Background Image"
-          className="-z-10 object-cover"
-          fill
-          priority
-          quality={100}
-          src="/images/kontakt-bg.jpeg"
-          sizes="100%"
-        />
+      <Image
+        alt="Kontakt Background Image"
+        className="-z-10 object-cover"
+        fill
+        priority
+        quality={100}
+        src="/images/kontakt-bg.jpeg"
+        sizes="100%"
+      />
       <div className="sm:col-start-2 sm:row-start-3 lg:row-start-1 py-16 px-8">
         <h2 className="text-dark-grey text-3xl">Czy masz jakiś pomysł?</h2>
         <div className="shadow-lg rounded-lg mt-8">
@@ -79,7 +79,7 @@ const ContactSection: FC = function () {
               ></textarea>
             </div>
             <div className="flex justify-center text-dark-grey">
-              <BrandedButton className="px-12 bg-brand">Wysłać</BrandedButton>
+              <BrandedButton className="px-12 w-full bg-brand">Wysłać</BrandedButton>
             </div>
           </form>
         </div>
