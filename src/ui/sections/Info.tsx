@@ -19,6 +19,7 @@ const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, sub
     <>
       <ResponsiveImage
         className={classNames("lg:h-[48rem] h-[36rem] lg:col-span-2 col-span-full", classImage)}
+        imgClassName="object-right-top"
         src={imageSrc}
         alt={heading}
       />

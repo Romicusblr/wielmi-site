@@ -4,7 +4,7 @@ import Info from "@/ui/sections/Info";
 
 const infos = [
   {
-    imageSrc: "/images/landing_id.jpeg",
+    imageSrc: "/images/landing_id.png",
     heading: "INTELIGENTNY DOM",
     subtitles: ["ZARZĄDZANIE DOMEM", "Z DOWOLNEGO", "MIEJSCA NA ŚWIECIE"],
     article: (
@@ -22,7 +22,7 @@ const infos = [
     ),
   },
   {
-    imageSrc: "/images/landing_electric.png",
+    imageSrc: "/images/landing_electric.jpeg",
     heading: "INSTALACJE ELEKTRYCZNE",
     article: (
       <>
@@ -47,7 +47,7 @@ const infos = [
     ),
   },
   {
-    imageSrc: "/images/landing_lan.png",
+    imageSrc: "/images/landing_lan.jpeg",
     heading: "SIECI LOKALNE",
     subtitles: ["ZINTEGROWANE", "ROZWIĄZANIA", "TECHNOLOGICZNE"],
     article: (
