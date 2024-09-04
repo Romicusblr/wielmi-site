@@ -51,8 +51,8 @@ const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
 
 const BlackCardSection: FC = function () {
   return (
-    <section className="grid-layout py-12">
-      <div className="sm:col-start-2 lg:col-end-4 p-12 flex flex-col lg:flex-row gap-16 text-center">
+    <section className="grid-layout py-10">
+      <div className="sm:col-start-2 lg:col-end-4 py-10 px-12 flex flex-col lg:flex-row gap-16 text-center">
         {cards.map(({ heading, text }, i) => {
           return <BlackCard key={i} heading={heading} text={text} />;
         })}

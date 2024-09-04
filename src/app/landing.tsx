@@ -17,7 +17,7 @@ const Landing: FC = function () {
       <Hero />
       <GridLineH />
       <AboutSection />
-      <GridLineH/>
+      <GridLineH />
       <WorkStepsSection />
       <GridLineH />
       <StatisticsSection />
@@ -25,6 +25,8 @@ const Landing: FC = function () {
       <BlackCardSection />
       <GridLineH />
       <ServicesSection />
+      <GridLineH />
+      <div className="w-full h-40 bg-[#F5F5F5]"></div>
       <InfoSection />
       <TeamSection />
       <ContactSection />
