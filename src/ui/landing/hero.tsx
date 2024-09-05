@@ -11,9 +11,8 @@ import { Inter } from "next/font/google";
 const font = Inter({ subsets: ["latin", "latin-ext"] });
 
 const Hero: FC = function () {
-  const paddingLeft = "2xl:pl-60 xl:pl-48 lg:pl-36";
   return (
-    <div className="relative w-full h-screen grid-layout grid-rows-6 text-dark-grey -mt-20">
+    <div className="relative w-full h-screen grid-layout grid-rows-12 text-dark-grey -mt-20">
       <Image
         alt="cozy room"
         className="-z-10 object-cover brightness-[0.5] contrast-[.75]"
@@ -24,21 +23,36 @@ const Hero: FC = function () {
         sizes="100%"
       />
 
-      <div className="col-span-full row-start-4 hidden sm:flex flex-col justify-center">
+      <div
+        className={classnames(
+          font.className,
+          "col-span-full text-4xl font-[500] tracking-wider lg:hidden row-start-6 flex flex-col justify-end items-center"
+        )}
+      >
+        <h2>PROJEKTUJEMY</h2>
+        <h2>I REALIZUJEMY</h2>
+      </div>
+
+      <div className="col-span-full row-start-7 flex flex-col justify-center">
         <GridLineH />
       </div>
-      <div className={classnames("h-16 flex justify-center items-center gap-4 sm:col-start-2 row-start-5")}>
+      <div className="h-16 hidden lg:flex justify-center items-center gap-4 sm:col-start-2 row-start-10 lg:row-start-8">
         <div className="relative">
-          <div className={classnames(font.className, "2xl:text-7xl sm:text-6xl text-4xl absolute lg:left-0 -top-72 font-[500] tracking-wider")}>
+          <div
+            className={classnames(
+              font.className,
+              "lg:text-7xl sm:text-5xl absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none lg:-top-80 -top-48 font-[500] tracking-wider"
+            )}
+          >
             <h2>PROJEKTUJEMY</h2>
             <h2>I REALIZUJEMY</h2>
           </div>
           <SocialLinks iconClassName="h-8 w-8" />
         </div>
       </div>
-      <div className="h-16 flex justify-center lg:row-start-5 lg:col-start-3 sm:col-start-2 row-start-6">
-        <Link href={CONTACT_HASH}>
-          <BrandedButton className="px-12 sm:w-96 w-full">napisz do nas</BrandedButton>
+      <div className="h-16 flex justify-center lg:col-start-3 sm:col-start-2 row-start-8 px-12">
+        <Link className="w-full flex place-content-center" href={CONTACT_HASH}>
+          <BrandedButton className="px-12 w-full lg:max-w-[416px] max-w-[320px]">napisz do nas</BrandedButton>
         </Link>
       </div>
     </div>

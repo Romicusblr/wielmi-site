@@ -7,7 +7,11 @@ import BrandedButton from "../common/button";
 const infos = [
   {
     imageSrc: "/images/landing_id.png",
-    heading: "INTELIGENTNY DOM",
+    heading: (
+      <span>
+        INTELIGENTNY <br /> DOM
+      </span>
+    ),
     subtitles: ["ZARZĄDZANIE DOMEM", "Z DOWOLNEGO", "MIEJSCA NA ŚWIECIE"],
     article: (
       <div>
@@ -30,7 +34,11 @@ const infos = [
   },
   {
     imageSrc: "/images/landing_electric.jpeg",
-    heading: "INSTALACJE ELEKTRYCZNE",
+    heading: (
+      <span>
+        INSTALACJE <br /> ELEKTRYCZNE
+      </span>
+    ),
     article: (
       <>
         <p className="mb-4">
@@ -60,20 +68,24 @@ const infos = [
   },
   {
     imageSrc: "/images/landing_lan.png",
-    heading: "SIECI LOKALNE",
+    heading: (
+      <span>
+        SIECI <br /> LOKALNE
+      </span>
+    ),
     subtitles: ["ZINTEGROWANE", "ROZWIĄZANIA", "TECHNOLOGICZNE"],
     article: (
       <div>
         <div>
-        <p className="mb-8">
-          Specjalizujemy się w tworzeniu kompleksowych rozwiązań zapewniających ciągłą i wysokiej jakości pracę systemów
-          w Twoim domu.
-        </p>
-        <p>
-          Otrzymujesz komfort i technologię bez konieczności zagłębiania się w zawiłości szczegółów technicznych.
-          Wyobraź sobie na przykład, że możesz stworzyć atmosferę w swoim domu na imprezę, romantyczną kolację lub
-          rodzinny wieczór filmowy, nie ruszając się z kanapy.
-        </p>
+          <p className="mb-8">
+            Specjalizujemy się w tworzeniu kompleksowych rozwiązań zapewniających ciągłą i wysokiej jakości pracę
+            systemów w Twoim domu.
+          </p>
+          <p>
+            Otrzymujesz komfort i technologię bez konieczności zagłębiania się w zawiłości szczegółów technicznych.
+            Wyobraź sobie na przykład, że możesz stworzyć atmosferę w swoim domu na imprezę, romantyczną kolację lub
+            rodzinny wieczór filmowy, nie ruszając się z kanapy.
+          </p>
         </div>
         <div className="mt-10">
           <Link href="/">

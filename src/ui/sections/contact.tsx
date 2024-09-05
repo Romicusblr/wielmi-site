@@ -8,6 +8,10 @@ import SocialLinks from "@/ui/sections/social-links";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import Image from "next-export-optimize-images/image";
+import Heading from "../common/heading";
+import Link from "next/link";
+import { PHONENUMBER } from "@/constants";
+import { formatNumber } from "./navbar";
 
 const ContactSection: FC = function () {
   const { register, reset, handleSubmit } = useForm();
@@ -33,7 +37,7 @@ const ContactSection: FC = function () {
   });
 
   return (
-    <section className="relative grid-layout w-full bg-cover bg-center" id="contact">
+    <section className="relative grid-layout w-full bg-cover bg-center text-dark-grey py-20" id="contact">
       <Image
         alt="Kontakt Background Image"
         className="-z-10 object-cover"
@@ -43,11 +47,19 @@ const ContactSection: FC = function () {
         src="/images/kontakt-bg.jpeg"
         sizes="100%"
       />
-      <div className="sm:col-start-2 sm:row-start-3 lg:row-start-1 py-16 px-8">
-        <h2 className="text-dark-grey text-3xl">Czy masz jakiś pomysł?</h2>
-        <div className="shadow-lg rounded-lg mt-8">
-          <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-            <div>
+      <div className="sm:col-start-2 px-12">
+        <Heading
+          title={
+            <span>
+              Czy masz
+              <br />
+              jakiś pomysł?
+            </span>
+          }
+        />
+        <div className="shadow-lg rounded-lg mt-20">
+          <form className="flex flex-col justify-between gap-4" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex-none">
               <input
                 {...register("name", { required: true })}
                 type="text"
@@ -55,7 +67,7 @@ const ContactSection: FC = function () {
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <div>
+            <div className="flex-none">
               <input
                 {...register("email", { required: true })}
                 type="email"
@@ -63,7 +75,7 @@ const ContactSection: FC = function () {
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <div>
+            <div className="flex-none">
               <input
                 type="tel"
                 {...register("phone", { required: true })}
@@ -71,33 +83,34 @@ const ContactSection: FC = function () {
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <div>
+            <div className="flex-1">
               <textarea
                 {...register("message", { required: true })}
                 placeholder="Informacje dla nas..."
                 className="w-full px-4 py-2 border rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
-            <div className="flex justify-center text-dark-grey">
+            <div className="flex-none flex justify-center text-dark-grey">
               <BrandedButton className="px-12 w-full bg-brand">Wysłać</BrandedButton>
             </div>
           </form>
         </div>
       </div>
-      <ResponsiveImage
-        className="h-full lg:col-start-3 object-bottom hidden lg:block"
-        src="/images/kontakt-image.jpeg"
-        alt="macbook"
-      />
-      <GridLineH className="col-span-full row-start-2" />
-      <div className="text-dark-grey lg:col-start-3 sm:col-start-2 row-start-1 lg:row-start-3 px-8 py-16">
-        <h3 className="text-2xl">Współpraca</h3>
-        <p className="mt-4">Zapraszamy architektów do kontaktu z nami.</p>
-        <p className="mt-4">
+      <div className="text-dark-grey lg:col-start-3 sm:col-start-2 px-12">
+        <h3 className="text-5xl lg:mt-12 mt-20">Współpraca</h3>
+        <p className="lg:mt-24 mt-12 text-xl">
+          ZAPRASZAMY ARCHITEKTÓW <br /> DO KONTAKTU Z NAMI.
+        </p>
+        <div className="lg:max-w-80">
+        <p className="lg:mt-16 mt-12">
           Zawsze jesteśmy gotowi udzielić kompetentnej porady i pomocy tam, gdzie nie ma prostych rozwiązań.{" "}
         </p>
         <p>Z naszymi specjalistami możesz skonsultować się w każdej sprawie.</p>
-        <div className="mt-8">
+        </div>
+        <div className="lg:mt-16 mt-12 text-2xl">
+          <Link href={`tel:${PHONENUMBER}`}>{formatNumber(PHONENUMBER)}</Link>
+        </div>
+        <div className="mt-6">
           <SocialLinks />
         </div>
       </div>

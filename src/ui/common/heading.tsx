@@ -13,7 +13,7 @@ const Heading: FC<HeadingProps> = ({ title, titleClass, subtitles, tag }) => {
   const TitleTag = tag ?? "h1";
   return (
     <div>
-      <TitleTag className={classNames("font-medium text-5xl text-left mb-8", titleClass)}>
+      <TitleTag className={classNames("font-medium text-3xl sm:text-5xl text-left mb-8", titleClass)}>
         <span>{title}</span>
         <div className="bg-brand h-2 w-24 mt-2"></div>
       </TitleTag>

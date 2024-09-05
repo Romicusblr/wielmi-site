@@ -12,7 +12,7 @@ const AboutSection: FC = function () {
         <Heading title="O Wielmi" />
       </div>
       <div className="sm:col-start-2 lg:col-start-3 p-12 pt-0 lg:pt-12">
-        <h4 className="text-4xl mb-4 text-left">
+        <h4 className="text-2xl sm:text-4xl mb-4 text-left">
           Inteligentny dom <br /> Wielmi
         </h4>
         <p>
@@ -47,11 +47,9 @@ const AboutSection: FC = function () {
           pracy wykorzystują kreatywność i niestandardowe podejście.
         </p>
         <p className="mb-16">Jesteśmy otwarci na nowe projekty i gotowi do współpracy!</p>
-        <div className="flex justify-center">
-          <Link href={CONTACT_HASH}>
-            <BrandedButton className="px-12 sm:w-96 w-full">Czy masz jakiś pomysł?</BrandedButton>
-          </Link>
-        </div>
+        <Link className="w-full" href={CONTACT_HASH}>
+          <BrandedButton className="px-12 w-full max-w">Czy masz jakiś pomysł?</BrandedButton>
+        </Link>
       </div>
     </section>
   );
