@@ -10,6 +10,7 @@ import InfoSection from "@/ui/landing/info";
 import TeamSection from "@/ui/landing/team";
 import ContactSection from "@/ui/sections/contact";
 import StatisticsSection from "@/ui/landing/statistics";
+import ArrowDown from "@/ui/common/arrow-down";
 
 const Landing: FC = function () {
   return (
@@ -26,8 +27,15 @@ const Landing: FC = function () {
       <GridLineH />
       <ServicesSection />
       <GridLineH />
-      <div className="w-full h-40 bg-[#F5F5F5]"></div>
+      <div className="w-full h-40 bg-[#F5F5F5] grid place-content-center">
+        <ArrowDown />
+      </div>
       <InfoSection />
+      <GridLineH />
+      <div className="w-full h-40 bg-grey grid place-content-center">
+        <ArrowDown />
+      </div>
+      <GridLineH />
       <TeamSection />
       <ContactSection />
       <Testimonials />
