@@ -5,8 +5,9 @@ import { GridLineH } from "@/ui/sections/grid-lines";
 import SocialLinks from "@/ui/sections/social-links";
 import Link from "next/link";
 import classnames from "classnames";
-import { CONTACT_HASH } from "@/constants";
+import { CONTACT_HASH, LANDING_ABOUT } from "@/constants";
 import { Inter } from "next/font/google";
+import ArrowDown from "../common/arrow-down";
 
 const font = Inter({ subsets: ["latin", "latin-ext"] });
 
@@ -53,6 +54,11 @@ const Hero: FC = function () {
       <div className="h-16 flex justify-center lg:col-start-3 sm:col-start-2 row-start-8 px-12">
         <Link className="w-full flex place-content-center" href={CONTACT_HASH}>
           <BrandedButton className="px-12 w-full lg:max-w-[416px] max-w-[320px]">napisz do nas</BrandedButton>
+        </Link>
+      </div>
+      <div className="row-start-11 col-span-full grid place-content-center">
+        <Link href={`#${LANDING_ABOUT}`}>
+          <ArrowDown />
         </Link>
       </div>
     </div>

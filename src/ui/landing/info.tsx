@@ -3,6 +3,7 @@ import { GridLineH } from "@/ui/sections/grid-lines";
 import Info from "@/ui/sections/Info";
 import Link from "next/link";
 import BrandedButton from "../common/button";
+import { INSTALACJE_ELEKTRYCZNE_LINK, INTELIGENTNY_DOM_LINK, SIECI_LOKALNE_LINK } from "@/constants";
 
 const infos = [
   {
@@ -25,7 +26,7 @@ const infos = [
           jego odczuwania - poczucie spokoju i pewności, że wszystko jest pod kontrolą.{" "}
         </p>
         <div className="mt-10">
-          <Link href="/">
+          <Link href={INTELIGENTNY_DOM_LINK}>
             <BrandedButton className="px-12 w-full">Więcej informacji</BrandedButton>
           </Link>
         </div>
@@ -59,7 +60,7 @@ const infos = [
           dostosowane do Twoich potrzeb.
         </p>
         <div className="mt-10">
-          <Link href="/">
+          <Link href={INSTALACJE_ELEKTRYCZNE_LINK}>
             <BrandedButton className="px-12 w-full">Więcej informacji</BrandedButton>
           </Link>
         </div>
@@ -77,18 +78,18 @@ const infos = [
     article: (
       <div>
         <div>
-          <p className="mb-8">
+          <p className="mt-6">
             Specjalizujemy się w tworzeniu kompleksowych rozwiązań zapewniających ciągłą i wysokiej jakości pracę
             systemów w Twoim domu.
           </p>
-          <p>
+          <p className="mt-6">
             Otrzymujesz komfort i technologię bez konieczności zagłębiania się w zawiłości szczegółów technicznych.
             Wyobraź sobie na przykład, że możesz stworzyć atmosferę w swoim domu na imprezę, romantyczną kolację lub
             rodzinny wieczór filmowy, nie ruszając się z kanapy.
           </p>
         </div>
         <div className="mt-10">
-          <Link href="/">
+          <Link href={SIECI_LOKALNE_LINK}>
             <BrandedButton className="px-12 w-full">Więcej informacji</BrandedButton>
           </Link>
         </div>

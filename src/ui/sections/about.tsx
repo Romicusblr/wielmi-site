@@ -1,13 +1,13 @@
 import type { FC } from "react";
 import BrandedButton from "@/ui/common/button";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import { CONTACT_HASH } from "@/constants";
+import { CONTACT_HASH, LANDING_ABOUT } from "@/constants";
 import Link from "next/link";
 import Heading from "@/ui/common/heading";
 
 const AboutSection: FC = function () {
   return (
-    <section className="grid-layout pt-24">
+    <section className="grid-layout pt-24 -scroll-mt-20" id={LANDING_ABOUT}>
       <div className="sm:col-start-2 p-12">
         <Heading title="O Wielmi" />
       </div>

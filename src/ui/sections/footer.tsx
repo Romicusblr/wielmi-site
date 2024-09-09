@@ -18,7 +18,7 @@ const Footer: FC = function () {
           </div>
         </div>
       </div>
-      <div className="p-8 sm:col-start-2 lg:col-start-3 flex justify-center items-center text-xl">
+      <div className="p-12 sm:col-start-2 lg:col-start-3 flex justify-center items-end text-xl">
         <div>
           <p>Godziny pracy: od 10:00 do 19:00</p>
           <p className="text-center lg:text-start">Weekendy: sobota, niedziela</p>
