@@ -10,7 +10,7 @@ const statistics = [
 
 const StatisticsSection: React.FC = () => {
   return (
-    <div className={classNames( "w-full grid-layout p-20")}>
+    <div className={classNames( "w-full grid-layout p-20 z-10 bg-[#F5F5F5]")}>
       <div className="sm:col-start-2 lg:col-end-4 grid lg:grid-cols-3 text-center gap-8">
         {statistics.map((stat, index) => (
           <div key={index} className="flex flex-col items-center">
