@@ -4,12 +4,13 @@ import React, { ReactNode, type FC } from "react";
 interface HeadingProps {
   title: ReactNode;
   titleClass?: string;
+  subtitleClass?: string;
   subtitles?: string[];
   isMain?: boolean;
   tag?: keyof JSX.IntrinsicElements;
 }
 
-const Heading: FC<HeadingProps> = ({ title, titleClass, subtitles, tag }) => {
+const Heading: FC<HeadingProps> = ({ title, titleClass, subtitleClass, subtitles, tag }) => {
   const TitleTag = tag ?? "h1";
   return (
     <div>
@@ -18,7 +19,7 @@ const Heading: FC<HeadingProps> = ({ title, titleClass, subtitles, tag }) => {
         <div className="bg-brand h-2 w-24 mt-2"></div>
       </TitleTag>
       {subtitles?.map((subtitle, index) => (
-        <h2 key={index} className="text-2xl font-light">
+        <h2 key={index} className={classNames("text-2xl font-light", subtitleClass)}>
           {subtitle}
         </h2>
       ))}

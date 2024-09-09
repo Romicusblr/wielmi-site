@@ -2,6 +2,7 @@ import type { FC } from "react";
 import classNames from "classnames";
 import ResponsiveImage from "@/ui/common/responsive-image";
 import { GridLineH } from "@/ui/sections/grid-lines";
+import Heading from "@/ui/common/heading";
 
 const services = [
   "Alarm",
@@ -26,10 +27,17 @@ const Section4 = () => {
   return (
     <section className="grid-layout bg-grey text-dark-grey text-left">
       <div className="sm:col-start-2 p-12">
-        <h1 className="text-4xl font-bold underline underline-offset-8 decoration-brand decoration-4">
-          CZYM STERUJE INTELIGENTNY DOM?
-        </h1>
-        <h2 className="text-4xl font-light mt-8">NAJWAŻNIEJSZE FUNKCJE</h2>
+        <Heading
+          title={
+            <span>
+              CZYM STERUJE <br />
+              INTELIGENTNY DOM?
+            </span>
+          }
+          titleClass="!text-5xl"
+          subtitles={["NAJWAŻNIEJSZE", "FUNKCJE"]}
+          subtitleClass="text-4xl"
+        />
       </div>
       <div className="sm:col-start-2 lg:col-start-3 lg:col-span-2">
         <ResponsiveImage

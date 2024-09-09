@@ -5,14 +5,14 @@ import { IconType } from "react-icons";
 interface ServiceItemProps {
   icon: IconType;
   iconSize: number;
-  title?: string;
+  title?: React.ReactNode;
   items?: React.ReactNode;
   className?: string;
 }
 
 const ServiceItem: FC<ServiceItemProps> = ({ icon: Icon, iconSize, title, items, className }) => {
   return (
-    <div className={classNames("flex items-center py-4", className)}>
+    <div className={classNames("flex items-start py-4", className)}>
       <div className="p-6 flex-shrink-0 bg-grey text-white rounded-full flex items-center justify-center">
         <Icon size={iconSize} />
       </div>

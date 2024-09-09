@@ -6,6 +6,7 @@ import Section1 from "./section1";
 import Section4 from "./section4";
 import Section5 from "./section5";
 import ContactBanner from "@/ui/sections/contact-banner";
+import ArrowDown from "@/ui/common/arrow-down";
 
 const Page: FC = function () {
   return (
@@ -14,7 +15,10 @@ const Page: FC = function () {
       <GridLineH />
       <Section2 />
       <GridLineH />
-      <GridLineH className="mt-8" />
+      <div className="w-full h-40 grid place-content-center">
+        <ArrowDown />
+      </div>
+      <GridLineH />
       <Section3 />
       <GridLineH />
       <Section4 />

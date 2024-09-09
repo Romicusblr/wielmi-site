@@ -16,20 +16,23 @@ const AboutSection: FC = function () {
           Inteligentny dom <br /> Wielmi
         </h4>
         <p>
-          Firma Wielmi to gwarancja kompleksowej i profesjonalnej realizacji projektów. Oferujemy pełen zakres usług,
-          obejmujących:
+          <strong>Jakość, kompetencje, dbałość</strong> — to wartości, które nas wyróżniają.
         </p>
-        <ul className="list-disc ml-8">
-          <li>Projektowanie</li>
-          <li>Instalacje elektryczne</li>
-          <li>Uruchamianie i programowanie</li>
-          <li>Gwarzancja i serwis</li>
+        <p>Każdy projekt, który realizujemy, oparty jest na trzech filarach:</p>
+        <ul className="list-disc mt-2">
+          <li>
+            <b>Jakość</b> - Niezawodność i precyzja na każdym etapie. Nasze rozwiązania spełniają najwyższe standardy,
+            co gwarantuje trwałość i satysfakcję.
+          </li>
+          <li>
+            <b>Kompetencje</b> - Nasz zespół to doświadczeni specjaliści, którzy łączą wiedzę z innowacyjnością. Dzięki
+            temu dostarczamy rozwiązania, które są dopasowane do potrzeb każdego klienta.
+          </li>
+          <li>
+            <b>Dbałość</b> - Każdy klient jest dla nas ważny. Słuchamy, reagujemy i jesteśmy gotowi na wsparcie na
+            każdym etapie współpracy, zarówno podczas realizacji projektu, jak i po jego zakończeniu.
+          </li>
         </ul>
-        <p>
-          Nasze rozwiązania „pod klucz” zapewniają, że każda faza projektu jest wykonywana przez nasz zespół, co
-          gwarantuje spójność i najwyższą jakość. Dbamy o każdy szczegół, aby końcowy efekt spełniał Państwa
-          oczekiwania. Wybierając Wielmi, wybieracie Państwo jakość i terminowość.
-        </p>
       </div>
       <GridLineH className="col-span-full" />
       <div className="sm:col-start-2 p-12">

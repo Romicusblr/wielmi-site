@@ -1,16 +1,23 @@
+import Heading from "@/ui/common/heading";
 import type { FC } from "react";
 
 const Section1: FC = () => {
   return (
-    <section className="grid-layout">
-      <div className="sm:col-start-2 p-12">
-        <h1 className="text-4xl font-bold underline underline-offset-8 decoration-brand decoration-4">
-          INTELIGENTNY DOM
-        </h1>
-        <h2 className="text-2xl font-light mt-4">ZWYCZAJ KOMFORTU</h2>
+    <section className="grid-layout py-20">
+      <div className="sm:col-start-2 pl-12">
+        <Heading
+          title={
+            <span>
+              INTELIGENTNY <br />
+              DOM{" "}
+            </span>
+          }
+          subtitles={["ZWYCZAJ", "KOMFORTU"]}
+          subtitleClass="text-4xl"
+        />
       </div>
-      <div className="sm:col-start-2 lg:col-start-3 p-12 pt-0 lg:pt-12">
-        <h3 className="text-xl font-bold mb-4">CO TO JEST INTELIGENTNY DOM?</h3>
+      <div className="sm:col-start-2 lg:col-start-3 px-12 pt-0">
+        <h3 className="text-3xl font-medium mb-4">CO TO JEST INTELIGENTNY DOM?</h3>
         <p className="mb-4">
           Przede wszystkim, system inteligentnego domu pozwala na oszczędne gospodarowanie zasobami oraz własnym czasem.
         </p>

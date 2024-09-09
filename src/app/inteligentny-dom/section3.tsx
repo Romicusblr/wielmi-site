@@ -2,12 +2,13 @@ import type { FC } from "react";
 import { FaDroplet, FaLock, FaRegLightbulb, FaWarehouse, FaAsterisk } from "react-icons/fa6";
 import { FaRegCheckCircle } from "react-icons/fa";
 import ServiceItem from "@/ui/common/service-item";
+import Heading from "@/ui/common/heading";
 
 const services = [
   {
     icon: FaLock,
     className: "lg:col-start-1",
-    title: "Systemy bezpieczeństwa",
+    title: <span>Systemy <br />bezpieczeństwa</span>,
     items: (
       <ul className="list-disc ml-5 mt-2 text-grey">
         <li>Inteligentne zamki i systemy zamykania</li>
@@ -76,16 +77,13 @@ const services = [
 
 const Section3 = () => {
   return (
-    <section className="grid-layout">
-      <div className="sm:col-start-2 p-12">
-        <h1 className="text-4xl font-bold underline underline-offset-8 decoration-brand decoration-4">
-          FUNKCJONALNE MOŻLIWOŚCI
-        </h1>
-        <h2 className="text-2xl font-light mt-4">NIEKTÓRE GŁÓWNE KORZYŚCI</h2>
+    <section className="grid-layout py-20">
+      <div className="sm:col-start-2 px-12">
+        <Heading title={<span>FUNKCJONALNE <br />MOŻLIWOŚCI</span>} subtitles={["NIEKTÓRE GŁÓWNE", "KORZYŚCI"]} />
       </div>
-      <div className="p-4 sm:col-start-2 lg:col-end-4 grid lg:grid-cols-2 lg:grid-flow-dense">
+      <div className="sm:col-start-2 lg:col-end-4 grid lg:grid-cols-2 lg:grid-flow-dense text-xl mt-12">
         {services.map((service, index) => (
-          <ServiceItem key={index}  iconSize={28} {...service} />
+          <ServiceItem key={index} iconSize={28} {...service} className="px-12" />
         ))}
       </div>
     </section>
