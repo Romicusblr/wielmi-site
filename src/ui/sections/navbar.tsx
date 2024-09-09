@@ -1,22 +1,23 @@
 "use client";
 import { useEffect, useState, type FC } from "react";
+import { throttle } from "lodash";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
-import { throttle } from "lodash";
-import Logo from "../logo";
-import MenuButton from "../menu-button";
 import { PHONENUMBER } from "@/constants";
+import Logo from "@/ui/common/logo";
+import MenuButton from "@/ui/common/menu-button";
 
 const navigation = [
-  { name: "O Wielmi", href: "#wielmi" },
-  { name: "Inteligentny dom", href: "#smart" },
-  { name: "Instalacje elektryczne", href: "#electric" },
-  { name: "Sieci lokalne", href: "#lan" },
-  { name: "Zespól", href: "#team" },
-  { name: "Kontakty", href: "#contact" },
+  { name: "Inteligentny Dom", href: "/inteligentny-dom/" },
+  { name: "Instalacje Elektryczne", href: "/instalacje-elektryczne/" },
+  { name: "Sieci Lokalne", href: "/sieci-lokalne/" },
+  { name: "Współpraca", href: "/wspolpraca/" },
+  { name: "O Nas", href: "/o-nas/" },
+  { name: "Kontakt", href: "/kontakt/" },
 ];
 
-function formatNumber(phoneNumber: string) {
+export function formatNumber(phoneNumber: string) {
   return phoneNumber.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4");
 }
 
@@ -33,16 +34,20 @@ const NavBar: FC = function () {
   const THRESHOLD = 100; // px
   const THROTTLE_THRESHOLD = 100; // ms
   const [isTop, setIsTop] = useState(false);
-
+  const path = usePathname();
   useEffect(() => {
-    const scroll = throttle(() => {
-      const { scrollY } = window;
-      setIsTop(scrollY > THRESHOLD);
-    }, THROTTLE_THRESHOLD);
-    document.addEventListener("scroll", scroll);
-
-    return () => document.removeEventListener("scroll", scroll);
-  }, []);
+    if (path === "/") {
+      const scroll = throttle(() => {
+        const { scrollY } = window;
+        setIsTop(scrollY < THRESHOLD);
+      }, THROTTLE_THRESHOLD);
+      document.addEventListener("scroll", scroll);
+      scroll();
+      return () => document.removeEventListener("scroll", scroll);
+    } else {
+      setIsTop(false);
+    }
+  }, [path]);
 
   const navLiClass =
     "whitespace-nowrap flex justify-center lg:justify-end p-2 lg:p-2 hover:text-brand hover:underline underline-offset-8 hover:scale-105 transform transition duration-150 ease-in-out";
@@ -50,11 +55,11 @@ const NavBar: FC = function () {
     <nav
       className={classNames(
         "lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-2 sm:px-0 transition-all duration-1000",
-        !isTop && "bg-opacity-0"
+        isTop && "bg-opacity-0"
       )}
     >
       <div className="grid-layout items-center">
-        <div className="flex items-center justify-between col-span-full lg:col-span-1">
+        <div className="flex items-center lg:justify-center justify-between col-span-full lg:col-span-1">
           <div className="h-12 w-24 sm:w-[10vw] p-2">
             <Logo />
           </div>
@@ -72,7 +77,7 @@ const NavBar: FC = function () {
         >
           {navigation.map(({ name, href }) => (
             <li key={name} className="xl:px-2">
-              <Link className={navLiClass} href={href}>
+              <Link className={classNames(navLiClass, path === href && 'text-brand')} href={href} >
                 {name}
               </Link>
             </li>

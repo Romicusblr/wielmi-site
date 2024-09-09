@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import type { FC } from "react";
 import classNames from "classnames";
-import Footer from "@/ui/footer";
+import Footer from "@/ui/sections/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import NavBar from "@/ui/sections/navbar";
+import GridLines from "@/ui/sections/grid-lines";
 
 const font = Montserrat({ subsets: ["latin", "latin-ext"] });
 
@@ -22,8 +24,10 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
 
   return (
     <html lang="pl-PL" className="scroll-smooth scroll-pt-20">
-      <body className={classNames(font.className, "text-justify text-grey bg-[#F6FAFF]")}>
-        {children}
+      <body className={classNames(font.className, "text-left text-grey bg-[#F6FAFF]")}>
+        <GridLines />
+        <NavBar />
+        <main className="flex flex-col justify-between min-h-screen pt-20">{children}</main>
         <Footer />
       </body>
       {/* <GoogleAnalytics gaId={gaId} /> */}

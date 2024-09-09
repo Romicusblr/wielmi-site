@@ -1,8 +1,13 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 
 const cards = [
   {
-    heading: "Bezpłatna konsultacja",
+    heading: (
+      <span>
+        Bezpłatna <br />
+        konsultacja
+      </span>
+    ),
     text: `Na etapie bezpłatnej konsultacji określamy Państwa potrzeby i oczekiwania. 
       Opowiadają nam Państwo o swoim domu marzeń i planach, które chcą zrealizować. 
       My proponujemy najlepsze rozwiązania dla inteligentnego domu.`,
@@ -15,7 +20,12 @@ const cards = [
       uzgodnione i przeliczone, podpisujemy umowę.`,
   },
   {
-    heading: "Realizacja projektu",
+    heading: (
+      <span>
+        Realizacja <br />
+        projektu
+      </span>
+    ),
     text: `Po podpisaniu umowy rozpoczynamy pracę. Proces projektowania może zająć od 
       kilku dni do kilku tygodni, w zależności od skomplikowania projektu. Następnie, 
       zgodnie z ustalonym harmonogramem i w koordynacji z innymi wykonawcami, przystępujemy
@@ -26,25 +36,27 @@ const cards = [
 ];
 
 interface BlackCardProps {
-  heading: string;
+  heading: ReactNode;
   text: string;
 }
 
 const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
   return (
-    <article className="p-8 pt-12 flex-1 bg-grey text-sm text-dark-grey">
-      <h3 className="font-semibold mb-4 text-xl text-center">{heading}</h3>
-      <p>{text}</p>
+    <article className="p-4 py-8 flex-1 bg-grey text-[13px] text-dark-grey rounded-2xl">
+      <h3 className="mb-4 text-xl text-center h-16 leading-6">{heading}</h3>
+      <p className="leading-4">{text}</p>
     </article>
   );
 };
 
 const BlackCardSection: FC = function () {
   return (
-    <section className="container grid lg:grid-cols-3 gap-12 p-12">
-      {cards.map(({ heading, text }) => {
-        return <BlackCard key={heading} heading={heading} text={text} />;
-      })}
+    <section className="grid-layout py-10 z-10">
+      <div className="sm:col-start-2 lg:col-end-4 py-10 px-12 flex flex-col lg:flex-row gap-16 text-center">
+        {cards.map(({ heading, text }, i) => {
+          return <BlackCard key={i} heading={heading} text={text} />;
+        })}
+      </div>
     </section>
   );
 };

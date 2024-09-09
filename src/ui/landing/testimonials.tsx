@@ -4,6 +4,7 @@ import React, { FC, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import Image from "next-export-optimize-images/image";
+import Heading from "@/ui/common/heading";
 
 interface SlideProps {
   text: string;
@@ -40,16 +41,7 @@ const reviews: SlideProps[] = [
 const Slide: FC<SlideProps> = ({ text, name, location }) => {
   return (
     <div className="min-w-0 lg:w-1/2 w-full flex-none p-4">
-      <div className="relative sm:p-12 p-4 bg-center">
-        <Image
-          alt="keyboard in dark light"
-          className="-z-10 object-cover"
-          fill
-          priority
-          quality={100}
-          sizes="100%"
-          src="/images/slide-bg.jpeg"
-        />
+      <div className="relative sm:p-12 p-4 bg-center bg-grey rounded-2xl">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -78,20 +70,22 @@ const Testimonials = () => {
   }, [emblaApi]);
 
   return (
-    <section className="grid-layout text-dark-grey">
+    <section className="grid-layout py-8">
       <div className="sm:grid place-items-center hidden">
         <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollPrev}>
           <SlArrowLeft className="h-8 w-8" />
         </button>
       </div>
-      <div className="overflow-hidden lg:col-span-2 m-8">
-        <div>
-          <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8 text-grey">
-            <span>CO MÓWIĄ O NAS NASI KLIENCI</span>
-          </h2>
-        </div>
+      <div className="overflow-hidden lg:col-span-2 m-12">
+        <Heading
+          title={
+            <span>
+              CO MÓWIĄ <br />O NAS KLIENCI
+            </span>
+          }
+        />
         <div ref={emblaRef}>
-          <div className="flex justify-around">
+          <div className="flex text-dark-grey">
             {reviews.map((t) => {
               return <Slide key={t.name} {...t} />;
             })}
