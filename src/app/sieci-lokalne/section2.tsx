@@ -24,10 +24,10 @@ const services = [
 
 const Section2 = () => {
   return (
-    <section className="grid-layout">
-      <div className="p-4 sm:col-start-2 lg:col-end-4 grid lg:grid-cols-2 lg:grid-flow-dense">
+    <section className="grid-layout bg-[#F5F5F5]">
+      <div className="sm:col-start-2 lg:col-end-4 grid lg:grid-cols-2 lg:grid-flow-dense text-xl my-20">
         {services.map((service, index) => (
-          <ServiceItem key={index} iconSize={28} {...service} />
+          <ServiceItem key={index} iconSize={28} {...service} className="px-12" />
         ))}
       </div>
     </section>

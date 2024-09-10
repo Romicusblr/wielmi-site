@@ -25,7 +25,7 @@ const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, sub
         alt={"image"}
       />
       <article className={classNames("px-12 py-20 lg:col-start-2 sm:col-start-2", classArticle)}>
-        <Heading title={heading} subtitles={subtitles} titleClass="!text-4xl"/>
+        <Heading title={heading} subtitles={subtitles} titleClass="!text-3xl"/>
         {article}
       </article>
     </>

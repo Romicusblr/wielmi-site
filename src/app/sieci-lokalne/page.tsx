@@ -4,6 +4,7 @@ import Section1 from "./section1";
 import Section2 from "./section2";
 import Section3 from "./section3";
 import ContactSection from "@/ui/sections/contact";
+import ArrowDownSection from "@/ui/sections/arrow-down-section";
 
 const Page: FC = function () {
   return (
@@ -12,9 +13,10 @@ const Page: FC = function () {
       <GridLineH />
       <Section2 />
       <GridLineH />
+      <ArrowDownSection />
+      <GridLineH />
       <Section3 />
       <GridLineH />
-      <GridLineH className="mt-12" />
       <ContactSection />
     </>
   );

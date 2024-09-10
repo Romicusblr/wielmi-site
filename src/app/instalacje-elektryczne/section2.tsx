@@ -58,7 +58,6 @@ const InfoSection: FC = function () {
       <GridLineH className="col-span-full" />
       <Info {...infos[2]} />
       <GridLineH className="col-span-full" />
-      <GridLineH className="mt-12 col-span-full" />
     </section>
   );
 };

@@ -13,7 +13,7 @@ interface ServiceItemProps {
 const ServiceItem: FC<ServiceItemProps> = ({ icon: Icon, iconSize, title, items, className }) => {
   return (
     <div className={classNames("flex items-start py-4", className)}>
-      <div className="p-6 flex-shrink-0 bg-grey text-white rounded-full flex items-center justify-center">
+      <div className="p-5 flex-shrink-0 bg-grey text-white rounded-full flex items-center justify-center">
         <Icon size={iconSize} />
       </div>
       <div className="ml-6">

@@ -2,11 +2,12 @@ import type { FC } from "react";
 import { GridLineH } from "@/ui/sections/grid-lines";
 import ResponsiveImage from "@/ui/common/responsive-image";
 import classNames from "classnames";
+import Info from "@/ui/sections/Info";
 
 const infos = [
   {
     id: "ESTETYKA",
-    imageSrc: "/images/sieci-lokalne/sieci.png",
+    imageSrc: "/images/landing_lan.png",
     heading: "SIECI LOKALNE",
     article: (
       <>
@@ -29,27 +30,6 @@ interface InfoProps {
   reverse?: boolean;
   id: string;
 }
-
-const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, id }) {
-  const classImage = reverse ? "lg:col-start-3" : "";
-  const classArticle = reverse ? "lg:col-start-2" : "lg:col-start-3";
-
-  return (
-    <>
-      <ResponsiveImage
-        className={classNames("lg:h-[48rem] h-[36rem] lg:col-span-2 col-span-full", classImage)}
-        src={imageSrc}
-        alt={heading}
-      />
-      <article className={classNames("px-12 py-16 lg:col-start-2 sm:col-start-2", classArticle)}>
-        <h2 className="text-3xl font-bold underline underline-offset-8 decoration-brand decoration-4 mb-8">
-          {heading}
-        </h2>
-        {article}
-      </article>
-    </>
-  );
-};
 
 const InfoSection: FC = function () {
   return (

@@ -12,14 +12,14 @@ const steps = [
       "Opracowujemy indywidualny projekt w ścisłej współpracy z projektantem, architektem oraz innymi wykonawcami.",
   },
   {
-    title: "Dobór i dostawa sprzętu",
-    description:
-      "Kompletujemy sprzęt zgodnie z wymaganiami technicznymi i projektem wnętrz. Bezpośrednia współpraca z producentami pozwala nam na precyzyjne dopasowanie komponentów do Państwa potrzeb.",
-  },
-  {
     title: "Wykonanie instalacji",
     description:
       "Realizujemy instalację systemu zgodnie ze wszystkimi regulacjami technicznymi i wymaganiami projektu. Jest to istotne, ponieważ niektóre rozwiązania konstrukcyjne są niemożliwe do zmiany po zakończeniu prac budowlanych.",
+  },
+  {
+    title: "Dobór i dostawa sprzętu",
+    description:
+      "Kompletujemy sprzęt zgodnie z wymaganiami technicznymi i projektem wnętrz. Bezpośrednia współpraca z producentami pozwala nam na precyzyjne dopasowanie komponentów do Państwa potrzeb.",
   },
   {
     title: "Programowanie i uruchomienie",
