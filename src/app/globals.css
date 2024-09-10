@@ -17,6 +17,7 @@
 } */
 
 body {
+  scrollbar-gutter: stable both-edges;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
