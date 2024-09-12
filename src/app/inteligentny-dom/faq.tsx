@@ -115,7 +115,7 @@ const FAQItem: FC<Props> = ({ faq, isOpen, onClick }) => {
   );
 };
 
-const Section5 = () => {
+const Section = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleClick = (index: number) => {
@@ -141,4 +141,4 @@ const Section5 = () => {
   );
 };
 
-export default Section5;
+export default Section;

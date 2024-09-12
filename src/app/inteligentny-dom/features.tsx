@@ -97,7 +97,7 @@ const Row: FC<Props> = function ({ imgSrc, heading, text, invert }) {
   );
 };
 
-const Section2 = () => {
+const Section = () => {
   return source.map((e, i) => (
     <>
       <section className="grid-layout grid-flow-dense lg:py-20 py-10" key={i}>
@@ -108,4 +108,4 @@ const Section2 = () => {
   ));
 };
 
-export default Section2;
+export default Section;

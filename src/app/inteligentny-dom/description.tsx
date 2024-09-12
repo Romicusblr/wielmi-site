@@ -3,7 +3,7 @@ import type { FC } from "react";
 
 const Section1: FC = () => {
   return (
-    <section className="grid-layout py-20">
+    <section className="grid-layout py-20 gap-y-10">
       <div className="sm:col-start-2 pl-12">
         <Heading
           title={
@@ -13,7 +13,6 @@ const Section1: FC = () => {
             </span>
           }
           subtitles={["ZWYCZAJ", "KOMFORTU"]}
-          subtitleClass="text-4xl"
         />
       </div>
       <div className="sm:col-start-2 lg:col-start-3 px-12 pt-0">

@@ -23,7 +23,7 @@ const services = [
   "Nawadnienie",
 ];
 
-const Section4 = () => {
+const Section = () => {
   return (
     <section className="grid-layout bg-grey text-dark-grey text-left">
       <div className="sm:col-start-2 p-12">
@@ -58,4 +58,4 @@ const Section4 = () => {
   );
 };
 
-export default Section4;
+export default Section;

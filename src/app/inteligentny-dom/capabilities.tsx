@@ -75,7 +75,7 @@ const services = [
   },
 ];
 
-const Section3 = () => {
+const Section = () => {
   return (
     <section className="grid-layout py-20">
       <div className="sm:col-start-2 px-12">
@@ -90,4 +90,4 @@ const Section3 = () => {
   );
 };
 
-export default Section3;
+export default Section;
