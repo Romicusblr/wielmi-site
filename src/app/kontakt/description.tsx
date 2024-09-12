@@ -1,5 +1,4 @@
 import Heading from "@/ui/common/heading";
-import SocialLinks from "@/ui/sections/social-links";
 import type { FC } from "react";
 
 const Section1: FC = () => {
