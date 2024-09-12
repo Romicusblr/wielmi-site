@@ -1,21 +1,21 @@
 import type { FC } from "react";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import Section1 from "./section1";
-import Section2 from "./section2";
-import Section3 from "./section3";
+import DescriptionSection from "./description";
+import ServicesSection from "./services";
+import InfoSection from "./infos";
 import ContactSection from "@/ui/sections/contact";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
 
 const Page: FC = function () {
   return (
     <>
-      <Section1 />
+      <DescriptionSection />
       <GridLineH />
-      <Section2 />
+      <ServicesSection />
       <GridLineH />
       <ArrowDownSection />
       <GridLineH />
-      <Section3 />
+      <InfoSection />
       <GridLineH />
       <ContactSection />
     </>
