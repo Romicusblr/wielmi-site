@@ -132,7 +132,6 @@ const Section5 = () => {
               ODPOWIEDŹ
             </span>
           }
-          titleClass="!text-5xl"
         />
         {faqs.map((faq, index) => (
           <FAQItem key={index} faq={faq} isOpen={openIndex === index} onClick={() => handleClick(index)} />

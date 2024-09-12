@@ -34,9 +34,7 @@ const Section4 = () => {
               INTELIGENTNY DOM?
             </span>
           }
-          titleClass="!text-5xl"
           subtitles={["NAJWAŻNIEJSZE", "FUNKCJE"]}
-          subtitleClass="text-4xl"
         />
       </div>
       <div className="sm:col-start-2 lg:col-start-3 lg:col-span-2">
