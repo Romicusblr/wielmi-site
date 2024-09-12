@@ -1,4 +1,5 @@
 "use client";
+import Heading from "@/ui/common/heading";
 import { FC, ReactNode, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 
@@ -104,7 +105,9 @@ const FAQItem: FC<Props> = ({ faq, isOpen, onClick }) => {
         <span className="text-white flex-1 mr-4">{faq.question}</span>
 
         <FaChevronDown
-          className={`flex-initial w-6 h-6 text-white transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          className={`flex-initial w-6 h-6 text-white transform transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
         />
       </button>
       {isOpen && <div className="py-2 text-gray-400">{faq.answer}</div>}
@@ -112,7 +115,7 @@ const FAQItem: FC<Props> = ({ faq, isOpen, onClick }) => {
   );
 };
 
-const Section5 = () => {
+const Section = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleClick = (index: number) => {
@@ -120,10 +123,16 @@ const Section5 = () => {
   };
 
   return (
-    <section className="grid-layout bg-grey text-dark-grey text-left">
-      <div className="sm:col-start-2 p-12">
-        <h2 className="text-2xl font-bold text-white mb-6">PYTANIE / ODPOWIEDŹ</h2>
-        <div className="w-24 h-1 bg-blue-500 mb-4"></div>
+    <section className="grid-layout bg-grey text-dark-grey text-left py-20">
+      <div className="sm:col-start-2 px-12">
+        <Heading
+          title={
+            <span>
+              PYTANIE /<br />
+              ODPOWIEDŹ
+            </span>
+          }
+        />
         {faqs.map((faq, index) => (
           <FAQItem key={index} faq={faq} isOpen={openIndex === index} onClick={() => handleClick(index)} />
         ))}
@@ -132,4 +141,4 @@ const Section5 = () => {
   );
 };
 
-export default Section5;
+export default Section;

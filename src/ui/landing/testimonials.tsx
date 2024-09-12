@@ -9,10 +9,20 @@ import Heading from "@/ui/common/heading";
 interface SlideProps {
   text: string;
   name: string;
+  company?: string;
   location: string;
 }
 
 const reviews: SlideProps[] = [
+  {
+    text: `Zleciliśmy firmie Wielmi wykonanie instalacji elektrycznej dla jednego z naszych klientów. 
+    Prace zostały wykonane profesjonalnie i terminowo. Firma Wielmi wykazała się ogromnym zaangażowaniem 
+    i wysoką jakością usług. Jesteśmy bardzo zadowoleni ze współpracy i na pewno będziemy polecać Wielmi 
+    naszym kolejnym klientom. Dziękujemy za świetną robotę!`,
+    name: "Mateusz",
+    company: "Volprim Instalacje",
+    location: "Kraków, Polska",
+  },
   {
     text: `Dla wyposażenia mojej działki w system „inteligentny dom” wybrałam firmę WIELMI i jestem bardzo zadowolona.
     Oprócz standardowych rozwiązań zaproponowali mi inteligentne nawadnianie z stacją pogodową oraz system
@@ -30,18 +40,18 @@ const reviews: SlideProps[] = [
     location: "Kraków, Polska",
   },
   {
-    text: `Zdecydowałem się na firmę WIELMI do zainstalowania systemu inteligentnego domu w moim nowym mieszkaniu.
+    text: `Zdecydowałem się na firmę WIELMI do zainstalowania systemu inteligentnego domu.
     Proces przebiegał bardzo sprawnie od początku do końca. Zespół był profesjonalny i zawsze gotowy odpowiedzieć na moje pytania.
-    Szczególnie doceniam system zarządzania energią, który pozwala mi monitorować i optymalizować zużycie prądu. Dzięki temu moje rachunki są niższe, a ja mam większą kontrolę nad domem. Gorąco polecam firmę WIELMI!`,
+    Szczególnie doceniam system zarządzania energią, który pozwala mi monitorować zużycie prądu. Dzięki temu moje rachunki są niższe, a ja mam większą kontrolę nad domem. Gorąco polecam!`,
     name: "Marcin",
     location: "Kraków, Polska",
   },
 ];
 
-const Slide: FC<SlideProps> = ({ text, name, location }) => {
+const Slide: FC<SlideProps> = ({ text, name, company, location }) => {
   return (
     <div className="min-w-0 lg:w-1/2 w-full flex-none p-4">
-      <div className="relative sm:p-12 p-4 bg-center bg-grey rounded-2xl">
+      <div className="sm:p-12 p-4 bg-grey rounded-2xl">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -52,6 +62,7 @@ const Slide: FC<SlideProps> = ({ text, name, location }) => {
         </svg>
         <p>{text}</p>
         <h2 className="font-medium title-font tracking-wider mt-6">{name}</h2>
+        <p className="mt-2">{company}</p>
         <p className="">{location}</p>
       </div>
     </div>
