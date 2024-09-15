@@ -13,7 +13,13 @@ const cards = [
       My proponujemy najlepsze rozwiązania dla inteligentnego domu.`,
   },
   {
-    heading: "Indywidualna kalkulacja kosztów",
+    heading: (
+      <span>
+        Indywidualna <br />
+        kalkulacja <br />
+        kosztów
+      </span>
+    ),
     text: `Przygotowujemy wstępną wycenę, która obejmuje koszt sprzętu, montażu 
       oraz automatyzacji domu. Używamy terminu „wstępna”, ponieważ na etapie uzgadniania 
       można dodać dodatkowe funkcje według Państwa życzeń. Gdy wszystkie szczegóły są 
@@ -43,7 +49,7 @@ interface BlackCardProps {
 const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
   return (
     <article className="p-4 py-8 flex-1 bg-grey text-[13px] text-dark-grey rounded-2xl">
-      <h3 className="mb-4 text-xl text-center h-16 leading-6">{heading}</h3>
+      <h3 className="mb-4 text-xl text-center h-20 leading-6">{heading}</h3>
       <p className="leading-4">{text}</p>
     </article>
   );
@@ -51,8 +57,8 @@ const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
 
 const BlackCardSection: FC = function () {
   return (
-    <section className="section py-10 z-10">
-      <div className="sm:col-start-2 lg:col-end-4 py-10 px-12 flex flex-col lg:flex-row gap-16 text-center">
+    <section className="section z-10">
+      <div className="content-center-span flex flex-col lg:flex-row gap-16 text-center">
         {cards.map(({ heading, text }, i) => {
           return <BlackCard key={i} heading={heading} text={text} />;
         })}
