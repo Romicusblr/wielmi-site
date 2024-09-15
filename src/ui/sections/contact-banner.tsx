@@ -6,7 +6,7 @@ import { CONTACT_LINK } from "@/constants";
 
 const ContactBanner = () => {
   return (
-    <section className="grid-layout py-20">
+    <section className="section">
       <div className="sm:col-start-2 flex flex-col justify-center px-12">
         <Heading
           title={
