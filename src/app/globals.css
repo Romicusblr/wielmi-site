@@ -47,4 +47,8 @@ body {
   .content-right-half {
     @apply sm:col-start-2 lg:col-start-3 content-padding
   }
+
+  .content-center-span {
+    @apply sm:col-start-2 lg:col-end-4 content-padding
+  }
 }
