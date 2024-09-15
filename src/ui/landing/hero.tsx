@@ -5,7 +5,7 @@ import { GridLineH } from "@/ui/sections/grid-lines";
 import SocialLinks from "@/ui/sections/social-links";
 import Link from "next/link";
 import classnames from "classnames";
-import { CONTACT_HASH, LANDING_ABOUT } from "@/constants";
+import { CONTACT_HASH, LANDING_DESCRIPTION } from "@/constants";
 import { Inter } from "next/font/google";
 import ArrowDown from "../common/arrow-down";
 
@@ -57,7 +57,7 @@ const Hero: FC = function () {
         </Link>
       </div>
       <div className="row-start-11 col-span-full grid place-content-center">
-        <Link href={`#${LANDING_ABOUT}`}>
+        <Link href={`#${LANDING_DESCRIPTION}`}>
           <ArrowDown />
         </Link>
       </div>

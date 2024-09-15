@@ -35,4 +35,16 @@ body {
   .section {
     @apply grid-layout py-16;
   }
+
+  .content-padding {
+    @apply px-12;
+  }
+
+  .content-left-half {
+    @apply sm:col-start-2 content-padding;
+  }
+
+  .content-right-half {
+    @apply sm:col-start-2 lg:col-start-3 content-padding
+  }
 }
