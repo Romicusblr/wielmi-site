@@ -31,4 +31,8 @@ body {
   .grid-layout {
     @apply grid lg:grid-cols-[12vw_1fr_1fr_12vw] sm:grid-cols-[12vw_1fr_12vw];
   }
+
+  .section {
+    @apply grid-layout py-16;
+  }
 }
