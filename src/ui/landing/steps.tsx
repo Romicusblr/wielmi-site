@@ -35,7 +35,7 @@ const steps = [
 
 const WorkSteps: React.FC = () => {
   return (
-    <section className="grid-layout grid-flow-dense text-dark-grey bg-grey py-12 bg-op">
+    <section className="section grid-flow-dense text-dark-grey bg-grey py-12 bg-op">
       <div className="sm:col-start-2 lg:col-start-3 p-12 items-start">
         <Heading
           title={

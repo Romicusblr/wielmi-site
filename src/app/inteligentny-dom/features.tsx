@@ -100,7 +100,7 @@ const Row: FC<Props> = function ({ imgSrc, heading, text, invert }) {
 const Section = () => {
   return source.map((e, i) => (
     <>
-      <section className="grid-layout grid-flow-dense lg:py-20 py-10" key={i}>
+      <section className="section grid-flow-dense lg:py-20 py-10" key={i}>
         <Row {...e} />
       </section>
       {i === 0 && <GridLineH className="col-span-full" />}

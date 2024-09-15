@@ -13,7 +13,7 @@ const font = Inter({ subsets: ["latin", "latin-ext"] });
 
 const Hero: FC = function () {
   return (
-    <div className="relative w-full h-screen grid-layout grid-rows-12 text-dark-grey -mt-20">
+    <div className="relative w-full h-screen section grid-rows-12 text-dark-grey -mt-20">
       <Image
         alt="cozy room"
         className="-z-10 object-cover brightness-[0.5] contrast-[.75]"

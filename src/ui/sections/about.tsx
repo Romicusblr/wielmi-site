@@ -7,7 +7,7 @@ import Heading from "@/ui/common/heading";
 
 const AboutSection: FC = function () {
   return (
-    <section className="grid-layout pt-24 -scroll-mt-20" id={LANDING_ABOUT}>
+    <section className="section pt-24 -scroll-mt-20" id={LANDING_ABOUT}>
       <div className="sm:col-start-2 p-12">
         <Heading title="O Wielmi" />
       </div>

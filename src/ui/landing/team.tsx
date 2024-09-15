@@ -66,7 +66,7 @@ const Person: FC<PersonProps> = function ({ name, description, role, image }) {
 
 const TeamSection: FC = function () {
   return (
-    <section className="w-full py-20 bg-grey text-dark-grey grid-layout z-10">
+    <section className="w-full py-20 bg-grey text-dark-grey section z-10">
       <div className="text-3xl sm:col-start-2 lg:col-end-4 px-12">
         <Heading
           title={

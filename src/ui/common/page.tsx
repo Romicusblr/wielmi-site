@@ -7,7 +7,7 @@ interface PageWrapperProps {
 
 const PageWrapper: FC<PageWrapperProps> = function ({ name, children }) {
   return (
-    <section className="grid-layout">
+    <section className="section">
       {name && (
         <div className="col-span-full">
           <h1 className="text-4xl font-bold">{name}</h1>

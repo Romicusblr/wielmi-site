@@ -81,7 +81,7 @@ const Testimonials = () => {
   }, [emblaApi]);
 
   return (
-    <section className="grid-layout py-8">
+    <section className="section py-8">
       <div className="sm:grid place-items-center hidden">
         <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollPrev}>
           <SlArrowLeft className="h-8 w-8" />

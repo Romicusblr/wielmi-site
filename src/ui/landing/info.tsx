@@ -100,7 +100,7 @@ const infos = [
 
 const InfoSection: FC = function () {
   return (
-    <section className="w-full bg-grey text-dark-grey grid-layout grid-flow-dense">
+    <section className="w-full bg-grey text-dark-grey section grid-flow-dense">
       <Info {...infos[0]} />
       <GridLineH className="col-span-full" />
       <Info {...infos[1]} reverse />

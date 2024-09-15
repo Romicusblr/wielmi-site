@@ -3,7 +3,7 @@ import type { FC } from "react";
 
 const Section1: FC = () => {
   return (
-    <section className="grid-layout">
+    <section className="section">
       <div className="sm:col-start-2 p-12">
         <Heading title="INSTALACJE ELEKTRYCZNE" subtitles={["WSZECHSTRONNOŚĆ", "PROJEKTOWANIA I", "REALIZACJI"]} />
       </div>

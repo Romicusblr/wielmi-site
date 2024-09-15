@@ -7,7 +7,7 @@ import Logo from "@/ui/common/logo";
 
 const Footer: FC = function () {
   return (
-    <footer className="bg-grey min-h-96 grid-layout text-dark-grey">
+    <footer className="bg-grey min-h-96 section text-dark-grey">
       <div className="sm:col-start-2 flex lg:justify-start justify-center items-center p-12">
         <div className="flex flex-col items-center lg:block">
           <Heading title="KONTAKTY" titleClass="!text-4xl font-normal lg:block flex flex-col items-center" />

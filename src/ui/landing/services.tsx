@@ -22,7 +22,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="w-full grid-layout py-12">
+    <section className="w-full section py-12">
       <div className="sm:col-start-2 lg:col-end-4 grid lg:grid-cols-2 lg:grid-flow-dense text-xl">
         {services.map((service, index) => (
           <ServiceItem key={index} iconSize={28} {...service} className="px-12"/>
