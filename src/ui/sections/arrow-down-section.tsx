@@ -8,7 +8,7 @@ interface ArrowDownSectionProps {
 
 const ArrowDownSection: React.FC<ArrowDownSectionProps> = function ({ className }) {
   return (
-    <div className={classNames("w-full h-32 grid place-content-center", className)}>
+    <div className={classNames("w-full h-32 grid place-content-center z-10", className)}>
       <ArrowDown />
     </div>
   );
