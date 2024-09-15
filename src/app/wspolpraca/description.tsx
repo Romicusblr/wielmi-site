@@ -1,7 +1,7 @@
 import Heading from "@/ui/common/heading";
 import type { FC } from "react";
 
-const Section1: FC = () => {
+const Section: FC = () => {
   return (
     <section className="section">
       <div className="sm:col-start-2 px-12">
@@ -27,4 +27,4 @@ const Section1: FC = () => {
   );
 };
 
-export default Section1;
+export default Section;
