@@ -123,8 +123,8 @@ const Section = () => {
   };
 
   return (
-    <section className="section bg-grey text-dark-grey text-left py-20">
-      <div className="sm:col-start-2 px-12">
+    <section className="section bg-grey text-dark-grey">
+      <div className="content-left-half">
         <Heading
           title={
             <span>

@@ -3,19 +3,19 @@ import type { FC } from "react";
 
 const Section: FC = () => {
   return (
-    <section className="section gap-y-10">
-      <div className="sm:col-start-2 pl-12">
+    <section className="section">
+      <div className="content-left-half">
         <Heading
           title={
             <span>
               INTELIGENTNY <br />
-              DOM{" "}
+              DOM
             </span>
           }
           subtitles={["ZWYCZAJ", "KOMFORTU"]}
         />
       </div>
-      <div className="sm:col-start-2 lg:col-start-3 px-12 pt-0">
+      <div className="content-right-half">
         <h3 className="text-3xl font-medium mb-4">CO TO JEST INTELIGENTNY DOM?</h3>
         <p className="mb-4">
           Przede wszystkim, system inteligentnego domu pozwala na oszczędne gospodarowanie zasobami oraz własnym czasem.
