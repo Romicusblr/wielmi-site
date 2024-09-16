@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import Description from "./description";
-import InfoSection from "./infos";
-import ContactSection from "@/ui/sections/contact";
+import Description from "@/ui/instalacje-elektryczne/description";
+import InfoSection from "@/ui/instalacje-elektryczne/infos";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
+import ContactBanner from "@/ui/sections/contact-banner";
 
 const Page: FC = function () {
   return (
@@ -13,7 +13,7 @@ const Page: FC = function () {
       <ArrowDownSection />
       <GridLineH />
       <InfoSection />
-      <ContactSection />
+      <ContactBanner />
     </>
   );
 };
