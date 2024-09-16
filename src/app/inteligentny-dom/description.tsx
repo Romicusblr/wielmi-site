@@ -1,9 +1,9 @@
 import Heading from "@/ui/common/heading";
 import type { FC } from "react";
 
-const Section1: FC = () => {
+const Section: FC = () => {
   return (
-    <section className="grid-layout py-20 gap-y-10">
+    <section className="section gap-y-10">
       <div className="sm:col-start-2 pl-12">
         <Heading
           title={
@@ -42,4 +42,4 @@ const Section1: FC = () => {
   );
 };
 
-export default Section1;
+export default Section;

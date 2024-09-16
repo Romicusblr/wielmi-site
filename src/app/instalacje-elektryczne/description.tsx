@@ -1,9 +1,9 @@
 import Heading from "@/ui/common/heading";
 import type { FC } from "react";
 
-const Section1: FC = () => {
+const Section: FC = () => {
   return (
-    <section className="grid-layout">
+    <section className="section">
       <div className="sm:col-start-2 p-12">
         <Heading title="INSTALACJE ELEKTRYCZNE" subtitles={["WSZECHSTRONNOŚĆ", "PROJEKTOWANIA I", "REALIZACJI"]} />
       </div>
@@ -23,4 +23,4 @@ const Section1: FC = () => {
   );
 };
 
-export default Section1;
+export default Section;

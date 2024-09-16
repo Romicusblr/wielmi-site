@@ -33,6 +33,7 @@ const config: Config = {
           DEFAULT: "#75A4DC",
           light: "#E4F0FF",
         },
+        whitesmoke: "#F5F5F5"
       },
       keyframes: {
         moveUpDown: {

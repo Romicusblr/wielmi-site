@@ -77,7 +77,7 @@ const services = [
 
 const Section = () => {
   return (
-    <section className="grid-layout py-20">
+    <section className="section">
       <div className="sm:col-start-2 px-12">
         <Heading title={<span>FUNKCJONALNE <br />MOŻLIWOŚCI</span>} subtitles={["NIEKTÓRE GŁÓWNE", "KORZYŚCI"]} />
       </div>

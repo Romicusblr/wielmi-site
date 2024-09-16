@@ -10,7 +10,7 @@ const partners = [
 
 const Partners: FC = () => {
   return (
-    <section className="grid-layout py-20 z-20">
+    <section className="section z-20">
       <div className="sm:col-start-2 px-12">
         <Heading title="PARTNERZY" />
       </div>
