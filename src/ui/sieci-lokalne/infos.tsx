@@ -1,14 +1,11 @@
 import type { FC } from "react";
-import { GridLineH } from "@/ui/sections/grid-lines";
-import ResponsiveImage from "@/ui/common/responsive-image";
-import classNames from "classnames";
 import Info from "@/ui/sections/Info";
 
 const infos = [
   {
     id: "ESTETYKA",
     imageSrc: "/images/landing_lan.png",
-    heading: "SIECI LOKALNE",
+    heading: <span>SIECI <br />LOKALNE</span>,
     article: (
       <>
         <p className="mb-8">Oprócz tego, łącząc różne technologie, można osiągnąć niemal nieograniczone możliwości.</p>
@@ -23,17 +20,9 @@ const infos = [
   },
 ];
 
-interface InfoProps {
-  imageSrc: string;
-  heading: string;
-  article: JSX.Element;
-  reverse?: boolean;
-  id: string;
-}
-
 const InfoSection: FC = function () {
   return (
-    <section className="w-full bg-grey text-dark-grey section grid-flow-dense">
+    <section className="bg-grey text-dark-grey section py-0 grid-flow-dense">
       <Info {...infos[0]} />
     </section>
   );

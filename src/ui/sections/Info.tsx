@@ -24,7 +24,7 @@ const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, sub
         // TODO: add descriptive message
         alt={"image"}
       />
-      <article className={classNames("section-padding content-padding  sm:col-start-2", classArticle)}>
+      <article className={classNames("section-padding content-padding sm:col-start-2 text-xl", classArticle)}>
         <Heading title={heading} subtitles={subtitles} titleClass="!text-3xl"/>
         {article}
       </article>

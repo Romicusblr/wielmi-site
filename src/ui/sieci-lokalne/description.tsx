@@ -5,7 +5,7 @@ import type { FC } from "react";
 const Section: FC = () => {
   return (
     <section className="section">
-      <div className="sm:col-start-2 px-12">
+      <div className="content-left-half">
         <Heading
           title={
             <span>
@@ -15,8 +15,8 @@ const Section: FC = () => {
           subtitles={["ZINTEGROWANE", "ROZWIĄZANIA", "TECHNOLOGICZNE"]}
         />
       </div>
-      <div className="sm:col-start-2 lg:col-start-3 px-12">
-        <h3 className="text-xl font-bold">CO TO JEST SIECI LOKALNE?</h3>
+      <div className="content-right-half">
+        <h3 className="text-3xl font-medium mb-4">CO TO JEST SIECI LOKALNE?</h3>
         <div className="mt-4">
           <ExpandableText
             shortText={
