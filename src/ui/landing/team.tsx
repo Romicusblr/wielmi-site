@@ -57,7 +57,7 @@ const Person: FC<PersonProps> = function ({ name, description, role, image }) {
           <FaUser size={150} />
         </div>
         <h3 className="mt-4">{name}</h3>
-        <p className="text-red text-[#9F9F9F] ">{role}</p>
+        <p className="text-[#9F9F9F] ">{role}</p>
       </div>
       <div className="text-[#F5F5F5] flex-1 flex flex-col justify-between">{description}</div>
     </div>

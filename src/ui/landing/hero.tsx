@@ -56,7 +56,7 @@ const Hero: FC = function () {
           <BrandedButton className="px-12 w-full lg:max-w-[416px] max-w-[320px]">napisz do nas</BrandedButton>
         </Link>
       </div>
-      <div className="row-start-11 col-span-full grid place-content-center">
+      <div className="row-start-11 col-span-full grid place-content-center z-10">
         <Link href={`#${LANDING_DESCRIPTION}`}>
           <ArrowDown />
         </Link>
