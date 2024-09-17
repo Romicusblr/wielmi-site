@@ -11,6 +11,7 @@ import TeamSection from "@/ui/landing/team";
 import ContactSection from "@/ui/sections/contact";
 import StatisticsSection from "@/ui/landing/statistics";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
+import Inspiration from "@/ui/sections/inspiration";
 
 const Page: FC = function () {
   return (
@@ -18,6 +19,8 @@ const Page: FC = function () {
       <Hero />
       <GridLineH />
       <AboutSection />
+      <GridLineH />
+      <Inspiration />
       <GridLineH />
       <WorkStepsSection />
       <GridLineH />
