@@ -6,6 +6,7 @@ import Testimonials from "@/ui/landing/testimonials";
 import ContactBanner from "@/ui/sections/contact-banner";
 import { GridLineH } from "@/ui/sections/grid-lines";
 import Inspiration from "@/ui/sections/inspiration";
+import ArrowDownSection from "@/ui/sections/arrow-down-section";
 
 const Page: FC = function () {
   return (
@@ -13,6 +14,8 @@ const Page: FC = function () {
       <AboutSection />
       <GridLineH />
       <Inspiration />
+      <GridLineH />
+      <ArrowDownSection />
       <GridLineH />
       <ContactBanner />
       <Team />
