@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import DescriptionSection from "./description";
+import DescriptionSection from "@/ui/kontakt/description";
 import ContactSection from "@/ui/sections/contact";
 
 const Page: FC = function () {

@@ -97,12 +97,12 @@ const ContactSection: FC = function () {
         </div>
       </div>
       <div className="text-dark-grey content-right-half">
-        <Heading title="Współpraca" />
-        <p className="lg:mt-20 mt-12 text-xl">
+        <Heading title={<span>&nbsp;<br/>Współpraca</span>} />
+        <p className="lg:mt-10 mt-12 text-2xl">
           ZAPRASZAMY ARCHITEKTÓW <br /> DO KONTAKTU Z NAMI.
         </p>
         <div className="lg:max-w-80">
-          <p className="lg:mt-16 mt-12">
+          <p className="lg:mt-14 mt-12">
             Zawsze jesteśmy gotowi udzielić kompetentnej porady i pomocy tam, gdzie nie ma prostych rozwiązań.{" "}
           </p>
           <p>Z naszymi specjalistami możesz skonsultować się w każdej sprawie.</p>
