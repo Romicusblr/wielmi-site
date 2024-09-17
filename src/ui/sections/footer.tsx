@@ -17,9 +17,11 @@ const Footer: FC = function () {
             <SocialLinks />
           </div>
         </div>
-        <div className="content-right-half flex justify-center items-end text-xl">
+        <div className="content-right-half flex justify-center lg:justify-start items-end text-xl">
           <div>
-            <p>Godziny pracy: od 10:00 do 19:00</p>
+            <p className="text-center sm:text-left">Godziny pracy: 
+              <br className="sm:hidden"/>
+              od 9:00 do 20:00</p>
             <p className="text-center lg:text-start">Weekendy: sobota, niedziela</p>
             <p className="mt-4 flex justify-center lg:justify-start">
               <a href="tel:+48571780770">+ 48 571 780 770</a>
@@ -35,10 +37,8 @@ const Footer: FC = function () {
         <div className="p-2">
           <Logo />
         </div>
-        <div className="sm:col-start-2 lg:col-start-3 grid place-content-center p-2">
-          <p className="flex justify-center uppercase tracking-[0.05em]">
-            <Link href="/polityka-prywatnosci">Polityka Prywatności</Link>
-          </p>
+        <div className="content-right-half flex justify-center lg:justify-start items-center uppercase tracking-[0.05em] m-0">
+          <Link href="/polityka-prywatnosci">Polityka Prywatności</Link>
         </div>
       </div>
     </footer>

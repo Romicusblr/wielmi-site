@@ -107,7 +107,7 @@ const ContactSection: FC = function () {
           </p>
           <p>Z naszymi specjalistami możesz skonsultować się w każdej sprawie.</p>
         </div>
-        <div className="lg:mt-16 mt-12 text-2xl">
+        <div className="lg:mt-16 mt-12 text-xl">
           <Link href={`tel:${PHONENUMBER}`}>{formatNumber(PHONENUMBER)}</Link>
         </div>
         <div className="mt-6">
