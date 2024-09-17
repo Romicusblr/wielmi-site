@@ -54,8 +54,9 @@ const NavBar: FC = function () {
   return (
     <nav
       className={classNames(
-        "lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-2 sm:px-0 transition-all duration-1000",
-        isTop && "bg-opacity-0"
+        "lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-2 sm:px-0 transition-all duration-500",
+        isTop && "bg-opacity-0",
+        isOpen && "bg-[#242424] bg-opacity-100"
       )}
     >
       <div className="grid-layout items-center">
@@ -70,9 +71,9 @@ const NavBar: FC = function () {
         <ul
           onClick={close}
           className={classNames(
-            "flex-col p-4 text-2xl h-[100vh] justify-start col-span-full",
+            "flex-col p-4 text-2xl h-[100vh] justify-center col-span-full",
             "lg:h-auto lg:text-base lg:flex lg:flex-row lg:justify-center lg:col-span-2",
-            isOpen ? "flex" : "hidden"
+            isOpen ? "flex uppercase" : "hidden"
           )}
         >
           {navigation.map(({ name, href }) => (
@@ -82,7 +83,7 @@ const NavBar: FC = function () {
               </Link>
             </li>
           ))}
-          <li className="mt-8 lg:hidden">
+          <li className="mt-16 lg:hidden">
             <Link className={navLiClass} href={`tel:${PHONENUMBER}`}>
               {formatNumber(PHONENUMBER)}
             </Link>
