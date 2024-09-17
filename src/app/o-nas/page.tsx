@@ -5,15 +5,19 @@ import Team from "@/ui/landing/team";
 import Testimonials from "@/ui/landing/testimonials";
 import ContactBanner from "@/ui/sections/contact-banner";
 import { GridLineH } from "@/ui/sections/grid-lines";
+import Inspiration from "@/ui/sections/inspiration";
 
 const Page: FC = function () {
   return (
     <>
       <AboutSection />
-      <Team />
-      <Testimonials />
+      <GridLineH />
+      <Inspiration />
       <GridLineH />
       <ContactBanner />
+      <Team />
+      <GridLineH />
+      <Testimonials />
     </>
   );
 };
