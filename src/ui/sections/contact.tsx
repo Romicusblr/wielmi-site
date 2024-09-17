@@ -58,7 +58,7 @@ const ContactSection: FC = function () {
           }
         />
         <div className="shadow-lg rounded-lg mt-12">
-          <form className="flex flex-col justify-between gap-4" onSubmit={handleSubmit(onSubmit)}>
+          <form className="flex flex-col justify-between gap-4 text-grey" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex-none">
               <input
                 {...register("name", { required: true })}
