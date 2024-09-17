@@ -4,7 +4,7 @@ import type { FC } from "react";
 const Section: FC = () => {
   return (
     <section className="section">
-      <div className="sm:col-start-2 p-12">
+      <div className="content-left-half">
         <Heading title="Kontakty" subtitles={["Skontaktuj się", "z nami"]} />
       </div>
     </section>
