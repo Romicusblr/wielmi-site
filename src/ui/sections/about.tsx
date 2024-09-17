@@ -1,21 +1,21 @@
 import type { FC } from "react";
 import BrandedButton from "@/ui/common/button";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import { CONTACT_HASH, LANDING_ABOUT } from "@/constants";
+import { CONTACT_HASH, LANDING_DESCRIPTION } from "@/constants";
 import Link from "next/link";
 import Heading from "@/ui/common/heading";
 
-const AboutSection: FC = function () {
+const About: FC = function () {
   return (
-    <section className="grid-layout pt-24 -scroll-mt-20" id={LANDING_ABOUT}>
-      <div className="sm:col-start-2 p-12">
+    <section className="section" id={LANDING_DESCRIPTION}>
+      <div className="content-left-half">
         <Heading title="O Wielmi" />
       </div>
-      <div className="sm:col-start-2 lg:col-start-3 p-12 pt-0 lg:pt-12">
-        <h4 className="text-2xl sm:text-4xl mb-4 text-left">
+      <div className="content-right-half">
+        <h4 className="text-2xl sm:text-4xl">
           Inteligentny dom <br /> Wielmi
         </h4>
-        <p>
+        <p className="mt-4">
           <strong>Jakość, kompetencje, dbałość</strong> — to wartości, które nas wyróżniają.
         </p>
         <p>Każdy projekt, który realizujemy, oparty jest na trzech filarach:</p>
@@ -34,28 +34,8 @@ const AboutSection: FC = function () {
           </li>
         </ul>
       </div>
-      <GridLineH className="col-span-full" />
-      <div className="sm:col-start-2 p-12">
-        <Heading
-          title={
-            <span>
-              NASZA <br /> INSPIRACJA
-            </span>
-          }
-        />
-      </div>
-      <div className="sm:col-start-2 lg:col-start-3 p-12 pt-0 lg:pt-12">
-        <p className="mb-4">
-          Inspirują nas oryginalne projekty designerów, którzy nie trzymają się standardowych rozwiązań, a w swojej
-          pracy wykorzystują kreatywność i niestandardowe podejście.
-        </p>
-        <p className="mb-16">Jesteśmy otwarci na nowe projekty i gotowi do współpracy!</p>
-        <Link className="w-full" href={CONTACT_HASH}>
-          <BrandedButton className="px-12 w-full max-w">Czy masz jakiś pomysł?</BrandedButton>
-        </Link>
-      </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default About;

@@ -69,19 +69,14 @@ const source = [
 
 const Row: FC<Props> = function ({ imgSrc, heading, text, invert }) {
   return (
-    <>
+    <section className="section grid-flow-dense">
       <div
         className={classNames(
           "lg:col-start-2 lg:col-end-3 col-span-full text-dark-grey relative flex items-end justify-center",
           invert ? "lg:col-start-3 lg:col-end-4" : "lg:col-start-2 lg:col-end-3"
         )}
       >
-        <div
-          className={classNames(
-            "bg-grey absolute -z-10 bottom-0 w-full h-48"
-            // invert ? "lg:-right-1/2" : "lg:-left-1/2"
-          )}
-        ></div>
+        <div className={classNames("bg-grey absolute -z-10 bottom-0 w-full h-48")}></div>
         <div className={classNames("flex flex-col lg:flex-row", invert ? "lg:flex-row-reverse" : "lg:flex-row")}>
           <ResponsiveImage
             className="grow mb-16 ml-8 w-48 h-48"
@@ -93,19 +88,18 @@ const Row: FC<Props> = function ({ imgSrc, heading, text, invert }) {
         </div>
       </div>
       <div className={classNames("sm:col-start-2 px-12 pb-0", invert ? "" : "lg:col-start-3")}>{text}</div>
-    </>
+    </section>
   );
 };
 
 const Section = () => {
-  return source.map((e, i) => (
+  return (
     <>
-      <section className="grid-layout grid-flow-dense lg:py-20 py-10" key={i}>
-        <Row {...e} />
-      </section>
-      {i === 0 && <GridLineH className="col-span-full" />}
+      <Row {...source[0]} />
+      <GridLineH />
+      <Row {...source[1]} />
     </>
-  ));
+  );
 };
 
 export default Section;

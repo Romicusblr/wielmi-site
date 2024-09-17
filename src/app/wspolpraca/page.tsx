@@ -1,16 +1,19 @@
 import type { FC } from "react";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import DescriptionSection from "./description";
-import ContactSection from "@/ui/sections/contact";
-import PartnersSection from "./partners";
+import DescriptionSection from "@/ui/wspolpraca/description";
+import ContactBanner from "@/ui/sections/contact-banner";
+import PartnersSection from "@/ui/wspolpraca/partners";
+import ArrowDownSection from "@/ui/sections/arrow-down-section";
 
 const Page: FC = function () {
   return (
     <>
       <DescriptionSection />
       <GridLineH />
-      <ContactSection />
+      <ArrowDownSection />
       <PartnersSection />
+      <GridLineH />
+      <ContactBanner />
     </>
   );
 };

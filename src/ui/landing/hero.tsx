@@ -5,7 +5,7 @@ import { GridLineH } from "@/ui/sections/grid-lines";
 import SocialLinks from "@/ui/sections/social-links";
 import Link from "next/link";
 import classnames from "classnames";
-import { CONTACT_HASH, LANDING_ABOUT } from "@/constants";
+import { CONTACT_HASH, LANDING_DESCRIPTION } from "@/constants";
 import { Inter } from "next/font/google";
 import ArrowDown from "../common/arrow-down";
 
@@ -13,7 +13,7 @@ const font = Inter({ subsets: ["latin", "latin-ext"] });
 
 const Hero: FC = function () {
   return (
-    <div className="relative w-full h-screen grid-layout grid-rows-12 text-dark-grey -mt-20">
+    <div className="relative w-full h-screen section grid-rows-12 text-dark-grey -mt-20">
       <Image
         alt="cozy room"
         className="-z-10 object-cover brightness-[0.5] contrast-[.75]"
@@ -56,8 +56,8 @@ const Hero: FC = function () {
           <BrandedButton className="px-12 w-full lg:max-w-[416px] max-w-[320px]">napisz do nas</BrandedButton>
         </Link>
       </div>
-      <div className="row-start-11 col-span-full grid place-content-center">
-        <Link href={`#${LANDING_ABOUT}`}>
+      <div className="row-start-11 col-span-full grid place-content-center z-10">
+        <Link href={`#${LANDING_DESCRIPTION}`}>
           <ArrowDown />
         </Link>
       </div>

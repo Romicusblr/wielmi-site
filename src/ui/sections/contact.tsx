@@ -37,7 +37,7 @@ const ContactSection: FC = function () {
   });
 
   return (
-    <section className="relative grid-layout w-full bg-cover bg-center text-dark-grey py-20" id="contact">
+    <section className="relative section bg-cover bg-center text-dark-grey" id="contact">
       <Image
         alt="Kontakt Background Image"
         className="-z-10 object-cover"
@@ -47,7 +47,7 @@ const ContactSection: FC = function () {
         src="/images/kontakt-bg.jpeg"
         sizes="100%"
       />
-      <div className="sm:col-start-2 px-12">
+      <div className="content-left-half">
         <Heading
           title={
             <span>
@@ -57,7 +57,7 @@ const ContactSection: FC = function () {
             </span>
           }
         />
-        <div className="shadow-lg rounded-lg mt-20">
+        <div className="shadow-lg rounded-lg mt-12">
           <form className="flex flex-col justify-between gap-4" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex-none">
               <input
@@ -96,18 +96,18 @@ const ContactSection: FC = function () {
           </form>
         </div>
       </div>
-      <div className="text-dark-grey lg:col-start-3 sm:col-start-2 px-12">
-        <h3 className="text-5xl lg:mt-12 mt-20">Współpraca</h3>
-        <p className="lg:mt-24 mt-12 text-xl">
+      <div className="text-dark-grey content-right-half">
+        <Heading title={<span>&nbsp;<br/>Współpraca</span>} />
+        <p className="lg:mt-10 mt-12 text-2xl">
           ZAPRASZAMY ARCHITEKTÓW <br /> DO KONTAKTU Z NAMI.
         </p>
         <div className="lg:max-w-80">
-        <p className="lg:mt-16 mt-12">
-          Zawsze jesteśmy gotowi udzielić kompetentnej porady i pomocy tam, gdzie nie ma prostych rozwiązań.{" "}
-        </p>
-        <p>Z naszymi specjalistami możesz skonsultować się w każdej sprawie.</p>
+          <p className="lg:mt-14 mt-12">
+            Zawsze jesteśmy gotowi udzielić kompetentnej porady i pomocy tam, gdzie nie ma prostych rozwiązań.{" "}
+          </p>
+          <p>Z naszymi specjalistami możesz skonsultować się w każdej sprawie.</p>
         </div>
-        <div className="lg:mt-16 mt-12 text-2xl">
+        <div className="lg:mt-16 mt-12 text-xl">
           <Link href={`tel:${PHONENUMBER}`}>{formatNumber(PHONENUMBER)}</Link>
         </div>
         <div className="mt-6">

@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import { GridLineH } from "@/ui/sections/grid-lines";
-import Features from "./features";
-import Capabilities from "./capabilities";
-import Description from "./description";
-import Controls from "./controls";
-import Faq from "./faq";
+import Features from "@/ui/inteligentny-dom/features";
+import Capabilities from "@/ui/inteligentny-dom/capabilities";
+import Description from "@/ui/inteligentny-dom/description";
+import Controls from "@/ui/inteligentny-dom/controls";
+import Faq from "@/ui/inteligentny-dom/faq";
 import ContactBanner from "@/ui/sections/contact-banner";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
 

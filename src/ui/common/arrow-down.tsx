@@ -9,10 +9,9 @@ interface ArrowDownProps {
 }
 
 const ArrowDown: React.FC<ArrowDownProps> = function ({ className, ...props }) {
-  const baseClass = "text-red";
   return (
     <IconContext.Provider value={{ color: "#75A4DC", className: "animate-move-up-down" }}>
-      <BsChevronDown className={classNames(baseClass, className)} {...props} size={75} />
+      <BsChevronDown  {...props} size={75} />
     </IconContext.Provider>
   );
 };

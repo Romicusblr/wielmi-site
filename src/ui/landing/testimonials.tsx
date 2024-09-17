@@ -50,8 +50,8 @@ const reviews: SlideProps[] = [
 
 const Slide: FC<SlideProps> = ({ text, name, company, location }) => {
   return (
-    <div className="min-w-0 lg:w-1/2 w-full flex-none p-4">
-      <div className="sm:p-12 p-4 bg-grey rounded-2xl">
+    <div className="min-w-0 lg:w-1/2 w-full flex-none p-8">
+      <div className="sm:p-12 p-4 bg-grey rounded-2xl h-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -81,13 +81,8 @@ const Testimonials = () => {
   }, [emblaApi]);
 
   return (
-    <section className="grid-layout py-8">
-      <div className="sm:grid place-items-center hidden">
-        <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollPrev}>
-          <SlArrowLeft className="h-8 w-8" />
-        </button>
-      </div>
-      <div className="overflow-hidden lg:col-span-2 m-12">
+    <section className="section">
+      <div className="content-left-half">
         <Heading
           title={
             <span>
@@ -95,15 +90,20 @@ const Testimonials = () => {
             </span>
           }
         />
-        <div ref={emblaRef}>
-          <div className="flex text-dark-grey">
-            {reviews.map((t) => {
-              return <Slide key={t.name} {...t} />;
-            })}
-          </div>
+      </div>
+      <div className="hidden sm:grid place-items-center row-start-2">
+        <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollPrev}>
+          <SlArrowLeft className="h-8 w-8" />
+        </button>
+      </div>
+      <div className="overflow-hidden content-center-span p-0 text-dark-grey" ref={emblaRef}>
+        <div className="flex">
+          {reviews.map((t) => {
+            return <Slide key={t.name} {...t} />;
+          })}
         </div>
       </div>
-      <div className="sm:grid place-items-center hidden">
+      <div className="hidden sm:grid place-items-center">
         <button className="p-4 rounded-lg text-brand hover:bg-brand-light" onClick={scrollNext}>
           <SlArrowRight className="h-8 w-8" />
         </button>

@@ -28,7 +28,31 @@ body {
 }
 
 @layer components {
+  .section-padding {
+    @apply py-16;
+  }
+
+  .content-padding {
+    @apply px-12;
+  }
+
   .grid-layout {
     @apply grid lg:grid-cols-[12vw_1fr_1fr_12vw] sm:grid-cols-[12vw_1fr_12vw];
+  }
+
+  .section {
+    @apply grid-layout section-padding;
+  }
+
+  .content-left-half {
+    @apply sm:col-start-2 content-padding;
+  }
+
+  .content-right-half {
+    @apply sm:col-start-2 lg:col-start-3 content-padding mt-8 lg:mt-0
+  }
+
+  .content-center-span {
+    @apply sm:col-start-2 lg:col-end-4 content-padding
   }
 }

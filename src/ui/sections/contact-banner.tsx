@@ -6,8 +6,8 @@ import { CONTACT_LINK } from "@/constants";
 
 const ContactBanner = () => {
   return (
-    <section className="grid-layout py-20">
-      <div className="sm:col-start-2 flex flex-col justify-center px-12">
+    <section className="section">
+      <div className="content-left-half">
         <Heading
           title={
             <span>
@@ -18,7 +18,7 @@ const ContactBanner = () => {
           subtitles={["BEZPOŚREDNIO", "LUB TELEFONICZNIE"]}
         />
       </div>
-      <div className="sm:col-start-2 lg:col-start-3 px-12 place-content-end">
+      <div className="content-right-half place-content-end">
         <Link className="w-full" href={CONTACT_LINK}>
           <BrandedButton className="px-12 w-full max-w">napisać do nas</BrandedButton>
         </Link>
