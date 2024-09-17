@@ -54,24 +54,24 @@ const NavBar: FC = function () {
   return (
     <nav
       className={classNames(
-        "lg:h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-2 sm:px-0 transition-all duration-500",
+        "h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-8 sm:px-0 transition-all duration-500",
         isTop && "bg-opacity-0",
-        isOpen && "bg-[#242424] bg-opacity-100"
+        isOpen && "bg-[#242424] bg-opacity-100 h-auto"
       )}
     >
       <div className="grid-layout items-center">
-        <div className="flex items-center lg:justify-center justify-between col-span-full lg:col-span-1">
+        <div className="flex items-center lg:justify-center justify-between col-span-full lg:col-span-1 min-w-[350px]">
           <div className="h-12 w-24 sm:w-[10vw] p-2">
             <Logo />
           </div>
-          <div className="h-12 w-24 sm:w-[10vw] grid place-items-center lg:hidden sm:col-start-3">
+          <div className="h-12 w-20 sm:w-[10vw] grid place-items-center lg:hidden sm:col-start-3">
             <MenuButton onClick={toggleOpen} />
           </div>
         </div>
         <ul
           onClick={close}
           className={classNames(
-            "flex-col p-4 text-2xl h-[100vh] justify-center col-span-full",
+            "flex-col p-0 text-2xl h-[100vh] justify-center col-span-full",
             "lg:h-auto lg:text-base lg:flex lg:flex-row lg:justify-center lg:col-span-2",
             isOpen ? "flex uppercase" : "hidden"
           )}
