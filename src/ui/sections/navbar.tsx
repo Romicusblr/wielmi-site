@@ -54,9 +54,9 @@ const NavBar: FC = function () {
   return (
     <nav
       className={classNames(
-        "grid-layout items-center content-padding sm:px-0 py-2 fixed z-30 w-full text-dark-grey bg-grey transition-all duration-500",
+        "grid-layout content-start items-center content-padding sm:px-0 py-2 fixed z-30 w-full text-dark-grey bg-grey transition-all duration-500",
         isTop && "bg-opacity-0",
-        isOpen && "bg-[#242424] bg-opacity-100"
+        isOpen && "bg-[#242424] bg-opacity-100 h-[100vh]"
       )}
     >
       <div className="flex items-center lg:justify-center justify-between col-span-full lg:col-span-1">
@@ -70,9 +70,9 @@ const NavBar: FC = function () {
       <ul
         onClick={close}
         className={classNames(
-          "flex-col p-0 xs:text-2xl text-xl h-[100vh] justify-center col-span-full",
+          "flex-col p-0 xs:text-2xl text-xl justify-center col-span-full",
           "lg:h-auto lg:text-base lg:flex lg:flex-row lg:justify-center lg:col-span-2",
-          isOpen ? "flex uppercase" : "hidden"
+          isOpen ? "flex uppercase mt-12" : "hidden"
         )}
       >
         {navigation.map(({ id, name, href }) => (
