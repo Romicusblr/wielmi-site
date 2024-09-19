@@ -54,7 +54,7 @@ const InfoSection: FC = function () {
     <section className="w-full bg-grey text-dark-grey section py-0 grid-flow-dense">
       <Info {...infos[0]} />
       <GridLineH className="col-span-full" />
-      <Info {...infos[1]} reverse imgClassName="object-left" />
+      <Info {...infos[1]} reverse imgClassName="!object-left" />
       <GridLineH className="col-span-full" />
       <Info {...infos[2]} />
       <GridLineH className="col-span-full" />
