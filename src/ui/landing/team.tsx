@@ -12,7 +12,7 @@ const persons = [
         <p className="mt-8">
           Doświadczony inżynier w automatyce domowej oraz w projektowaniu i instalacji szaf automatyki.
         </p>
-        <p className="mt-8">Doświadczenie zawodowe 10 lat</p>
+        <p className="mt-8">Doświadczenie zawodowe 10&nbsp;lat</p>
       </>
     ),
   },
@@ -25,7 +25,7 @@ const persons = [
         <p className="mt-8">
           Doświadczony inżynier w instalacji systemów okablowania i energetyki z wysokim napięciem.
         </p>
-        <p className="mt-8">Doświadczenie zawodowe 10 lat</p>
+        <p className="mt-8">Doświadczenie zawodowe 10&nbsp;lat</p>
       </>
     ),
   },
@@ -36,7 +36,7 @@ const persons = [
     description: (
       <>
         <p className="mt-8">Doświadczony programista serwerów i interfejsów inteligentnego domu. </p>
-        <p className="mt-8">Doświadczenie zawodowe 10 lat</p>
+        <p className="mt-8">Doświadczenie zawodowe 10&nbsp;lat</p>
       </>
     ),
   },

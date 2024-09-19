@@ -9,12 +9,12 @@ import Logo from "@/ui/common/logo";
 import MenuButton from "@/ui/common/menu-button";
 
 const navigation = [
-  { name: "Inteligentny Dom", href: "/inteligentny-dom/" },
-  { name: "Instalacje Elektryczne", href: "/instalacje-elektryczne/" },
-  { name: "Sieci Lokalne", href: "/sieci-lokalne/" },
-  { name: "Współpraca", href: "/wspolpraca/" },
-  { name: "O Nas", href: "/o-nas/" },
-  { name: "Kontakt", href: "/kontakt/" },
+  { id: 0, name: "Inteligentny Dom", href: "/inteligentny-dom/" },
+  { id: 1, name: "Instalacje Elektryczne", href: "/instalacje-elektryczne/" },
+  { id: 2, name: "Sieci Lokalne", href: "/sieci-lokalne/" },
+  { id: 3, name: "Współpraca", href: "/wspolpraca/" },
+  { id: 4, name: "O Nas", href: "/o-nas/" },
+  { id: 5, name: "Kontakt", href: "/kontakt/" },
 ];
 
 export function formatNumber(phoneNumber: string) {
@@ -54,46 +54,44 @@ const NavBar: FC = function () {
   return (
     <nav
       className={classNames(
-        "h-20 p-2 fixed z-30 w-full text-dark-grey bg-grey px-8 sm:px-0 transition-all duration-500",
+        "grid-layout items-center content-padding sm:px-0 py-2 fixed z-30 w-full text-dark-grey bg-grey transition-all duration-500",
         isTop && "bg-opacity-0",
-        isOpen && "bg-[#242424] bg-opacity-100 h-auto"
+        isOpen && "bg-[#242424] bg-opacity-100"
       )}
     >
-      <div className="grid-layout items-center">
-        <div className="flex items-center lg:justify-center justify-between col-span-full lg:col-span-1 min-w-[350px]">
-          <div className="h-12 w-24 sm:w-[10vw] p-2">
-            <Logo />
-          </div>
-          <div className="h-12 w-20 sm:w-[10vw] grid place-items-center lg:hidden sm:col-start-3">
-            <MenuButton onClick={toggleOpen} />
-          </div>
+      <div className="flex items-center lg:justify-center justify-between col-span-full lg:col-span-1">
+        <div className="h-12 w-24 sm:w-[12vw] sm:px-2 grid place-items-center">
+          <Logo />
         </div>
-        <ul
-          onClick={close}
-          className={classNames(
-            "flex-col p-0 text-2xl h-[100vh] justify-center col-span-full",
-            "lg:h-auto lg:text-base lg:flex lg:flex-row lg:justify-center lg:col-span-2",
-            isOpen ? "flex uppercase" : "hidden"
-          )}
-        >
-          {navigation.map(({ name, href }) => (
-            <li key={name} className="xl:px-2">
-              <Link className={classNames(navLiClass, path === href && 'text-brand')} href={href} >
-                {name}
-              </Link>
-            </li>
-          ))}
-          <li className="mt-16 lg:hidden">
-            <Link className={navLiClass} href={`tel:${PHONENUMBER}`}>
-              {formatNumber(PHONENUMBER)}
+        <div className="sm:w-[12vw] grid place-items-center lg:hidden sm:col-start-3">
+          <MenuButton onClick={toggleOpen} isOpen={isOpen}/>
+        </div>
+      </div>
+      <ul
+        onClick={close}
+        className={classNames(
+          "flex-col p-0 xs:text-2xl text-xl h-[100vh] justify-center col-span-full",
+          "lg:h-auto lg:text-base lg:flex lg:flex-row lg:justify-center lg:col-span-2",
+          isOpen ? "flex uppercase" : "hidden"
+        )}
+      >
+        {navigation.map(({ id, name, href }) => (
+          <li key={id} className={classNames("xl:px-2", id === 3 && "mt-8 lg:mt-0")}>
+            <Link className={classNames(navLiClass, path === href && "text-brand")} href={href}>
+              {name}
             </Link>
           </li>
-        </ul>
-        <div className="lg:flex lg:justify-end xl:justify-center hidden">
+        ))}
+        <li className="mt-16 lg:hidden">
           <Link className={navLiClass} href={`tel:${PHONENUMBER}`}>
             {formatNumber(PHONENUMBER)}
           </Link>
-        </div>
+        </li>
+      </ul>
+      <div className="lg:flex lg:justify-end xl:justify-center hidden">
+        <Link className={navLiClass} href={`tel:${PHONENUMBER}`}>
+          {formatNumber(PHONENUMBER)}
+        </Link>
       </div>
     </nav>
   );
