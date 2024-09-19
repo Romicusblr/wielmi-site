@@ -9,9 +9,10 @@ interface InfoProps {
   article: JSX.Element;
   subtitles?: string[];
   reverse?: boolean;
+  imgClassName?: string;
 }
 
-const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, subtitles }) {
+const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, subtitles, imgClassName }) {
   const classImage = reverse ? "lg:col-start-3" : "";
   const classArticle = reverse ? "lg:col-start-2" : "lg:col-start-3";
 
@@ -19,7 +20,7 @@ const Info: FC<InfoProps> = function ({ imageSrc, heading, article, reverse, sub
     <>
       <ResponsiveImage
         className={classNames("lg:h-auto h-[36rem] lg:col-span-2 col-span-full", classImage)}
-        imgClassName="object-right-top"
+        imgClassName={classNames("object-right-top", imgClassName)}
         src={imageSrc}
         // TODO: add descriptive message
         alt={"image"}

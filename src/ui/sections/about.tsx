@@ -13,7 +13,7 @@ const About: FC = function () {
       </div>
       <div className="content-right-half">
         <h4 className="text-2xl sm:text-4xl">
-          Inteligentny dom <br /> Wielmi
+          INTELIGENTNY DOM <br /> Wielmi
         </h4>
         <p className="mt-4">
           <strong>Jakość, kompetencje, dbałość</strong> — to wartości, które nas wyróżniają.
