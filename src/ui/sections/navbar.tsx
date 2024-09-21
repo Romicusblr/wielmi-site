@@ -50,11 +50,7 @@ const NavBar: FC = function () {
   }, [path]);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
   const navLiClass =
@@ -72,7 +68,7 @@ const NavBar: FC = function () {
           <Logo />
         </div>
         <div className="sm:w-[12vw] grid place-items-center lg:hidden sm:col-start-3">
-          <MenuButton onClick={toggleOpen} isOpen={isOpen}/>
+          <MenuButton onClick={toggleOpen} isOpen={isOpen} />
         </div>
       </div>
       <ul
