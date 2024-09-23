@@ -1,41 +1,12 @@
-"use client";
-
-import { useState, type FC } from "react";
-import ResponsiveImage from "@/ui/common/responsive-image";
-import { GridLineH } from "@/ui/sections/grid-lines";
-import BrandedButton from "@/ui/common/button";
+import { type FC } from "react";
 import SocialLinks from "@/ui/sections/social-links";
-import { useForm } from "react-hook-form";
-import useWeb3Forms from "@web3forms/react";
 import Image from "next-export-optimize-images/image";
 import Heading from "../common/heading";
 import Link from "next/link";
-import { PHONENUMBER } from "@/constants";
-import { formatNumber } from "./navbar";
+import { formatNumber, PHONENUMBER } from "@/constants";
+import ContactForm from "@/ui/common/contact-form";
 
 const ContactSection: FC = function () {
-  const { register, reset, handleSubmit } = useForm();
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [result, setResult] = useState("");
-  const accessKey = process.env.NEXT_PUBLIC_FORM_ACCESS_KEY ?? "";
-
-  const { submit: onSubmit } = useWeb3Forms({
-    access_key: accessKey,
-    settings: {
-      from_name: "Wielmi Contact Form",
-      subject: "New Contact Message from your Website",
-    },
-    onSuccess: (msg, data) => {
-      setIsSuccess(true);
-      setResult(msg);
-      reset();
-    },
-    onError: (msg, data) => {
-      setIsSuccess(false);
-      setResult(msg);
-    },
-  });
-
   return (
     <section className="relative section bg-cover bg-center text-dark-grey" id="contact">
       <Image
@@ -57,47 +28,18 @@ const ContactSection: FC = function () {
             </span>
           }
         />
-        <div className="shadow-lg rounded-lg mt-12">
-          <form className="flex flex-col justify-between gap-4 text-grey" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex-none">
-              <input
-                {...register("name", { required: true })}
-                type="text"
-                placeholder="Podaj imię..."
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div className="flex-none">
-              <input
-                {...register("email", { required: true })}
-                type="email"
-                placeholder="Podaj email..."
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div className="flex-none">
-              <input
-                type="tel"
-                {...register("phone", { required: true })}
-                placeholder="Podaj numer telefonu..."
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div className="flex-1">
-              <textarea
-                {...register("message", { required: true })}
-                placeholder="Informacje dla nas..."
-                className="w-full px-4 py-2 border rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
-            </div>
-            <div className="flex-none flex justify-center text-dark-grey">
-              <BrandedButton className="px-12 w-full bg-brand">Wysłać</BrandedButton>
-            </div>
-          </form>
-        </div>
+        <ContactForm />
       </div>
       <div className="text-dark-grey content-right-half">
-        <Heading title={<span>&nbsp;<br/>Współpraca</span>} />
+        <Heading
+          title={
+            <span>
+              &nbsp;
+              <br />
+              Współpraca
+            </span>
+          }
+        />
         <p className="lg:mt-10 mt-12 text-2xl">
           ZAPRASZAMY ARCHITEKTÓW <br /> DO KONTAKTU Z NAMI.
         </p>
