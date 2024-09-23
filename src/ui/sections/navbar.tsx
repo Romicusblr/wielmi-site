@@ -4,7 +4,7 @@ import { throttle } from "lodash";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
-import { PHONENUMBER } from "@/constants";
+import { formatNumber, PHONENUMBER } from "@/constants";
 import Logo from "@/ui/common/logo";
 import MenuButton from "@/ui/common/menu-button";
 
@@ -16,10 +16,6 @@ const navigation = [
   { id: 4, name: "O Nas", href: "/o-nas/" },
   { id: 5, name: "Kontakt", href: "/kontakt/" },
 ];
-
-export function formatNumber(phoneNumber: string) {
-  return phoneNumber.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4");
-}
 
 const NavBar: FC = function () {
   const [isOpen, setIsOpen] = useState(false);
