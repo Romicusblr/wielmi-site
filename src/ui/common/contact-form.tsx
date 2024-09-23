@@ -5,49 +5,39 @@ import BrandedButton from "@/ui/common/button";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { contactFormSchema } from "./contact-form.schema";
 
-const validationSchema = yup.object().shape({
-  name: yup.string().required("Imię jest wymagane"),
-  email: yup.string().email("Nieprawidłowy adres email").required("Email jest wymagany"),
-  phone: yup.string().required("Numer telefonu jest wymagany"),
-  message: yup.string().min(4, "Wiadomość musi mieć co najmniej 4 znaków").required("Wiadomość jest wymagana"),
-});
+const successMessage = "Dziękujemy! Formularz został pomyślnie wysłany.";
+const errorMessage = "Niestety, formularz nie został wysłany. Skontaktuj się z nami innym sposobem.";
 
 const ContactForm: FC = function () {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful, isSubmitting },
     reset,
   } = useForm({
     mode: "onChange",
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(contactFormSchema),
   });
   const [isSuccess, setIsSuccess] = useState(false);
+
   const accessKey = process.env.NEXT_PUBLIC_FORM_ACCESS_KEY ?? "";
 
-  const onSubmit = (d: any) => {
-    console.log(d);
-    setIsSuccess(true);
-    reset();
-  };
-  // const { submit: onSubmit } = useWeb3Forms({
-  //   access_key: accessKey,
-  //   settings: {
-  //     from_name: "Wielmi Contact Form",
-  //     subject: "New Contact Message from your Website",
-  //   },
-  //   onSuccess: (msg, data) => {
-  //     setIsSuccess(true);
-  //     setResult(msg);
-  //     reset();
-  //   },
-  //   onError: (msg, data) => {
-  //     setIsSuccess(false);
-  //     setResult(msg);
-  //   },
-  // });
+  const { submit: onSubmit } = useWeb3Forms({
+    access_key: accessKey,
+    settings: {
+      from_name: "Wielmi Contact Form",
+      subject: "New Contact Message from your Website",
+    },
+    onSuccess: (msg, data) => {
+      setIsSuccess(true);
+      reset();
+    },
+    onError: (msg, data) => {
+      setIsSuccess(false);
+    },
+  });
 
   return (
     <div className="shadow-lg rounded-lg mt-12">
@@ -99,10 +89,11 @@ const ContactForm: FC = function () {
           <BrandedButton className="px-12 w-full bg-brand">Wysłać</BrandedButton>
         </div>
       </form>
-      {isSuccess && (
-        <div className="mt-4 p-4 text-green-600 bg-green-100 rounded-md">
-          Dziękujemy! Formularz został wysłany pomyślnie.
-        </div>
+      {isSubmitSuccessful && isSuccess && (
+        <div className="mt-4 p-4 text-green-600 bg-green-100 rounded-md">{successMessage}</div>
+      )}
+      {isSubmitSuccessful && !isSuccess && (
+        <div className="mt-4 p-4 text-red-600 bg-red-100 rounded-md">{errorMessage}</div>
       )}
     </div>
   );
