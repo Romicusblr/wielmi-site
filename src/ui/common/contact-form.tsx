@@ -17,7 +17,6 @@ const ContactForm: FC = function () {
     formState: { errors, isSubmitSuccessful, isSubmitting },
     reset,
   } = useForm({
-    mode: "onChange",
     resolver: yupResolver(contactFormSchema),
   });
   const [isSuccess, setIsSuccess] = useState(false);
