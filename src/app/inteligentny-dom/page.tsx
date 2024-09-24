@@ -7,6 +7,11 @@ import Controls from "@/ui/inteligentny-dom/controls";
 import Faq from "@/ui/inteligentny-dom/faq";
 import ContactBanner from "@/ui/sections/contact-banner";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Inteligentny Dom",
+};
 
 const Page: FC = function () {
   return (
