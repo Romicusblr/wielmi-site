@@ -76,7 +76,4 @@ jobs:
       - name: Deploy to server using rsync
         run: |
           rsync -avz --delete -e "ssh -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/wielmi.pl/public_html/
-
-      # - name: Deploy to server
-      #   run: |
-      #     scp -P ${{ secrets.SSH_PORT }} -r ./build/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/wielmi.pl/public_html
+          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "cp ~/domains/wielmi.pl/public_html/404.html ~/domains/wielmi.pl/public_html/404.shtml"
