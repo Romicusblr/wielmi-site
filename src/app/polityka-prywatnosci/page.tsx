@@ -1,5 +1,10 @@
 import PageWrapper from "@/ui/common/page";
 import type { FC } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Polityka Prywatności",
+};
 
 const Page: FC = function () {
   return (

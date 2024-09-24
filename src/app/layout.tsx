@@ -7,6 +7,7 @@ import Footer from "@/ui/sections/footer";
 import NavBar from "@/ui/sections/navbar";
 import GridLines from "@/ui/sections/grid-lines";
 import CookieConsentComponent from "@/ui/cookie-banner/CookieConsent";
+import { siteMetadata } from "@/ui/common/meta";
 
 const font = Montserrat({ subsets: ["latin", "latin-ext"] });
 
@@ -14,10 +15,7 @@ interface RootLayoutProps {
   children?: React.ReactNode;
 }
 
-export const metadata: Metadata = {
-  title: "Wielmi",
-  description: "Wielmi site",
-};
+export const metadata = siteMetadata; // Re-export metadata
 
 const RootLayout: FC<RootLayoutProps> = function ({ children }) {
   return (
