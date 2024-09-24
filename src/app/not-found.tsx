@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "404",
+};
+
 const Custom404: React.FC = () => {
   return (
     <div className="min-h-[50vh] flex-1 flex flex-col h-full items-center justify-center p-10 z-10 bg-[#F5F5F5] text-center">
