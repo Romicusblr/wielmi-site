@@ -48,7 +48,7 @@ interface BlackCardProps {
 
 const BlackCard: FC<BlackCardProps> = function ({ heading, text }) {
   return (
-    <article className="p-4 py-8 flex-1 bg-grey text-[13px] text-dark-grey rounded-2xl">
+    <article className="p-8 flex-1 bg-grey text-[13px] text-dark-grey rounded-2xl">
       <h3 className="mb-4 text-xl text-center h-20 leading-6">{heading}</h3>
       <p className="leading-4">{text}</p>
     </article>
