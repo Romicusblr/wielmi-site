@@ -12,7 +12,7 @@ const About: FC = function () {
         <Heading title="O Wielmi" />
       </div>
       <div className="content-right-half">
-        <h4 className="text-2xl sm:text-4xl">
+        <h4 className="text-3xl font-medium">
           INTELIGENTNY DOM <br /> Wielmi
         </h4>
         <p className="mt-4">
