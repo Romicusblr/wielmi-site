@@ -5,7 +5,11 @@ const Section: FC = () => {
   return (
     <section className="section">
       <div className="content-left-half">
-        <Heading title="JEŚTEŚ ARCHITECTEM?" subtitles={["DOŁĄCZ DO", "SYSTEMU", "INTELIGENTNEGO", "DOMU Wielmi"]} />
+        <Heading
+          tag="h1"
+          title="JEŚTEŚ ARCHITECTEM?"
+          subtitles={["DOŁĄCZ DO", "SYSTEMU", "INTELIGENTNEGO", "DOMU Wielmi"]}
+        />
       </div>
       <div className="content-right-half">
         <h3 className="text-3xl font-medium">DOŁĄCZ DO SYSTEMU INTELIGENTNEGO DOMU Wielmi</h3>
