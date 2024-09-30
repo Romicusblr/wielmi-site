@@ -19,10 +19,11 @@ const Footer: FC = function () {
         </div>
         <div className="content-right-half flex justify-center lg:justify-start items-end text-xl">
           <div>
-            <p className="text-center sm:text-left">Godziny pracy: 
-              <br className="sm:hidden"/>
-              od 9:00 do 20:00</p>
-            <p className="text-center lg:text-start">Weekendy: sobota, niedziela</p>
+            <p className="text-center lg:text-start text-2xl">
+              Godziny pracy:&nbsp;
+            </p>
+            <p className="text-center lg:text-start">poniedziałek - sobota od&nbsp;09:00&nbsp;do&nbsp;20:00</p>
+            <p className="text-center lg:text-start">Weekendy: niedziela</p>
             <p className="mt-4 flex justify-center lg:justify-start">
               <a href="tel:+48571780770">+ 48 571 780 770</a>
             </p>
