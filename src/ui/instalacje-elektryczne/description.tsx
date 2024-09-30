@@ -5,7 +5,11 @@ const Section: FC = () => {
   return (
     <section className="section">
       <div className="content-left-half">
-        <Heading title="INSTALACJE ELEKTRYCZNE" subtitles={["WSZECHSTRONNOŚĆ", "PROJEKTOWANIA I", "REALIZACJI"]} />
+        <Heading
+          tag="h1"
+          title="INSTALACJE ELEKTRYCZNE"
+          subtitles={["WSZECHSTRONNOŚĆ", "PROJEKTOWANIA I", "REALIZACJI"]}
+        />
       </div>
       <div className="content-right-half">
         <h3 className="text-3xl font-medium mb-4">CO TO JEST INSTALACJE ELEKTRYCZNE?</h3>

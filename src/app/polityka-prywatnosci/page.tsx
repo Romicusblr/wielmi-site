@@ -1,4 +1,3 @@
-import PageWrapper from "@/ui/common/page";
 import type { FC } from "react";
 import { Metadata } from "next";
 
@@ -8,8 +7,8 @@ export const metadata: Metadata = {
 
 const Page: FC = function () {
   return (
-    <PageWrapper>
-      <div className="px-4 py-8 sm:col-start-2 lg:col-end-4">
+    <section className="section">
+      <div className="content-center-span">
         <h1 className="text-4xl font-bold mb-6">Polityka Prywatności</h1>
 
         <section className="mb-6">
@@ -137,7 +136,7 @@ const Page: FC = function () {
           </p>
         </section>
       </div>
-    </PageWrapper>
+    </section>
   );
 };
 

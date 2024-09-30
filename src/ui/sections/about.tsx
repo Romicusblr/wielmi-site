@@ -12,9 +12,9 @@ const About: FC = function () {
         <Heading title="O Wielmi" />
       </div>
       <div className="content-right-half">
-        <h4 className="text-2xl sm:text-4xl">
+        <h1 className="text-3xl font-medium">
           INTELIGENTNY DOM <br /> Wielmi
-        </h4>
+        </h1>
         <p className="mt-4">
           <strong>Jakość, kompetencje, dbałość</strong> — to wartości, które nas wyróżniają.
         </p>

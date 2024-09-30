@@ -7,6 +7,7 @@ const Section: FC = () => {
     <section className="section">
       <div className="content-left-half">
         <Heading
+          tag="h1"
           title={
             <span>
               SIECI <br /> LOKALNE

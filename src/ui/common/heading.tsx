@@ -11,7 +11,7 @@ interface HeadingProps {
 }
 
 const Heading: FC<HeadingProps> = ({ title, titleClass, subtitleClass, subtitles, tag }) => {
-  const TitleTag = tag ?? "h1";
+  const TitleTag = tag ?? "h2";
   return (
     <div>
       <TitleTag className={classNames("font-semibold text-3xl sm:text-4xl text-left mb-8", titleClass)}>
