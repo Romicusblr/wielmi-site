@@ -27,7 +27,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ className, iconClassName = "h-4 w-4
   return (
     <div className={containerClass}>
       {socialLinksData.map((link, index) => (
-        <a key={index} className={linkClass} href={link.href}>
+        <a key={index} className={linkClass} href={link.href} target="_blank" rel="noopener noreferrer">
           {React.cloneElement(link.icon, { className: iconClassName })}
         </a>
       ))}

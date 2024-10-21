@@ -12,16 +12,23 @@ const Footer: FC = function () {
         <div className="content-left-half flex flex-col items-center lg:items-start">
           <Heading title="KONTAKTY" titleClass="!text-4xl font-normal lg:block flex flex-col items-center" />
           <p className="text-brand tracking-[0.1em] text-xl -mt-4">INTELIGENTNY DOM Wielmi</p>
-          <p className="mt-8 text-3xl">Kraków, Polska</p>
+          <p className="mt-8 text-3xl">
+            <a
+              target="_blank"
+              className="hover:text-brand hover:underline hover:underline-offset-8"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/place/Wielmi/@50.0476952,19.9630103,2405m/data=!3m1!1e3!4m6!3m5!1s0x478a513b5a8e7f85:0x1ccfb67257aed487!8m2!3d50.0471774!4d19.9612736!16s%2Fg%2F11svlqlgl2?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
+            >
+              Kraków, Polska
+            </a>
+          </p>
           <div className="mt-4">
             <SocialLinks />
           </div>
         </div>
         <div className="content-right-half flex justify-center lg:justify-start items-end text-xl">
           <div>
-            <p className="text-center lg:text-start text-2xl">
-              Godziny pracy:&nbsp;
-            </p>
+            <p className="text-center lg:text-start text-2xl">Godziny pracy:&nbsp;</p>
             <p className="text-center lg:text-start">poniedziałek - sobota od&nbsp;09:00&nbsp;do&nbsp;20:00</p>
             <p className="text-center lg:text-start">Weekendy: niedziela</p>
             <p className="mt-4 flex justify-center lg:justify-start">
