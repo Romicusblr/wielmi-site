@@ -24,6 +24,11 @@ const reviews: SlideProps[] = [
     location: "Kraków, Polska",
   },
   {
+    text: `Zrobione zgodnie z projektem nowe instalacje, starannie i dokładnie wykonane i wszystko działa jak powinno 👍`,
+    name: "Anna LE",
+    location: "Kraków, Polska",
+  },
+  {
     text: `Dla wyposażenia mojej działki w system „inteligentny dom” wybrałam firmę WIELMI i jestem bardzo zadowolona.
     Oprócz standardowych rozwiązań zaproponowali mi inteligentne nawadnianie z stacją pogodową oraz system
     bezpieczeństwa, wszystko zarządzane przez aplikację. Menedżerowie zawsze byli dostępni, prace wykonano
