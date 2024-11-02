@@ -24,31 +24,24 @@ const reviews: SlideProps[] = [
     location: "Kraków, Polska",
   },
   {
-    text: `Zrobione zgodnie z projektem nowe instalacje, starannie i dokładnie wykonane i wszystko działa jak powinno 👍`,
-    name: "Anna LE",
+    text: `Firma WIELMI zapewniła naszemu lounge-karaoke barowi Angel's niezawodne systemy automatyki i oświetlenia, 
+    które działają bezawaryjnie od dwóch lat. Rozwiązania idealnie odpowiadają naszym potrzebom, tworząc wyjątkową 
+    atmosferę dla gości i podnosząc jakość wydarzeń. Szczególnie doceniamy stałe wsparcie oraz szybką reakcję Aleksa 
+    na wszelkie nasze potrzeby, a także gotowość do modernizacji w każdej chwili. Gorąco polecamy za doskonałą pracę 
+    i niezawodną współpracę`,
+    name: "Angel's Karaoke & Lounge Bar",
+    location: "Warszawa, Polska",
+  },
+  {
+    text: `Niezwykle rzeczowy, pomocny właściciel firmy. Zadzwoniłem do niego z zapytaniem o jeden z elementów Smart domu, 
+    wykonał testy i udzielił odpowiedzi rozwiązującej problem. Nie musiał a pomógł i to pro bono, to wiele znaczy 
+    w dzisiejszych czasach. Polecam!!!`,
+    name: "Xxx",
     location: "Kraków, Polska",
   },
   {
-    text: `Dla wyposażenia mojej działki w system „inteligentny dom” wybrałam firmę WIELMI i jestem bardzo zadowolona.
-    Oprócz standardowych rozwiązań zaproponowali mi inteligentne nawadnianie z stacją pogodową oraz system
-    bezpieczeństwa, wszystko zarządzane przez aplikację. Menedżerowie zawsze byli dostępni, prace wykonano
-    terminowo i solidnie. Polecam firmę WIELMI za profesjonalizm i doskonałą obsługę!`,
-    name: "Iwona",
-    location: "Kraków, Polska",
-  },
-  {
-    text: `Zwróciłem się do firmy WIELMI w celu zainstalowania systemu „inteligentny dom” w moim mieszkaniu i wyniki 
-    przerosły wszelkie oczekiwania. Uwzględnili wszystkie moje życzenia, automatyzując oświetlenie, klimatyzację, 
-    system nagłośnienia oraz bezpieczeństwo. Wszystko jest intuicyjne w obsłudze i sprawia ogromną przyjemność w 
-    użytkowaniu. Montażyści i programiści to prawdziwi profesjonaliści i przyjemni ludzie.`,
-    name: "Bartosz",
-    location: "Kraków, Polska",
-  },
-  {
-    text: `Zdecydowałem się na firmę WIELMI do zainstalowania systemu inteligentnego domu.
-    Proces przebiegał bardzo sprawnie od początku do końca. Zespół był profesjonalny i zawsze gotowy odpowiedzieć na moje pytania.
-    Szczególnie doceniam system zarządzania energią, który pozwala mi monitorować zużycie prądu. Dzięki temu moje rachunki są niższe, a ja mam większą kontrolę nad domem. Gorąco polecam!`,
-    name: "Marcin",
+    text: `Zrobione zgodnie z projektem nowe instalacje, starannie i dokładnie wykonane i wszystko działa jak powinno`,
+    name: "Anna",
     location: "Kraków, Polska",
   },
 ];
