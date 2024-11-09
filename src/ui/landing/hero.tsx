@@ -14,7 +14,7 @@ const font = Inter({ subsets: ["latin", "latin-ext"] });
 const Hero: FC = function () {
   return (
     <div className="relative w-full h-screen section grid-rows-12 text-dark-grey -mt-20">
-      <Image
+      {/* <Image
         alt="cozy room"
         className="-z-10 object-cover brightness-[0.5] contrast-[.75]"
         fill
@@ -22,8 +22,18 @@ const Hero: FC = function () {
         quality={100}
         src="/images/hero-bg.png"
         sizes="100%"
-      />
+      /> */}
 
+      <video
+        className="-z-10 brightness-50 contrast-75 object-cover h-full absolute inset-0"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={`${process.env.BASE_PATH}/videos/hero.mp4`} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div
         className={classnames(
           font.className,
