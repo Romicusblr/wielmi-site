@@ -30,9 +30,9 @@ const Hero: FC = function () {
           "col-span-full text-4xl font-[500] tracking-wider lg:hidden row-start-6 flex flex-col justify-end items-center"
         )}
       >
-        <h1>INTELIGENTNY&nbsp;DOM</h1>
-        <h2>Wielmi</h2>
-        <h3 className="text-xl mt-4 opacity-80">PROJEKTUJEMY I REALIZUJEMY</h3>
+        <h1 className="font-light">INTELIGENTNY&nbsp;DOM</h1>
+        <h2 className="font-light mt-2">Wielmi</h2>
+        <h3 className="text-xl mt-4 font-normal">PROJEKTUJEMY I REALIZUJEMY</h3>
       </div>
 
       <div className="col-span-full row-start-7 flex flex-col justify-center">
@@ -43,12 +43,12 @@ const Hero: FC = function () {
           <div
             className={classnames(
               font.className,
-              "lg:text-6xl sm:text-5xl absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none lg:-top-80 -top-48 font-[500] tracking-wider"
+              "lg:text-6xl sm:text-5xl absolute left-1/2 transform -translate-x-1/2 lg:left-0 lg:transform-none lg:-top-72 -top-48 font-[500] tracking-wider"
             )}
           >
-            <h1>INTELIGENTNY&nbsp;DOM</h1>
-            <h2>Wielmi</h2>
-            <h3 className="text-3xl mt-8 opacity-80">PROJEKTUJEMY I REALIZUJEMY</h3>
+            <h1 className="font-light">INTELIGENTNY&nbsp;DOM</h1>
+            <h2 className="font-light mt-2">Wielmi</h2>
+            <h3 className="text-2xl mt-8 font-normal">PROJEKTUJEMY I REALIZUJEMY</h3>
           </div>
           <SocialLinks iconClassName="h-8 w-8" />
         </div>
