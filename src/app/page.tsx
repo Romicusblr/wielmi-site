@@ -12,6 +12,7 @@ import ContactSection from "@/ui/sections/contact";
 import StatisticsSection from "@/ui/landing/statistics";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import Inspiration from "@/ui/sections/inspiration";
+import Partners from "@/ui/wspolpraca/partners";
 
 const Page: FC = function () {
   return (
@@ -35,7 +36,8 @@ const Page: FC = function () {
       <GridLineH />
       <ArrowDownSection className="bg-grey"/>
       <GridLineH />
-      <TeamSection />
+      {/* <TeamSection /> */}
+      <Partners />
       <ContactSection />
       <Testimonials />
     </>
