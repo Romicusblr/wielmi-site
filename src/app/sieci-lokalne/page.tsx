@@ -6,10 +6,9 @@ import InfoSection from "@/ui/sieci-lokalne/infos";
 import ContactBanner from "@/ui/sections/contact-banner";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Sieci Lokalne",
-};
+export const metadata: Metadata = getPageMetadata("Sieci Lokalne", "sieci-lokalne");
 
 const Page: FC = function () {
   return (

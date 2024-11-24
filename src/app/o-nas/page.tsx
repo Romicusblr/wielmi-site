@@ -8,10 +8,9 @@ import { GridLineH } from "@/ui/sections/grid-lines";
 import Inspiration from "@/ui/sections/inspiration";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "O Nas",
-};
+export const metadata: Metadata = getPageMetadata("O Nas", "o-nas");
 
 const Page: FC = function () {
   return (

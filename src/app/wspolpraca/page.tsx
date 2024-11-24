@@ -5,10 +5,9 @@ import ContactBanner from "@/ui/sections/contact-banner";
 import PartnersSection from "@/ui/wspolpraca/partners";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Wspólpraca",
-};
+export const metadata: Metadata = getPageMetadata("Współpraca", "wspolpraca");
 
 const Page: FC = function () {
   return (

@@ -7,7 +7,7 @@ import Footer from "@/ui/sections/footer";
 import NavBar from "@/ui/sections/navbar";
 import GridLines from "@/ui/sections/grid-lines";
 import CookieConsentComponent from "@/ui/cookie-banner/CookieConsent";
-import { siteMetadata } from "@/ui/common/meta";
+import { siteMetadata } from "@/lib/meta";
 
 const font = Montserrat({ subsets: ["latin", "latin-ext"] });
 

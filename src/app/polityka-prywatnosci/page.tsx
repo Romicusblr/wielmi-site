@@ -1,9 +1,8 @@
 import type { FC } from "react";
 import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Polityka Prywatności",
-};
+export const metadata: Metadata = getPageMetadata("Polityka Prywatności", "polityka-prywatnosci");
 
 const Page: FC = function () {
   return (

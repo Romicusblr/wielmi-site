@@ -8,10 +8,9 @@ import Faq from "@/ui/inteligentny-dom/faq";
 import ContactBanner from "@/ui/sections/contact-banner";
 import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import { Metadata } from "next";
+import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Inteligentny Dom",
-};
+export const metadata: Metadata = getPageMetadata("Inteligentny Dom", "inteligentny-dom");
 
 const Page: FC = function () {
   return (
