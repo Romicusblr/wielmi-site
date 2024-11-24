@@ -7,7 +7,15 @@ import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import { Metadata } from "next";
 import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getPageMetadata("Współpraca", "wspolpraca");
+export const metadata: Metadata = getPageMetadata("Współpraca", "wspolpraca", [
+  "Współpraca Wielmi Kraków",
+  "Partnerzy smart home Kraków",
+  "Oferta współpracy Wielmi Smart Homes",
+  "Program partnerski inteligentny dom Kraków",
+  "Partnerstwo biznesowe Wielmi Kraków",
+  "Współpraca technologiczna Wielmi Smart Homes",
+  "Dołącz do Wielmi Smart Homes"
+]);
 
 const Page: FC = function () {
   return (

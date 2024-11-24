@@ -10,7 +10,15 @@ import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import { Metadata } from "next";
 import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getPageMetadata("O Nas", "o-nas");
+export const metadata: Metadata = getPageMetadata("O Nas", "o-nas", [
+  "O nas Wielmi Smart Homes",
+  "Zespół inteligentnych domów Kraków",
+  "Historia Wielmi Smart Homes",
+  "Misja i wizja Wielmi Kraków",
+  "Nasze wartości Wielmi Smart Homes",
+  "Kim jesteśmy Wielmi Kraków",
+  "Doświadczenie Wielmi Smart Homes"
+]);
 
 const Page: FC = function () {
   return (

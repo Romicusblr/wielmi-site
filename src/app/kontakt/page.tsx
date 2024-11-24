@@ -6,7 +6,15 @@ import { GridLineH } from "@/ui/sections/grid-lines";
 import { Metadata } from "next";
 import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getPageMetadata("Kontakt", "kontakt");
+export const metadata: Metadata = getPageMetadata("Kontakt", "kontakt", [
+  "Kontakt Wielmi Kraków",
+  "Skontaktuj się z nami inteligentny dom Kraków",
+  "Zapytanie o smart home Kraków",
+  "Umów wizytę instalacji elektrycznych Kraków",
+  "Wsparcie techniczne smart home Kraków",
+  "Dane kontaktowe Wielmi Smart Homes",
+  "Formularz kontaktowy Wielmi Kraków"
+]);
 
 const Page: FC = function () {
   return (

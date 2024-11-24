@@ -8,7 +8,15 @@ import ArrowDownSection from "@/ui/sections/arrow-down-section";
 import { Metadata } from "next";
 import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getPageMetadata("Sieci Lokalne", "sieci-lokalne");
+export const metadata: Metadata = getPageMetadata("Sieci Lokalne", "sieci-lokalne", [
+  "Sieci lokalne Kraków",
+  "Konfiguracja sieci lokalnych dla smart homes Kraków",
+  "Profesjonalne sieci lokalne Kraków",
+  "Bezprzewodowe sieci domowe Kraków",
+  "Projektowanie sieci lokalnych Kraków",
+  "Instalacja sieci lokalnych dla inteligentnych domów",
+  "Bezpieczne sieci lokalne Kraków"
+]);
 
 const Page: FC = function () {
   return (

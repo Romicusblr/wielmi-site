@@ -7,7 +7,15 @@ import ContactBanner from "@/ui/sections/contact-banner";
 import { getPageMetadata } from "@/lib/seo";
 import { Metadata } from "next";
 
-export const metadata: Metadata = getPageMetadata("Instalacje Elektryczne", "instalacje-elektryczne");
+export const metadata: Metadata = getPageMetadata("Instalacje Elektryczne", "instalacje-elektryczne", [
+  "Instalacje elektryczne Kraków",
+  "Profesjonalne instalacje elektryczne",
+  "Montaż instalacji elektrycznych Kraków",
+  "Instalacja elektryczna smart home Kraków",
+  "Instalacje elektryczne dla inteligentnych domów",
+  "Bezpieczne instalacje elektryczne Kraków",
+  "Projektowanie instalacji elektrycznych Kraków",
+]);
 
 const Page: FC = function () {
   return (

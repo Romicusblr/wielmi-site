@@ -6,7 +6,15 @@ export const siteMetadata: Metadata = {
   title: "Inteligentny Dom, Instalacje Elektryczne | Wielmi Kraków",
   description:
     "Firma Wielmi oferuje instalacje elektryczne, inteligentne domy i sieci lokalne w Krakowie. Profesjonalne rozwiązania dla nowoczesnych domów.",
-  keywords: ["Inteligentny dom Kraków", "Instalacje elektryczne", "Sieci lokalne", "Smart home", "Wielmi Kraków"],
+  keywords: [
+    "Wielmi Smart Homes",
+    "Inteligentny dom Kraków",
+    "Smart home Kraków",
+    "Innowacyjne rozwiązania inteligentny dom",
+    "Systemy automatyki domowej Kraków",
+    "Rozwiązania smart home",
+    "Automatyzacja domu Kraków"
+  ],
   applicationName: "Wielmi",
   openGraph: {
     title: "Inteligentny Dom - Wielmi Kraków",

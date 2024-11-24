@@ -2,7 +2,15 @@ import type { FC } from "react";
 import { Metadata } from "next";
 import { getPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getPageMetadata("Polityka Prywatności", "polityka-prywatnosci");
+export const metadata: Metadata = getPageMetadata("Polityka Prywatności", "polityka-prywatnosci", [
+  "Polityka prywatności Wielmi Kraków",
+  "Ochrona danych osobowych Wielmi Smart Homes",
+  "Regulamin serwisu Wielmi",
+  "Polityka cookies Wielmi Kraków",
+  "Bezpieczeństwo danych Wielmi Smart Homes",
+  "Przetwarzanie danych osobowych Wielmi",
+  "Zasady prywatności Wielmi Smart Homes"
+]);
 
 const Page: FC = function () {
   return (

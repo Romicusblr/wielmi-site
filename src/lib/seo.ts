@@ -6,7 +6,7 @@ export const getCanonicalUrl = (path: string, locale: string = ""): string => {
   return locale ? `${baseUrl}/${locale}${normalizedPath}` : `${baseUrl}${normalizedPath}`;
 };
 
-export const getPageMetadata = (title: string, path: string): Metadata => {
+export const getPageMetadata = (title: string, path: string, keywords: string[]): Metadata => {
   return {
     title: title + " | Wielmi Kraków",
     alternates: {
@@ -15,5 +15,6 @@ export const getPageMetadata = (title: string, path: string): Metadata => {
     openGraph: {
       title,
     },
+    keywords,
   };
 };
