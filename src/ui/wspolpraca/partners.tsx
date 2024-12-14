@@ -3,7 +3,7 @@ import type { FC } from "react";
 import Image from "next-export-optimize-images/image";
 
 const partners = [
-  { name: "Satel", logo: "/images/logos/satel.png", alt: "Satel Logo" },
+  // { name: "Satel", logo: "/images/logos/satel.png", alt: "Satel Logo" },
   { name: "i3 engineering", logo: "/images/logos/i3.png", alt: "i3 Logo" },
   { name: "Grenton", logo: "/images/logos/grenton.png", alt: "Grenton Logo" },
   { name: "TermoFol", logo: "/images/logos/termofol.png", alt: "Termofol Logo" },
