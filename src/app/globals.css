@@ -19,12 +19,7 @@
 body {
   scrollbar-gutter: stable both-edges;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer components {
@@ -49,10 +44,16 @@ body {
   }
 
   .content-right-half {
-    @apply sm:col-start-2 lg:col-start-3 content-padding mt-8 lg:mt-0
+    @apply sm:col-start-2 lg:col-start-3 content-padding mt-8 lg:mt-0;
   }
 
   .content-center-span {
-    @apply sm:col-start-2 lg:col-end-4 content-padding
+    @apply sm:col-start-2 lg:col-end-4 content-padding;
+  }
+}
+
+@layer utilities {
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }

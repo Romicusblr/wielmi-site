@@ -10,6 +10,9 @@ const nextConfig = withExportImages(
     output: "export",
     trailingSlash: true,
     basePath: process.env.BASE_PATH ?? "",
+    images: {
+      deviceSizes: [440, 640, 768, 1024, 1280, 1480],
+    },
   })
 );
 
