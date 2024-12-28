@@ -7,7 +7,6 @@ settings:
 overrides:
   micromatch@<4.0.8: '>=4.0.8'
   cross-spawn@>=7.0.0 <7.0.5: '>=7.0.5'
-  nanoid@<3.3.8: '>=3.3.8'
 
 importers:
 
@@ -85,7 +84,7 @@ importers:
         version: 18.3.0
       autoprefixer:
         specifier: ^10.4.19
-        version: 10.4.19(postcss@8.4.39)
+        version: 10.4.19(postcss@8.4.49)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -105,8 +104,8 @@ importers:
         specifier: ^4.2.3
         version: 4.2.3(next@14.2.22(@babel/core@7.25.2)(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       postcss:
-        specifier: ^8.4.39
-        version: 8.4.39
+        specifier: ^8.4.49
+        version: 8.4.49
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
@@ -631,7 +630,7 @@ packages:
   '@next/third-parties@14.2.22':
     resolution: {integrity: sha512-DDa1uhvLE+bz0OUUK1Xk4m4yduo3yVKvXyjywiLeApX8EpwyF4dfKrM7DLKIgYJyN2At5Eg+lJR68MY4sa/rgw==}
     peerDependencies:
-      next: '>=14.2.15'
+      next: ^13.0.0 || ^14.0.0
       react: ^18.2.0
 
   '@nodelib/fs.scandir@2.1.5':
@@ -975,7 +974,7 @@ packages:
     resolution: {integrity: sha512-qr++MBYhyAwF25hGq7LAxe3Xehs+w2V4b8mVxilRYFXNkWFazY1ukZcVzq9pKrrt5uTiURTf68e8eVMraHnHEQ==}
     engines: {node: '>=14.18'}
     peerDependencies:
-      next: '>=14.2.15'
+      next: ^13.2.0 || ^14.0 || ^15.0.0-rc.0
 
   '@sentry/node@8.47.0':
     resolution: {integrity: sha512-tMzeU3KkmDi2OVvSu+Ah5pwoi7srsSyc1DovBbRQU96RFf/lOFzGe9JERa1MyDUqqLH95NqnPTNsa4Amb8/Vxg==}
@@ -2794,9 +2793,9 @@ packages:
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
 
-  nanoid@5.0.9:
-    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
-    engines: {node: ^18 || >=20}
+  nanoid@3.3.8:
+    resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
   natural-compare@1.4.0:
@@ -2810,7 +2809,7 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
-      next: '>=14.2.15'
+      next: '>=14.1.0'
       react: ^17.0.2 || ^18.0.0-0
       react-dom: ^17.0.2 || ^18.0.0-0
 
@@ -2819,7 +2818,7 @@ packages:
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
-      next: '>=14.2.15'
+      next: '*'
 
   next@14.2.22:
     resolution: {integrity: sha512-Ps2caobQ9hlEhscLPiPm3J3SYhfwfpMqzsoCMZGWxt9jBRK9hoBZj2A37i8joKhsyth2EuVKDVJCTF5/H4iEDw==}
@@ -3070,8 +3069,8 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.4.39:
-    resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
+  postcss@8.4.49:
+    resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
     engines: {node: ^10 || ^12 || >=14}
 
   postgres-array@2.0.0:
@@ -3340,10 +3339,6 @@ packages:
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
-
-  source-map-js@1.2.0:
-    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
-    engines: {node: '>=0.10.0'}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -5404,14 +5399,14 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  autoprefixer@10.4.19(postcss@8.4.39):
+  autoprefixer@10.4.19(postcss@8.4.49):
     dependencies:
       browserslist: 4.23.2
       caniuse-lite: 1.0.30001641
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.1
-      postcss: 8.4.39
+      postcss: 8.4.49
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -7175,7 +7170,7 @@ snapshots:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  nanoid@5.0.9: {}
+  nanoid@3.3.8: {}
 
   natural-compare@1.4.0: {}
 
@@ -7398,28 +7393,28 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.39):
+  postcss-import@15.1.0(postcss@8.4.49):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.49
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.39):
+  postcss-js@4.0.1(postcss@8.4.49):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.39
+      postcss: 8.4.49
 
-  postcss-load-config@4.0.2(postcss@8.4.39):
+  postcss-load-config@4.0.2(postcss@8.4.49):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.4.5
     optionalDependencies:
-      postcss: 8.4.39
+      postcss: 8.4.49
 
-  postcss-nested@6.0.1(postcss@8.4.39):
+  postcss-nested@6.0.1(postcss@8.4.49):
     dependencies:
-      postcss: 8.4.39
+      postcss: 8.4.49
       postcss-selector-parser: 6.1.1
 
   postcss-selector-parser@6.1.1:
@@ -7431,15 +7426,15 @@ snapshots:
 
   postcss@8.4.31:
     dependencies:
-      nanoid: 5.0.9
+      nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.4.39:
+  postcss@8.4.49:
     dependencies:
-      nanoid: 5.0.9
-      picocolors: 1.0.1
-      source-map-js: 1.2.0
+      nanoid: 3.3.8
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
 
   postgres-array@2.0.0: {}
 
@@ -7729,8 +7724,6 @@ snapshots:
 
   slash@3.0.0: {}
 
-  source-map-js@1.2.0: {}
-
   source-map-js@1.2.1: {}
 
   source-map-support@0.5.13:
@@ -7886,11 +7879,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.39
-      postcss-import: 15.1.0(postcss@8.4.39)
-      postcss-js: 4.0.1(postcss@8.4.39)
-      postcss-load-config: 4.0.2(postcss@8.4.39)
-      postcss-nested: 6.0.1(postcss@8.4.39)
+      postcss: 8.4.49
+      postcss-import: 15.1.0(postcss@8.4.49)
+      postcss-js: 4.0.1(postcss@8.4.49)
+      postcss-load-config: 4.0.2(postcss@8.4.49)
+      postcss-nested: 6.0.1(postcss@8.4.49)
       postcss-selector-parser: 6.1.1
       resolve: 1.22.8
       sucrase: 3.35.0
