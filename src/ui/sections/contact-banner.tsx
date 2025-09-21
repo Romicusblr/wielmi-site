@@ -20,7 +20,7 @@ const ContactBanner = () => {
       </div>
       <div className="content-right-half place-content-end">
         <Link className="w-full" href={CONTACT_LINK}>
-          <BrandedButton className="px-12 w-full max-w">napisać do nas</BrandedButton>
+          <BrandedButton className="px-12 w-full max-w">napisz do nas</BrandedButton>
         </Link>
       </div>
     </section>

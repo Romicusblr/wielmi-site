@@ -7,7 +7,7 @@ const Section: FC = () => {
       <div className="content-left-half">
         <Heading
           tag="h1"
-          title="JEŚTEŚ ARCHITECTEM?"
+          title="JEŚTEŚ ARCHITEKTEM?"
           subtitles={["DOŁĄCZ DO", "SYSTEMU", "INTELIGENTNEGO", "DOMU Wielmi"]}
         />
       </div>
