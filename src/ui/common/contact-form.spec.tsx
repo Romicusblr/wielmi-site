@@ -1,68 +1,92 @@
-import "@testing-library/jest-dom";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import ContactForm from "./contact-form"; // Adjust path to your form
+import assert from "node:assert/strict";
+import { afterEach, beforeEach, mock, test } from "node:test";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactFormSchema } from "./contact-form.schema";
 
-// Mock useWeb3Forms to prevent actual email sending
-jest.mock("@web3forms/react", () => ({
-  __esModule: true,
-  default: () => ({
-    submit: jest.fn((data, onSuccess, onError) => {
-      onSuccess("Email sent successfully", data);
-    }),
+afterEach(() => {
+  cleanup();
+});
+
+let submitSpy: ReturnType<typeof mock.fn>;
+
+beforeEach(() => {
+  submitSpy = mock.fn((data) => data);
+});
+
+mock.module("@web3forms/react", {
+  defaultExport: (options?: { onSuccess?: (msg: string, data: unknown) => void }) => ({
+    submit: (data: unknown) => {
+      submitSpy(data);
+      options?.onSuccess?.("Email sent successfully", data);
+    },
   }),
-}));
+});
 
-const ContactFormWrapper = () => {
-  const methods = useForm({
-    resolver: yupResolver(contactFormSchema),
-    mode: 'onChange',
-  });
+const renderContactForm = async () => {
+  const { default: ContactForm } = await import("./contact-form");
+  const ContactFormWrapper = () => {
+    const methods = useForm({
+      resolver: yupResolver(contactFormSchema),
+      mode: "onChange",
+    });
 
-  return (
-    <FormProvider {...methods}>
-      <ContactForm />
-    </FormProvider>
-  );
+    return (
+      <FormProvider {...methods}>
+        <ContactForm />
+      </FormProvider>
+    );
+  };
+
+  render(<ContactFormWrapper />);
+
+  return { submitSpy };
 };
 
-describe("ContactForm Tests", () => {
-  test("displays validation errors when inputs are empty", async () => {
-    render(<ContactFormWrapper />);
+test("displays validation errors when inputs are empty", async () => {
+  await renderContactForm();
 
-    const submitButton = screen.getByRole("button", { name: /wysłać/i });
-    fireEvent.click(submitButton);
+  const submitButton = screen.getByRole("button", { name: /wysłać/i });
+  fireEvent.click(submitButton);
 
-    expect(await screen.findByText("Imię jest wymagane")).toBeInTheDocument();
-    expect(await screen.findByText("Email jest wymagany")).toBeInTheDocument();
-    expect(await screen.findByText("Numer telefonu jest wymagany")).toBeInTheDocument();
-    expect(await screen.findByText("Wiadomość musi mieć co najmniej 4 znaków")).toBeInTheDocument();
+  assert.ok(await screen.findByText("Imię jest wymagane"));
+  assert.ok(await screen.findByText("Email jest wymagany"));
+  assert.ok(await screen.findByText("Numer telefonu jest wymagany"));
+  assert.ok(await screen.findByText("Wiadomość musi mieć co najmniej 4 znaków"));
+});
+
+test("renders contact form fields and submit button", async () => {
+  await renderContactForm();
+
+  assert.ok(screen.getByPlaceholderText("Podaj imię..."));
+  assert.ok(screen.getByPlaceholderText("Podaj email..."));
+  assert.ok(screen.getByPlaceholderText("Podaj numer telefonu..."));
+  assert.ok(screen.getByPlaceholderText("Informacje dla nas..."));
+  assert.ok(screen.getByRole("button", { name: /wysłać/i }));
+});
+
+test("submits the form successfully without sending email", async () => {
+  const { submitSpy } = await renderContactForm();
+
+  fireEvent.change(screen.getByPlaceholderText("Podaj imię..."), {
+    target: { value: "John Doe" },
+  });
+  fireEvent.change(screen.getByPlaceholderText("Podaj email..."), {
+    target: { value: "raman.mastyka@gmail.com" },
+  });
+  fireEvent.change(screen.getByPlaceholderText("Podaj numer telefonu..."), {
+    target: { value: "123456789" },
+  });
+  fireEvent.change(screen.getByPlaceholderText("Informacje dla nas..."), {
+    target: { value: "This is a test message." },
   });
 
-  test.skip("submits the form successfully without sending email", async () => {
-    render(<ContactFormWrapper />);
+  const submitButton = screen.getByRole("button", { name: /wysłać/i });
+  fireEvent.click(submitButton);
 
-    fireEvent.change(screen.getByPlaceholderText("Podaj imię..."), {
-      target: { value: "John Doe" },
-    });
-    fireEvent.change(screen.getByPlaceholderText("Podaj email..."), {
-      target: { value: "john@example.com" },
-    });
-    fireEvent.change(screen.getByPlaceholderText("Podaj numer telefonu..."), {
-      target: { value: "123456789" },
-    });
-    fireEvent.change(screen.getByPlaceholderText("Informacje dla nas..."), {
-      target: { value: "This is a test message." },
-    });
-
-    const submitButton = screen.getByRole("button", { name: /wysłać/i });
-    fireEvent.click(submitButton);
-
-    // Expect success message after form submission
-    await waitFor(() =>
-      expect(screen.getByText("Dziękujemy! Formularz został wysłany pomyślnie.")).toBeInTheDocument()
-    );
-  });
+  await waitFor(() =>
+    assert.ok(screen.getByText("Dziękujemy! Formularz został pomyślnie wysłany."))
+  );
+  assert.equal(submitSpy.mock.calls.length, 1);
 });
