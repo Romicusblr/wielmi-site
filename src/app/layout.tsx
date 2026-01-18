@@ -6,7 +6,6 @@ import classNames from "classnames";
 import Footer from "@/ui/sections/footer";
 import NavBar from "@/ui/sections/navbar";
 import GridLines from "@/ui/sections/grid-lines";
-import CookieConsentComponent from "@/ui/cookie-banner/CookieConsent";
 import { siteMetadata } from "@/lib/meta";
 
 const font = Montserrat({ subsets: ["latin", "latin-ext"] });
@@ -25,7 +24,6 @@ const RootLayout: FC<RootLayoutProps> = function ({ children }) {
         <NavBar />
         <main className="flex flex-col justify-between pt-20">{children}</main>
         <Footer />
-        <CookieConsentComponent />
       </body>
     </html>
   );

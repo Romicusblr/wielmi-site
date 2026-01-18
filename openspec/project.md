@@ -8,7 +8,7 @@ network services in Krakow. The site highlights services, showcases trust signal
 - Next.js 14 (App Router) with static export (`output: "export"`).
 - React 18 + TypeScript (strict mode).
 - Tailwind CSS for styling.
-- Jest + Testing Library for UI tests.
+- Node.js test runner + Testing Library for UI tests.
 - Sentry for production error monitoring.
 - next-sitemap and next-export-optimize-images for SEO and static image optimization.
 
@@ -27,7 +27,7 @@ network services in Krakow. The site highlights services, showcases trust signal
 - Images use `next-export-optimize-images` and `next-export-optimize-images/image`.
 
 ### Testing Strategy
-- Jest with `jest.setup.js` and `@testing-library/*` for component tests.
+- Node.js native test runner with `@testing-library/*` for component tests.
 - `pnpm test` / `npm run test` runs the suite.
 
 ### Git Workflow

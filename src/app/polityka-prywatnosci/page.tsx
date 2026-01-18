@@ -50,10 +50,7 @@ const Page: FC = function () {
             <li>Adres e-mail</li>
             <li>Numer telefonu</li>
           </ul>
-          <p>
-            Dane te są zbierane bezpośrednio od użytkowników za pośrednictwem formularza kontaktowego oraz przy użyciu
-            usług Google Analytics.
-          </p>
+          <p>Dane te są zbierane bezpośrednio od użytkowników za pośrednictwem formularza kontaktowego.</p>
         </section>
 
         <section className="mb-6">
@@ -61,16 +58,12 @@ const Page: FC = function () {
           <p>Twoje dane osobowe są przetwarzane w następujących celach:</p>
           <ul className="list-disc list-inside ml-4">
             <li>Odpowiadanie na zapytania użytkowników przesłane za pośrednictwem formularza kontaktowego</li>
-            <li>Analiza ruchu na Stronie i poprawa jej funkcjonalności przy użyciu Google Analytics</li>
           </ul>
         </section>
 
         <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-2">5. Udostępnianie danych</h2>
-          <p>Twoje dane osobowe mogą być udostępniane:</p>
-          <ul className="list-disc list-inside ml-4">
-            <li>Google Analytics – w celu analizy ruchu na Stronie</li>
-          </ul>
+          <p>Twoje dane osobowe nie są udostępniane podmiotom trzecim w celach analitycznych.</p>
         </section>
 
         <section className="mb-6">
@@ -97,17 +90,16 @@ const Page: FC = function () {
         <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-2">7. Pliki cookies i technologie śledzące</h2>
           <p>
-            Strona wykorzystuje pliki cookies w celu poprawy funkcjonalności i analizy ruchu za pomocą Google Analytics.
-            Użytkownik może zarządzać ustawieniami cookies za pomocą ustawień przeglądarki internetowej.
+            Strona nie wykorzystuje analitycznych plików cookies. Wykorzystujemy wyłącznie niezbędne pliki cookies
+            techniczne związane z działaniem serwisu.
           </p>
         </section>
 
         <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-2">8. Bezpieczeństwo danych</h2>
           <p>
-            Twoje dane osobowe są przechowywane wyłącznie w skrzynce e-mail oraz na serwerach Google Analytics.
-            Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych osobowych przed
-            nieautoryzowanym dostępem, utratą lub zniszczeniem.
+            Twoje dane osobowe są przechowywane w skrzynce e-mail. Stosujemy odpowiednie środki techniczne i
+            organizacyjne w celu ochrony danych osobowych przed nieautoryzowanym dostępem, utratą lub zniszczeniem.
           </p>
         </section>
 
@@ -122,8 +114,8 @@ const Page: FC = function () {
         <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-2">10. Podstawa prawna przetwarzania danych</h2>
           <p>
-            Podstawą prawną przetwarzania danych osobowych jest zgoda użytkownika, wyrażana poprzez akceptację plików
-            cookies za pomocą bannera zgody na cookies.
+            Podstawą prawną przetwarzania danych osobowych z formularza kontaktowego jest zgoda użytkownika wyrażona
+            poprzez wysłanie formularza.
           </p>
         </section>
 
@@ -138,8 +130,7 @@ const Page: FC = function () {
         <section>
           <h2 className="text-2xl font-semibold mb-2">12. Usługi zewnętrzne</h2>
           <p>
-            W celu analizy ruchu na Stronie korzystamy z Google Analytics, który przetwarza dane osobowe zgodnie z
-            własną polityką prywatności.
+            Strona nie korzysta z narzędzi analitycznych stron trzecich.
           </p>
         </section>
       </div>

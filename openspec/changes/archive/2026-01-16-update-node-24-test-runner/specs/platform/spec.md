@@ -1,15 +1,4 @@
-# platform Specification
-
-## Purpose
-TBD - created by archiving change update-nextjs-16. Update Purpose after archive.
-## Requirements
-### Requirement: Framework Version
-The project SHALL use the latest stable Next.js 15.x as the primary framework for build and runtime.
-
-#### Scenario: Build uses Next.js 15
-- **WHEN** dependencies are installed
-- **THEN** `next` resolves to a 15.x version during build and export
-
+## ADDED Requirements
 ### Requirement: Node.js Runtime Version
 The project SHALL use Node.js 24.x for development, builds, and CI automation.
 
@@ -23,4 +12,3 @@ The project SHALL use the Node.js native test runner for automated tests.
 #### Scenario: Tests run without Jest
 - **WHEN** automated tests are executed
 - **THEN** the Node.js native test runner is used and Jest is not required
-
