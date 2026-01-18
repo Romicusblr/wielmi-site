@@ -37,10 +37,14 @@ const ContactForm: FC = function () {
       setIsSuccess(false);
     },
   });
+  const handleFormSubmit = handleSubmit((data) => onSubmit(data));
 
   return (
     <div className="shadow-lg rounded-lg mt-12">
-      <form className="flex flex-col justify-between gap-4 text-grey" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="flex flex-col justify-between gap-4 text-grey"
+        onSubmit={handleFormSubmit}
+      >
         <div className="flex-none">
           <input
             {...register("name")}
@@ -85,7 +89,9 @@ const ContactForm: FC = function () {
           {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
         </div>
         <div className="flex-none flex justify-center text-dark-grey">
-          <BrandedButton className="px-12 w-full bg-brand">Wysłać</BrandedButton>
+          <BrandedButton className="px-12 w-full bg-brand">
+            Wysłać
+          </BrandedButton>
         </div>
       </form>
       {isSubmitSuccessful && isSuccess && (

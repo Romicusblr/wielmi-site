@@ -55,7 +55,9 @@ const Hero: FC = function () {
       </div>
       <div className="h-16 flex justify-center lg:col-start-3 sm:col-start-2 row-start-8 px-12">
         <Link className="w-full flex place-content-center" href={CONTACT_HASH}>
-          <BrandedButton className="px-12 w-full lg:max-w-[416px] max-w-[320px]">napisz do nas</BrandedButton>
+          <BrandedButton className="px-12 w-full lg:max-w-[416px] max-w-[320px]">
+            napisz do nas
+          </BrandedButton>
         </Link>
       </div>
       <div className="row-start-11 col-span-full grid place-content-center z-10">
