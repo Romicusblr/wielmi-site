@@ -1,8 +1,5 @@
 import type { FC } from "react";
-import BrandedButton from "@/ui/common/button";
-import { GridLineH } from "@/ui/sections/grid-lines";
-import { CONTACT_HASH, LANDING_DESCRIPTION } from "@/constants";
-import Link from "next/link";
+import { LANDING_DESCRIPTION } from "@/constants";
 import Heading from "@/ui/common/heading";
 
 const About: FC = function () {
