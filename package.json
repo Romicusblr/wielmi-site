@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "ts": "tsc",
     "analyze": "ANALYZE=true pnpm build",
-    "test": "TSX_TSCONFIG_PATH=tsconfig.test.json node --import global-jsdom/register --import tsx --experimental-transform-types --experimental-test-module-mocks --test \"src/**/*.spec.tsx\""
+    "test": "TSX_TSCONFIG_PATH=tsconfig.test.json node --import global-jsdom/register --import tsx --experimental-transform-types --experimental-test-module-mocks --test \"src/**/*.spec.ts[x]\""
   },
   "engines": {
     "node": "24.x"
@@ -27,6 +27,8 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1",
+    "react-photo-album": "^3.4.0",
+    "yet-another-react-lightbox": "^3.28.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
