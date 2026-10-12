@@ -75,7 +75,10 @@ const Page: FC = function () {
             w regionie Unii Europejskiej. PostHog otrzymuje dane techniczne opisane w tej polityce oraz metadane
             połączenia, w tym adres IP i informacje o przeglądarce, potrzebne do obliczenia identyfikatora
             zmieniającego się każdego dnia. Nie tworzymy profili użytkowników ani nie identyfikujemy ich
-            na podstawie danych z formularza kontaktowego.
+            na podstawie danych z formularza kontaktowego. Jeśli korzystamy z zarządzanego proxy PostHog,
+            żądania są dodatkowo przekazywane przez infrastrukturę Cloudflare, podwykonawcy PostHog.
+            Dane są przyjmowane przez wybrany projekt PostHog Cloud EU, ale zakończenie każdego połączenia
+            wyłącznie na terenie UE nie jest gwarantowane.
           </p>
         </section>
 
@@ -153,7 +156,8 @@ const Page: FC = function () {
           <p>
             Strona korzysta z PostHog Cloud EU do pomiaru odsłon i monitorowania błędów przeglądarki.
             Usługa działa bez analitycznych cookies i trwałych identyfikatorów w przeglądarce. Informacje
-            o usłudze są dostępne na stronie{' '}
+            Jeśli włączymy zarządzane proxy PostHog, ruch będzie przechodził przez Cloudflare, podwykonawcę
+            PostHog, i nie będzie gwarancji zakończenia każdego połączenia w UE. Informacje o usłudze są dostępne na stronie{' '}
             <a href="https://posthog.com/privacy" className="text-blue-500">PostHog</a>.
           </p>
         </section>

@@ -6,10 +6,24 @@ let initialized = false;
 const capturedErrors = new WeakSet<object>();
 
 function telemetryEnabled(): boolean {
+  const apiHost = process.env.NEXT_PUBLIC_POSTHOG_HOST;
+  let validApiHost = false;
+  try {
+    const parsedHost = new URL(apiHost ?? "");
+    validApiHost = parsedHost.protocol === "https:"
+      && parsedHost.username === ""
+      && parsedHost.password === ""
+      && parsedHost.pathname === "/"
+      && parsedHost.search === ""
+      && parsedHost.hash === "";
+  } catch {
+    // An unset or malformed host disables telemetry.
+  }
+
   return process.env.NODE_ENV === "production"
     && process.env.NEXT_PUBLIC_POSTHOG_ENABLED === "true"
     && !!process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN?.trim()
-    && process.env.NEXT_PUBLIC_POSTHOG_HOST === "https://eu.i.posthog.com";
+    && validApiHost;
 }
 
 export function initializeTelemetry(): void {

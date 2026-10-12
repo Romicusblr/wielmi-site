@@ -1,15 +1,22 @@
 ## ADDED Requirements
 
 ### Requirement: EU Browser Telemetry Activation
-The site SHALL use PostHog Cloud EU for browser telemetry only when a production build has explicit PostHog enablement and a valid project token and EU ingestion host. Local development and builds without this configuration SHALL emit no telemetry. Both Hostido and GitHub Pages deployment workflows SHALL enable browser telemetry when a project token is supplied. Telemetry failures SHALL NOT prevent normal page rendering or the existing error UI.
+The site SHALL use PostHog Cloud EU for browser telemetry only when a production build has explicit PostHog enablement, a valid project token, and an HTTPS ingestion origin configured through `NEXT_PUBLIC_POSTHOG_HOST`. The origin MAY be the default EU ingestion host or a managed reverse proxy for the EU project. Local development and builds without this configuration SHALL emit no telemetry. Both Hostido and GitHub Pages deployment workflows SHALL enable browser telemetry when a project token is supplied. Telemetry failures SHALL NOT prevent normal page rendering or the existing error UI.
 
-#### Scenario: Configured production site
+#### Scenario: Configured production site with direct EU ingestion
 - **WHEN** a Hostido or GitHub Pages production-mode build is explicitly enabled and configured
-- **THEN** browser telemetry is sent to `https://eu.i.posthog.com`
+- **THEN** browser telemetry is sent to the configured HTTPS ingestion origin, which defaults to `https://eu.i.posthog.com`
+- **AND** the EU dashboard host remains `https://eu.posthog.com`
+- **AND** no request-time server integration is required for the static export
+
+#### Scenario: Configured managed proxy
+- **WHEN** a Hostido or GitHub Pages production-mode build is explicitly enabled with an HTTPS managed proxy origin for the EU project
+- **THEN** browser telemetry is sent to that proxy origin
+- **AND** the EU dashboard host remains `https://eu.posthog.com`
 - **AND** no request-time server integration is required for the static export
 
 #### Scenario: Disabled or incomplete configuration
-- **WHEN** the site runs in development mode, without explicit enablement, or without valid EU configuration
+- **WHEN** the site runs in development mode, without explicit enablement, or without a valid EU ingestion origin
 - **THEN** no telemetry is initialized or sent
 - **AND** the site builds and renders successfully
 

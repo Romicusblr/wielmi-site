@@ -26,7 +26,8 @@ test("guarded initialization and error capture preserve the site when telemetry 
     for (const overrides of [
       { NEXT_PUBLIC_POSTHOG_ENABLED: "false" },
       { NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN: " " },
-      { NEXT_PUBLIC_POSTHOG_HOST: "https://other.example" },
+      { NEXT_PUBLIC_POSTHOG_HOST: "http://events.wielmi.pl" },
+      { NEXT_PUBLIC_POSTHOG_HOST: "https://events.wielmi.pl/path" },
     ]) {
       const configured = { ...process.env };
       Object.assign(process.env, overrides);
@@ -35,12 +36,14 @@ test("guarded initialization and error capture preserve the site when telemetry 
       process.env = configured;
     }
     failInit = true;
+    process.env.NEXT_PUBLIC_POSTHOG_HOST = "https://events.wielmi.pl";
     assert.doesNotThrow(initializeTelemetry);
     failInit = false;
     initializeTelemetry();
     initializeTelemetry();
     assert.equal(initialize.mock.calls.length, 2);
     const config = initialize.mock.calls[1].arguments[1];
+    assert.equal(config.api_host, "https://events.wielmi.pl");
     assert.equal(config.cookieless_mode, "always");
     assert.equal(config.person_profiles, "never");
     assert.equal(config.disable_persistence, true);

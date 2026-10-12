@@ -27,16 +27,27 @@ In **Project settings**, copy the **project token** (often beginning `phc_`).
 | Setting | Value | Visibility |
 | --- | --- | --- |
 | `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN` | Your project's token | Public; included in browser JavaScript |
-| `NEXT_PUBLIC_POSTHOG_HOST` | `https://eu.i.posthog.com` | Public ingestion endpoint |
+| `NEXT_PUBLIC_POSTHOG_HOST` | `https://eu.i.posthog.com` until proxy setup; then your proxy subdomain, e.g. `https://events.wielmi.pl` | Public ingestion endpoint |
 | `NEXT_PUBLIC_POSTHOG_ENABLED` | `true` only when ready for production | Public build flag |
 
-Use the public project token, not a personal API key. The browser uses `eu.i.posthog.com`; the dashboard uses `eu.posthog.com`.
+Use the public project token, not a personal API key. The dashboard and source-map uploads use `eu.posthog.com`; browser ingestion uses the host configured in `NEXT_PUBLIC_POSTHOG_HOST`. Keep `ui_host` set to `https://eu.posthog.com` for toolbar and dashboard features.
 
-The Hostido production build uploads source maps using `@posthog/nextjs-config`, following the [PostHog Next.js guide](https://posthog.com/docs/error-tracking/upload-source-maps/nextjs). Uploads use `https://eu.posthog.com`, while browser ingestion continues to use `https://eu.i.posthog.com`. Maps are deleted after upload and excluded from the deployed static export. Releases use `wielmi-site` and the GitHub commit SHA.
+## 4. Set up the managed reverse proxy (optional, recommended before production)
+
+PostHog's managed proxy can reduce event loss from browser tracking blockers. It is free for PostHog Cloud users. It sends traffic through Cloudflare, a PostHog subprocessor, and does not guarantee that every request terminates at an EU edge. Review this processing before enabling the proxy; do not use it for Protected Health Information.
+
+1. In PostHog EU, open **Organization settings → Reverse proxies** and create a **managed proxy**. Choose a neutral subdomain you control, such as `events.wielmi.pl`; avoid names containing `analytics`, `tracking`, `telemetry`, `posthog`, or `ph`.
+2. In Cloudflare DNS, add the CNAME record PostHog gives you. Use the subdomain as the Name and PostHog's generated proxy target as the Target. Set **Proxy status** to **DNS only** (gray cloud), not Proxied (orange cloud), so PostHog can provision TLS and receive the traffic.
+3. Wait for PostHog to report the proxy as **Live**. Then set `NEXT_PUBLIC_POSTHOG_HOST` to the full HTTPS origin for your subdomain, for example `https://events.wielmi.pl`. Add it as a repository Actions variable and rebuild/redeploy; for local production-build checks, set the same value in ignored `.env.local`.
+4. Verify in browser developer tools that ingestion requests go to the proxy hostname and return successfully, then confirm events appear in the EU project. Continue to use `https://eu.posthog.com` for `ui_host` and source-map uploads.
+
+Until the proxy is live and the new build is deployed, keep `NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com`. The telemetry code accepts HTTPS origins for a custom proxy and rejects malformed, non-HTTPS, or path-based hosts. A configured proxy is a build-time value, so changing the GitHub variable alone does not change an already deployed site.
+
+The Hostido production build uploads source maps using `@posthog/nextjs-config`, following the [PostHog Next.js guide](https://posthog.com/docs/error-tracking/upload-source-maps/nextjs). Uploads use `https://eu.posthog.com`, independently of the browser ingestion host. Maps are deleted after upload and excluded from the deployed static export. Releases use `wielmi-site` and the GitHub commit SHA.
 
 Create a personal API key with **write access to Error Tracking** and find the numeric project ID in project settings. These are build-only values; never put the personal API key in a `NEXT_PUBLIC_` variable.
 
-## 4. Configure GitHub Actions
+## 5. Configure GitHub Actions
 
 Open this repository's **Settings → Secrets and variables → Actions**. The Hostido build runs before the deployment environment is selected, so use **repository-level** variables and secrets for its build configuration. The project and both workflows use pnpm **12.9.1**. `pnpm-workspace.yaml` permits the PostHog CLI, esbuild, and sharp installation scripts; core-js scripts are disabled.
 
@@ -47,16 +58,18 @@ NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=<public-project-token>
 POSTHOG_PROJECT_ID=<numeric-project-id>
 ```
 
+Optionally add `NEXT_PUBLIC_POSTHOG_HOST=https://events.wielmi.pl` after the proxy is live. If unset, both workflows use `https://eu.i.posthog.com`.
+
 Add the repository **secret** `POSTHOG_API_KEY=<personal-api-key>`. The Hostido workflow enables source map uploads with `POSTHOG_SOURCEMAPS_ENABLED=true` and fails if either upload credential is missing. The GitHub Pages workflow does not enable source map uploads.
 
-Both workflows currently enable browser telemetry and supply the EU ingestion host. Public variables are baked into the static export: changing a variable does not affect already deployed files.
+Both workflows enable browser telemetry and use the configured ingestion host, defaulting to the EU endpoint. Public variables are baked into the static export: changing a variable does not affect already deployed files.
 
 After successful production verification, remove the unused `SENTRY_AUTH_TOKEN` GitHub secret and any local `.env.sentry-build-plugin` file. Keep the existing Sentry account/history if you need past issues.
 
-## 5. Verify the connection
+## 6. Verify the connection
 
 1. Start with a controlled production build, since `pnpm dev` deliberately sends no telemetry. Copy the public values from `.env.example` into ignored `.env.local`, set enablement to `true` for this test, then run `pnpm build` and serve `out/` using a static file server. Do not use `next start` for a static export.
-2. Open browser developer tools and inspect requests to `eu.i.posthog.com`. The event payloads must contain only `$pageview`, `$pageleave`, `$web_vitals`, or `$exception`, with sensitive URL parameters and fragments removed; campaign parameters and standard SDK metadata are retained. Remote configuration and SDK asset requests are normal; they are not additional tracked event types.
+2. Open browser developer tools and inspect requests to the configured `NEXT_PUBLIC_POSTHOG_HOST` (direct EU ingestion or your proxy subdomain). The event payloads must contain only `$pageview`, `$pageleave`, `$web_vitals`, or `$exception`, with sensitive URL parameters and fragments removed; campaign parameters and standard SDK metadata are retained. Remote configuration and SDK asset requests are normal; they are not additional tracked event types.
 3. Load a page, navigate to another page, and use back/forward. Expect one pageview per displayed pathname. Rerenders and query/hash-only changes must not add pageviews.
 4. In the EU project's activity feed, filter for `$pageview`. Confirm the sanitized page URL is present. Leave the site and confirm `$pageleave` with pageview linkage, duration, and numeric scroll depth metadata. Bounce rate remains limited without interaction autocapture.
 5. Trigger a synthetic uncaught exception using the browser console, for example `setTimeout(() => { throw new Error("Wielmi setup test"); }, 0)`. Also test a synthetic unhandled rejection. Verify `$exception` in the activity feed and an issue in Error Tracking. Console logging alone is intentionally not captured.
@@ -69,9 +82,9 @@ If events are missing, check the EU host and project token, the cookieless proje
 
 HTTP `200` acknowledges the request, but cookieless processing can still discard an event afterward. Check ingestion warnings for `cookieless_missing_host` or `cookieless_missing_user_agent`. The final event filter must preserve `$host` and `$raw_user_agent` for server-side hashing; PostHog removes the raw user agent after hashing. The IP comes from the request and does not need to be added by the browser.
 
-A reverse proxy is optional and outside this migration. Direct EU ingestion can be blocked by privacy tools. PostHog's managed proxy requires DNS setup and adds Cloudflare processing; it does not guarantee EU-only edge termination.
+Direct EU ingestion can be blocked by privacy tools. PostHog's managed proxy requires DNS setup and adds Cloudflare processing; it does not guarantee EU-only edge termination. PostHog still ingests events into the selected EU project.
 
-## 6. Disable or roll back
+## 7. Disable or roll back
 
 Set the production enable variable to `false`, then rebuild and deploy to stop collection. Restore the previous integration commit/configuration if Sentry monitoring must be restored.
 
